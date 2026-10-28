@@ -1,6 +1,9 @@
 /* 上線用補充樣式（版型樣式在各頁 <style> 內） */
 html { background: #FFFFFF; }
 body[data-mode="d"] { margin: 0 auto; }
+/* 手機版：原設計稿 body 有 overflow:hidden，會讓手機無法往下捲 */
+body[data-mode="m"] { overflow: visible !important; overflow-x: clip !important; }
+html { overflow-x: hidden; }
 a.card, a.tab { cursor: pointer; }
 a.card:hover .h3 { color: var(--dgold); }
 

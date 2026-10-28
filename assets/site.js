@@ -11,6 +11,12 @@
     if (isM && w >= 1024) { location.replace('/' + name + location.search + location.hash); return; }
   }
 
+  // 手機版頁面一律用 375 設計寬顯示
+  if (isM && !document.querySelector('meta[name=viewport]')) {
+    var vp = document.createElement('meta'); vp.name = 'viewport'; vp.content = 'width=375';
+    document.head.appendChild(vp);
+  }
+
   // 電腦版設計寬 1440，小於這個寬度時等比例縮小
   function fit() {
     if (isM) return;
