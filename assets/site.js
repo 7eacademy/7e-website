@@ -3,7 +3,7 @@
   var path = location.pathname;
   var isM = /^\/m\//.test(path);
   var name = path.replace(/^\/m\//, '/').replace(/^\//, '') || 'index.html';
-  var w = window.innerWidth || screen.width;
+  var w = Math.min(window.innerWidth || 9999, screen.width || 9999);
 
   // 手機看電腦版 → 轉到 /m/；大螢幕看手機版 → 轉回電腦版
   if (name !== 'menu.html') {
