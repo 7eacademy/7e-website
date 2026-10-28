@@ -1,0 +1,264 @@
+# 7E 商學院官網後台設定（Pages CMS，https://app.pagescms.org）
+media:
+  input: media
+  output: /media
+
+content:
+  - name: articles
+    label: 最新文章
+    type: collection
+    path: content/articles
+    view:
+      fields: [title, category, date, published]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: 文章標題
+        type: string
+        required: true
+      - name: date
+        label: 發布日期
+        type: date
+        required: true
+      - name: category
+        label: 分類
+        type: select
+        required: true
+        options:
+          values: [商業見析, 品牌解析, 企業人物訪談, 產業轉型案例實務]
+      - name: excerpt
+        label: 摘要（列表上顯示的一兩句話）
+        type: text
+      - name: cover
+        label: 封面圖
+        type: image
+      - name: featured
+        label: 設為編輯精選（文章頁最上方大圖）
+        type: boolean
+      - name: published
+        label: 發布（取消勾選就不會出現在網站）
+        type: boolean
+        default: true
+      - name: body
+        label: 文章內文
+        type: rich-text
+
+  - name: news
+    label: 最新消息（IG 貼文）
+    type: collection
+    path: content/news
+    view:
+      fields: [caption, date]
+      primary: caption
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: caption
+        label: 圖下方的介紹文字
+        type: text
+        required: true
+      - name: date
+        label: 貼文日期（越新越前面，首頁顯示最新 4 則）
+        type: date
+        required: true
+      - name: image
+        label: 貼文圖片（建議 3:4 直式）
+        type: image
+        required: true
+      - name: link
+        label: IG 貼文網址（點圖會開這個網址）
+        type: string
+      - name: published
+        label: 顯示
+        type: boolean
+        default: true
+
+  - name: courses
+    label: 商業教育｜課程與檢測
+    type: collection
+    path: content/courses
+    view:
+      fields: [title, price, order, show]
+      primary: title
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: 課程名稱
+        type: string
+        required: true
+      - name: tag
+        label: 圖片左上角標籤（例：職能檢測）
+        type: string
+      - name: description
+        label: 簡短說明
+        type: text
+      - name: note
+        label: 上課方式／地點
+        type: string
+      - name: price
+        label: 價格（以 NT$ 開頭會用大字顯示；也可寫「免費」「預約洽談」）
+        type: string
+      - name: button
+        label: 按鈕文字
+        type: string
+      - name: link
+        label: 按鈕連結（報名表單、檢測表單或 LINE 網址）
+        type: string
+        required: true
+      - name: image
+        label: 卡片圖片
+        type: image
+      - name: order
+        label: 排序（數字小的在前面）
+        type: number
+      - name: show
+        label: 顯示
+        type: boolean
+        default: true
+
+  - name: plans
+    label: 企業內訓｜五獸方案與價格
+    type: file
+    path: content/plans.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: 方案名稱
+        type: string
+      - name: subtitle
+        label: 小標
+        type: string
+      - name: price
+        label: 價格
+        type: string
+      - name: bullets
+        label: 方案說明（每行一點）
+        type: string
+        list: true
+      - name: button
+        label: 按鈕文字
+        type: string
+      - name: link
+        label: 按鈕連結
+        type: string
+
+  - name: consultants
+    label: 顧問團隊
+    type: collection
+    path: content/consultants
+    view:
+      fields: [name, title, order]
+      primary: name
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: name
+        label: 姓名
+        type: string
+        required: true
+      - name: title
+        label: 職稱
+        type: string
+      - name: photo
+        label: 照片（直式）
+        type: image
+      - name: tags
+        label: 專長標籤
+        type: string
+        list: true
+      - name: intro
+        label: 介紹（顧問團隊頁）
+        type: text
+      - name: case_label
+        label: 案例欄標題（例：案例實務）
+        type: string
+      - name: case_text
+        label: 案例內容
+        type: text
+      - name: page
+        label: 顧問個人頁
+        type: select
+        options:
+          values: [consultant-eling, consultant-vessi, consultant-joey, consultant-su]
+      - name: order
+        label: 排序
+        type: number
+      - name: show
+        label: 顯示
+        type: boolean
+        default: true
+
+  - name: partners
+    label: 協力夥伴
+    type: file
+    path: content/partners.json
+    format: json
+    list: true
+    fields:
+      - name: name
+        label: 夥伴名稱
+        type: string
+      - name: logo
+        label: Logo
+        type: image
+
+  - name: settings
+    label: 網站設定（聯絡資訊、連結、表單）
+    type: file
+    path: content/settings.json
+    format: json
+    fields:
+      - name: line_url
+        label: 官方 LINE@ 連結
+        type: string
+      - name: line_id
+        label: 官方 LINE@ ID
+        type: string
+      - name: ig_url
+        label: Instagram 連結
+        type: string
+      - name: ig_handle
+        label: Instagram 帳號名稱
+        type: string
+      - name: fb_url
+        label: Facebook 連結
+        type: string
+      - name: email
+        label: Email
+        type: string
+      - name: phone
+        label: 專線電話
+        type: string
+      - name: address
+        label: 地址
+        type: string
+      - name: hours
+        label: 服務時間
+        type: string
+      - name: form_personal
+        label: 「預約檢視你的個人 7E」表單網址
+        type: string
+      - name: form_biz
+        label: 「商業品牌 7E 健檢」表單網址
+        type: string
+      - name: form_four
+        label: 職能四獸檢測表單網址
+        type: string
+      - name: form_beast
+        label: 職能五獸檢測表單網址
+        type: string
+      - name: form_endpoint
+        label: 官網表單接收網址（Google Apps Script，見上架教學第 4 步）
+        type: string
+      - name: site_url
+        label: 網站正式網址（用於 Google 搜尋網站地圖）
+        type: string

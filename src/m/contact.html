@@ -1,0 +1,107 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=375"><title>聯絡我們</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#212E3E;--gold:#B58333;--dgold:#8C6526;--champ:#D9B77A;--ivory:#FBF8F3;--pearl:#F4EDE1;--line:#E6DCCB;--ink2:#5A5657}
+body{width:375px;background:#FFFFFF;color:#212E3E;font-family:'Noto Sans TC',sans-serif;font-size:16px;line-height:1.75;overflow:hidden}
+.serif{font-family:'Noto Serif TC',serif}.en{font-family:'Playfair Display',serif}.num{font-family:'Noto Serif TC',serif}
+a{color:inherit;text-decoration:none}
+.wrap{padding:0 20px}
+.sec{padding:64px 0}
+/* header */
+.hd{height:64px;background:#FFFFFF;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 16px 0 20px;gap:8px}
+.logo{display:flex;align-items:center;gap:9px;margin-right:auto}
+.logo img{width:38px;height:36px}
+.logo .t1{font-weight:900;font-size:17px;letter-spacing:1px;line-height:1.1}
+.logo .t2{font-size:8px;letter-spacing:2px;color:var(--dgold);font-weight:500;line-height:1.4;margin-top:2px}
+.hbtn{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+/* buttons */
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;height:50px;padding:0 24px;border-radius:999px;font-size:16px;font-weight:500;white-space:nowrap}
+.btn-navy{background:var(--navy);color:#FFFFFF}.btn-gold{background:var(--gold);color:#FFFFFF}
+.btn-line{border:1px solid var(--gold);color:var(--dgold);background:#FFFFFF}
+.btn-ghost-l{border:1px solid rgba(217,183,122,.6);color:var(--champ)}
+.more{display:inline-flex;align-items:center;gap:6px;color:var(--dgold);font-weight:500;font-size:15px}
+/* section title */
+.st{text-align:center;margin-bottom:32px}
+.st .ey{font-family:'Playfair Display',serif;font-size:13px;letter-spacing:4px;color:var(--dgold);font-weight:600;text-transform:uppercase}
+.st h2{font-family:'Noto Serif TC',serif;font-size:28px;font-weight:600;letter-spacing:1px;line-height:1.4;margin-top:4px}
+.st .rule{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px}
+.st .rule i{display:block;width:36px;height:1px;background:var(--gold)}
+.st .rule b{display:block;width:6px;height:6px;background:var(--gold);transform:rotate(45deg)}
+.st p{color:var(--ink2);margin-top:14px;font-size:15px}
+.st.left{text-align:left}.st.left .rule{justify-content:flex-start}
+.st.dark h2{color:#FFFFFF}.st.dark .ey{color:var(--champ)}.st.dark p{color:#C9C3BC}.st.dark .rule i,.st.dark .rule b{background:var(--champ)}
+/* banner */
+.bn{height:250px;position:relative;overflow:hidden;background:var(--ivory);border-bottom:1px solid var(--line)}
+.bn .word{position:absolute;right:-4px;bottom:-30px;font-family:'Playfair Display',serif;font-style:italic;font-size:86px;line-height:1.4;color:#F2E9DA;white-space:nowrap}
+.bn .r1{position:absolute;width:300px;height:300px;border:1px solid rgba(181,131,51,.32);border-radius:50%;right:-150px;top:-130px}
+.bn .bin{position:absolute;left:20px;top:30px;width:335px}
+.bn .crumb{font-size:13px;color:var(--ink2)}.bn .crumb b{color:var(--dgold);font-weight:500}
+.bn .big{font-family:'Playfair Display',serif;font-size:13px;letter-spacing:4px;color:var(--dgold);font-weight:600;margin-top:20px}
+.bn h1{font-family:'Noto Serif TC',serif;font-size:32px;font-weight:600;letter-spacing:2px;line-height:1.3;margin-top:4px}
+.bn p{color:var(--ink2);font-size:14px;margin-top:10px;line-height:1.7;width:300px}
+/* tabs: 單列可橫向滑動，最後一顆故意露出一半提示可滑 */
+.tabs{display:flex;gap:8px;white-space:nowrap;overflow:hidden;margin-right:-20px}
+.tab{flex:none;height:40px;padding:0 18px;border-radius:999px;border:1px solid var(--line);display:inline-flex;align-items:center;font-size:14px;color:var(--ink2);background:#FFFFFF}
+.tab.on{background:var(--navy);border-color:var(--navy);color:#FFFFFF}
+/* cards */
+.card{background:#FFFFFF;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.cat{font-size:13px;color:var(--dgold);font-weight:500;letter-spacing:1px}
+.date{font-size:13px;color:var(--ink2)}
+.h3{font-family:'Noto Serif TC',serif;font-size:19px;font-weight:600;line-height:1.5}
+.ex{color:var(--ink2);font-size:15px;line-height:1.75}
+.tag{display:inline-flex;align-items:center;height:28px;padding:0 11px;border-radius:999px;background:var(--pearl);color:var(--dgold);font-size:13px;font-weight:500}
+.ph{background:linear-gradient(160deg,#F4EDE1,#E9DCC4);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--dgold);gap:8px;font-size:14px}
+/* forms */
+.fl{display:flex;flex-direction:column;gap:8px;font-size:15px;font-weight:500}
+.req{color:#C73B28}
+.in{height:50px;border:1px solid var(--line);border-radius:10px;background:#FFFFFF;padding:0 16px;display:flex;align-items:center;color:#8A8486;font-size:16px;font-weight:400}
+.ta{height:130px;align-items:flex-start;padding-top:13px}
+.chip{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 14px;white-space:nowrap;border:1px solid var(--line);border-radius:10px;font-size:14px;font-weight:400;color:var(--ink2);background:#FFFFFF}
+.chip.on{border-color:var(--gold);color:var(--dgold);background:#FBF6EC}
+.box{width:18px;height:18px;border:1.5px solid #B9AE9C;border-radius:4px;display:inline-block;flex:none}
+.chip.on .box{background:var(--gold);border-color:var(--gold)}
+.note{font-size:13px;color:var(--ink2)}
+.dots{display:flex;gap:6px;justify-content:center;margin-top:20px}.dots i{width:6px;height:6px;border-radius:50%;background:#D8CCB8;display:block}.dots i.on{width:20px;border-radius:3px;background:var(--gold)}
+/* footer */
+.ft{background:var(--navy);color:#C9C3BC;padding:48px 20px 0}
+.ft h4{color:var(--champ);font-size:14px;font-weight:500;letter-spacing:2px;margin-bottom:14px}
+.soc{width:44px;height:44px;border-radius:50%;border:1px solid rgba(217,183,122,.5);display:inline-flex;align-items:center;justify-content:center;color:var(--champ)}
+</style><style>select.in{appearance:none;-webkit-appearance:none;width:100%;font-family:inherit;font-size:15px;color:#5A5657;cursor:pointer;background:#FFFFFF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%235A5657' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 18px center;padding-right:46px}select.in:focus{outline:none;border-color:var(--gold)}html{scroll-behavior:smooth}[id]{scroll-margin-top:24px}</style><link rel="stylesheet" href="/assets/site.css"><script>window.SITE={endpoint:"{{settings.form_endpoint}}"};</script><script src="/assets/site.js"></script></head><body data-mode="m" data-page="contact"><header class="hd"><a class="logo" href="index.html"><img src="/media/site/8aba46176fdb.png"><div><div class="t1">7E商學院</div><div class="t2">7E BUSINESS ACADEMY</div></div></a><a href="{{settings.line_url}}" target="_blank" rel="noopener" class="hbtn" style="background:var(--navy)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 10v3M11 10v3M14 10l2 3v-3"/></svg></a><a class="hbtn" href="menu.html" style="border:1px solid var(--line)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#212E3E" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M9 18h12"/></svg></a></header>
+<section class="bn"><div class="word">Contact</div><div class="r1"></div><div class="bin"><div class="crumb">首頁　/　<b>聯絡我們</b></div><div class="big">CONTACT US</div><h1>聯絡我們</h1><p>先聊聊，再一起決定下一步。</p></div></section>
+<section style="padding:28px 0 64px"><div class="wrap">
+ <div style="background:var(--navy);border-radius:16px;padding:28px 22px">
+  <div class="en" style="font-size:12px;letter-spacing:4px;color:var(--champ);font-weight:600">GET IN TOUCH</div>
+  <div class="serif" style="font-size:24px;font-weight:600;color:#FFFFFF;margin-top:4px;line-height:1.45">讓有夢的人，<br>被對的人看見。</div>
+  <div style="margin-top:12px"><div style="display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(217,183,122,.22)"><div style="width:42px;height:42px;flex:none;border-radius:50%;border:1px solid rgba(217,183,122,.5);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 10v3M11 10v3M14 10l2 3v-3"/></svg></div><div><div style="font-size:13px;color:var(--champ)">官方 LINE@</div><div style="font-size:16px;color:#FFFFFF;font-weight:500">{{settings.line_id}}</div></div></div><div style="display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(217,183,122,.22)"><div style="width:42px;height:42px;flex:none;border-radius:50%;border:1px solid rgba(217,183,122,.5);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div style="font-size:13px;color:var(--champ)">專線電話</div><div style="font-size:16px;color:#FFFFFF;font-weight:500">{{settings.phone}}</div></div></div><div style="display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(217,183,122,.22)"><div style="width:42px;height:42px;flex:none;border-radius:50%;border:1px solid rgba(217,183,122,.5);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div><div><div style="font-size:13px;color:var(--champ)">Email</div><div style="font-size:16px;color:#FFFFFF;font-weight:500">{{settings.email}}</div></div></div><div style="display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(217,183,122,.22)"><div style="width:42px;height:42px;flex:none;border-radius:50%;border:1px solid rgba(217,183,122,.5);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div><div style="font-size:13px;color:var(--champ)">服務時間</div><div style="font-size:16px;color:#FFFFFF;font-weight:500">{{settings.hours}}</div></div></div><div style="display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(217,183,122,.22)"><div style="width:42px;height:42px;flex:none;border-radius:50%;border:1px solid rgba(217,183,122,.5);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div style="font-size:13px;color:var(--champ)">公司地址</div><div style="font-size:16px;color:#FFFFFF;font-weight:500">{{settings.address}}</div></div></div></div>
+  <a href="{{settings.line_url}}" target="_blank" rel="noopener" class="btn btn-gold" style="margin-top:22px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 10v3M11 10v3M14 10l2 3v-3"/></svg> 加入官方 LINE@</a></div>
+ <form data-form="聯絡我們" novalidate class="js-form card" style="padding:24px 20px;margin-top:20px;display:flex;flex-direction:column;gap:18px">
+  <div><div class="serif" style="font-size:22px;font-weight:600">線上諮詢表單</div><div class="note" style="margin-top:2px">標示 <span class="req">*</span> 為必填，送出後寄至服務信箱，1–2 個工作天內回覆。</div></div>
+  <div class="fl"><span>姓名 <span class="req">*</span></span><input class="in" type="text" name="姓名" placeholder="請輸入您的姓名" required></div>
+  <div class="fl"><span>聯絡電話 <span class="req">*</span></span><input class="in" type="tel" name="聯絡電話" placeholder="0912-345-678" required></div>
+  <div class="fl"><span>Email <span class="req">*</span></span><input class="in" type="email" name="Email" placeholder="name@example.com" required></div>
+  <div class="fl">公司 / 品牌名稱<input class="in" type="text" name="公司 / 品牌名稱" placeholder="選填"></div>
+  <div class="fl">諮詢項目（可複選）<div style="display:flex;gap:8px;flex-wrap:wrap"><label class="chip"><input type="checkbox" name="諮詢項目（可複選）" value="品牌行銷服務"><span class="box"></span>品牌行銷服務</label><label class="chip"><input type="checkbox" name="諮詢項目（可複選）品牌行銷服務" value="顧問諮詢"><span class="box"></span>顧問諮詢</label><span class="chip "><span class="box"></span>企業內訓</span><span class="chip "><span class="box"></span>商業教育課程</span><span class="chip "><span class="box"></span>合作提案</span><span class="chip "><span class="box"></span>其他</span></div></div>
+  <div class="fl"><span>需求說明 <span class="req">*</span></span><textarea class="in ta" name="需求說明" placeholder="請簡述需求、預算或期望時程" required style="font:inherit;resize:vertical"></textarea></div>
+  <div class="fl">方便聯絡時段<select class="in" name="方便聯絡時段"><option selected>不限</option><option>平日上午</option><option>平日下午</option><option>平日晚上</option><option>假日</option></select></div>
+  <label class="note chk" style="display:flex;gap:8px;align-items:center;font-size:14px"><input type="checkbox" name="同意隱私權政策" value="是" required><span class="box"></span>我已閱讀並同意隱私權政策</label>
+  <button type="submit" class="btn btn-navy" style="border:0;cursor:pointer;font-family:inherit">送出諮詢 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button><p class="js-msg" style="display:none;grid-column:1/-1;margin:0;padding:14px 18px;border-radius:10px;background:#F2F7EF;color:#2F5D2A;font-size:15px"></p></form></div></section>
+<section style="background:var(--ivory);padding:56px 20px;position:relative;overflow:hidden">
+ <div style="position:absolute;width:320px;height:320px;border-radius:50%;border:1px solid rgba(181,131,51,.3);right:-170px;top:-150px"></div>
+ <div style="position:relative"><div class="en" style="font-size:12px;letter-spacing:4px;color:var(--dgold);font-weight:600">FROM VISION TO LEGACY</div>
+ <div class="serif" style="font-size:26px;font-weight:600;line-height:1.45;margin-top:6px">你的品牌，<br>現在走到第幾個 E？</div>
+ <div class="ex" style="margin-top:8px">先做一次健檢，看見自己的位置，再決定下一步。</div>
+ <div style="display:flex;flex-direction:column;gap:10px;margin-top:24px"><a href="{{settings.form_personal}}" target="_blank" rel="noopener" class="btn btn-navy">預約檢視你的個人 7E <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a href="{{settings.form_biz}}" target="_blank" rel="noopener" class="btn btn-line">商業品牌 7E 健檢與諮詢</a></div></div>
+</section>
+<footer class="ft">
+ <div class="logo"><div style="width:52px;height:52px;border-radius:50%;background:#FFFFFF;display:flex;align-items:center;justify-content:center"><img src="/media/site/8aba46176fdb.png" style="width:40px;height:38px"></div>
+  <div><div class="t1" style="color:#FFFFFF">7E商學院</div><div class="t2" style="color:var(--champ)">7E BUSINESS ACADEMY</div></div></div>
+ <div class="serif" style="color:#FFFFFF;font-size:16px;margin-top:20px">天賦，是被看見之前的礦；<br>7E，是把它煉成光的地方。</div>
+ <div style="display:flex;gap:10px;margin-top:20px"><a href="{{settings.ig_url}}" target="_blank" rel="noopener" class="soc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg></a><a href="{{settings.fb_url}}" target="_blank" rel="noopener" class="soc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="{{settings.line_url}}" target="_blank" rel="noopener" class="soc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 10v3M11 10v3M14 10l2 3v-3"/></svg></a></div>
+ <div style="margin-top:36px"><h4>網站導覽</h4><div style="display:grid;grid-template-columns:1fr 1fr;row-gap:12px"><a href="about.html" style="font-size:15px">關於7E</a><a href="consultants.html" style="font-size:15px">顧問團隊</a><a href="articles.html" style="font-size:15px">最新文章</a><a href="news.html" style="font-size:15px">最新消息</a><a href="marketing.html" style="font-size:15px">品牌行銷服務</a><a href="training.html" style="font-size:15px">企業內訓</a><a href="courses.html" style="font-size:15px">商業教育課程</a><a href="contact.html" style="font-size:15px">聯絡我們</a></div></div>
+ <div style="margin-top:32px"><h4>聯絡資訊</h4><div style="display:flex;flex-direction:column;gap:10px;font-size:15px">
+  <span style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 10v3M11 10v3M14 10l2 3v-3"/></svg>官方 LINE@：{{settings.line_id}}</span>
+   <span style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>專線：{{settings.phone}}</span>
+  <span style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>{{settings.email}}</span>
+  <span style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>{{settings.hours}}</span>
+  <span style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>{{settings.address}}</span></div></div>
+ <div style="border-top:1px solid rgba(217,183,122,.2);margin-top:36px;padding:20px 0 28px;font-size:13px;line-height:1.8">© 2026 7E 商學院 7E Business Academy.<br>隱私權政策　｜　網站使用條款</div>
+</footer><style>html{background:#E9E4DC}body{margin:0 auto;box-shadow:0 0 40px rgba(33,46,62,.18)}</style></body></html>
