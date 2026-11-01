@@ -316,6 +316,9 @@ content:
       - name: form_beast
         label: 職能五獸檢測表單網址
         type: string
+      - name: line_login_channel_id
+        label: LINE Login 頻道 Channel ID（會員加入用）
+        type: string
       - name: form_endpoint
         label: 官網表單接收網址（Google Apps Script，見上架教學第 4 步）
         type: string
@@ -1449,7 +1452,7 @@ content:
                 label: "圖說"
                 type: string
       - name: industries
-        label: "適用產業"
+        label: "產業別選項"
         type: object
         fields:
           - name: eyebrow
@@ -2934,6 +2937,9 @@ content:
           - name: button
             label: "按鈕文字"
             type: string
+          - name: member_button
+            label: "加入會員按鈕"
+            type: string
       - name: form
         label: "表單區"
         type: object
@@ -2947,3 +2953,190 @@ content:
           - name: note_2
             label: "小卡內文 2"
             type: text
+
+  - name: page-member
+    label: "頁面｜加入會員"
+    type: file
+    path: content/pages/member.json
+    format: json
+    fields:
+      - name: banner
+        label: "頁面上方大標區"
+        type: object
+        fields:
+          - name: word
+            label: "背景大字（英文）"
+            type: string
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: text
+            label: "內文"
+            type: text
+      - name: benefits
+        label: "會員好處"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: items
+            label: "項目"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+      - name: join
+        label: "LINE 加入區"
+        type: object
+        fields:
+          - name: title
+            label: "標題"
+            type: string
+          - name: text
+            label: "內文"
+            type: text
+          - name: button
+            label: "按鈕文字"
+            type: string
+          - name: note
+            label: "備註文字"
+            type: text
+      - name: form
+        label: "表單區"
+        type: object
+        fields:
+          - name: title
+            label: "標題"
+            type: string
+          - name: hello
+            label: "問候語"
+            type: string
+          - name: text
+            label: "內文"
+            type: text
+          - name: interests_label
+            label: "興趣欄位標題"
+            type: string
+          - name: interests
+            label: "有興趣的服務選項"
+            type: string
+            list: true
+          - name: industries
+            label: "產業別選項"
+            type: string
+            list: true
+          - name: sizes
+            label: "公司人數選項"
+            type: string
+            list: true
+          - name: agree
+            label: "同意隱私權政策文字"
+            type: string
+          - name: subscribe
+            label: "同意接收訊息文字"
+            type: string
+          - name: button
+            label: "按鈕文字"
+            type: string
+          - name: update_button
+            label: "更新資料按鈕"
+            type: string
+          - name: existing
+            label: "已是會員提示"
+            type: string
+      - name: done
+        label: "完成畫面"
+        type: object
+        fields:
+          - name: title
+            label: "標題"
+            type: string
+          - name: text
+            label: "內文"
+            type: text
+          - name: line_button
+            label: "加 LINE 好友按鈕"
+            type: string
+          - name: back_button
+            label: "回首頁按鈕"
+            type: string
+          - name: updated
+            label: "更新完成文字／最後更新日期"
+            type: string
+      - name: messages
+        label: "提示訊息"
+        type: object
+        fields:
+          - name: verifying
+            label: "確認中"
+            type: string
+          - name: not_ready
+            label: "尚未設定時"
+            type: string
+          - name: error
+            label: "登入失敗"
+            type: string
+          - name: expired
+            label: "逾時"
+            type: string
+          - name: missing
+            label: "缺必填"
+            type: string
+          - name: bad_email
+            label: "Email 格式錯誤"
+            type: string
+          - name: fail
+            label: "送出失敗"
+            type: string
+
+  - name: page-privacy
+    label: "頁面｜隱私權政策"
+    type: file
+    path: content/pages/privacy.json
+    format: json
+    fields:
+      - name: banner
+        label: "頁面上方大標區"
+        type: object
+        fields:
+          - name: word
+            label: "背景大字（英文）"
+            type: string
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: text
+            label: "內文"
+            type: text
+      - name: updated
+        label: "更新完成文字／最後更新日期"
+        type: string
+      - name: sections
+        label: "條文段落"
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: "標題"
+            type: string
+          - name: text
+            label: "內文"
+            type: text
+      - name: contact_title
+        label: "聯絡方式標題"
+        type: string
