@@ -71,12 +71,52 @@ content:
         type: image
         required: true
       - name: link
-        label: IG 貼文網址（點圖會開這個網址）
+        label: 這則消息要連到的貼文網址（貼上該篇 IG 貼文的網址；留空會連到 IG 首頁）
         type: string
       - name: published
         label: 顯示
         type: boolean
         default: true
+
+  - name: recaps
+    label: 課程回顧
+    type: collection
+    path: content/recaps
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date, show]
+      primary: title
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: 主題
+        type: string
+        required: true
+      - name: date
+        label: 上課日期（越新越前面）
+        type: date
+        required: true
+      - name: place
+        label: 地點（可留空）
+        type: string
+      - name: teacher
+        label: 講師（可留空）
+        type: string
+      - name: photos
+        label: 照片（最多 10 張；直接上傳手機照片即可，網站會自動壓縮成縮圖）
+        type: image
+        options:
+          multiple:
+            max: 10
+      - name: show
+        label: 顯示
+        type: boolean
+        default: true
+      - name: body
+        label: 內容
+        type: rich-text
 
   - name: courses
     label: 商業教育｜課程與檢測
@@ -149,6 +189,26 @@ content:
       - name: link
         label: 按鈕連結
         type: string
+
+  - name: faq
+    label: 常見問題（企業內訓・商業教育）
+    type: file
+    path: content/faq.json
+    format: json
+    fields:
+      - name: training
+        label: 企業內訓頁的常見問題
+        type: object
+        list: true
+        fields: &qa
+          - { name: q, label: 問題, type: string, required: true }
+          - { name: a, label: 回答（可換行；貼上網址會自動變成連結）, type: text }
+          - { name: show, label: 顯示, type: boolean, default: true }
+      - name: courses
+        label: 商業教育課程頁的常見問題
+        type: object
+        list: true
+        fields: *qa
 
   - name: consultants
     label: 顧問團隊
