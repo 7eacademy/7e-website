@@ -1,0 +1,210 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=1440"><title>7E商學院｜首頁</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#212E3E;--gold:#B58333;--dgold:#8C6526;--champ:#D9B77A;--ivory:#FBF8F3;--pearl:#F4EDE1;--line:#E6DCCB;--ink2:#5A5657}
+body{width:1440px;background:#FFFFFF;color:#212E3E;font-family:'Noto Sans TC',sans-serif;font-size:16px;line-height:1.75}
+.serif{font-family:'Noto Serif TC',serif}
+.en{font-family:'Playfair Display',serif}
+a{color:inherit;text-decoration:none}
+.wrap{width:1200px;margin:0 auto}
+/* header */
+.hd{height:88px;background:#FFFFFF;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 60px;gap:32px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{width:52px;height:50px}
+.logo .t1{font-weight:900;font-size:22px;letter-spacing:1px;line-height:1.1;color:var(--navy)}
+.logo .t2{font-size:9.5px;letter-spacing:3px;color:var(--dgold);font-weight:500;line-height:1.4;margin-top:3px}
+.nav{display:flex;gap:28px;margin-left:auto;font-size:15px;font-weight:500}
+.nav a{padding:31px 0 29px;border-bottom:2px solid transparent;white-space:nowrap}
+.nav a.on{border-bottom-color:var(--gold);color:var(--dgold)}
+.pill{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 22px;border-radius:999px;background:var(--navy);color:#FFFFFF;font-size:15px;font-weight:500;white-space:nowrap}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 30px;border-radius:999px;font-size:16px;font-weight:500;white-space:nowrap}
+.btn-navy{background:var(--navy);color:#FFFFFF}
+.btn-gold{background:var(--gold);color:#FFFFFF}
+.btn-line{border:1px solid var(--gold);color:var(--dgold);background:#FFFFFF}
+.btn-ghost-l{border:1px solid rgba(217,183,122,.6);color:var(--champ)}
+.more{display:inline-flex;align-items:center;gap:8px;color:var(--dgold);font-weight:500;font-size:15px}
+/* section titles */
+.st{text-align:center;margin-bottom:56px}
+.st .ey{font-family:'Playfair Display',serif;font-size:16px;letter-spacing:5px;color:var(--dgold);font-weight:600;text-transform:uppercase}
+.st h2{font-family:'Noto Serif TC',serif;font-size:40px;font-weight:600;letter-spacing:2px;line-height:1.35;margin-top:6px}
+.st .rule{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:18px}
+.st .rule i{display:block;width:48px;height:1px;background:var(--gold)}
+.st .rule b{display:block;width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
+.st p{color:var(--ink2);margin-top:18px;font-size:17px}
+.st.left{text-align:left}.st.left .rule{justify-content:flex-start}
+.st.dark h2{color:#FFFFFF}.st.dark .ey{color:var(--champ)}.st.dark p{color:#C9C3BC}
+.st.dark .rule i,.st.dark .rule b{background:var(--champ)}
+/* banner */
+.bn{height:360px;position:relative;overflow:hidden;background:var(--ivory);border-bottom:1px solid var(--line)}
+.bn .word{position:absolute;right:96px;top:40px;font-family:'Playfair Display',serif;font-style:italic;font-size:190px;line-height:1.4;color:#EFE4D0;white-space:nowrap;letter-spacing:-2px}
+.bn .r1{position:absolute;width:560px;height:560px;border:1px solid rgba(181,131,51,.35);border-radius:50%;right:-120px;top:-150px}
+.bn .r2{position:absolute;width:380px;height:380px;border:1px solid rgba(181,131,51,.28);border-radius:50%;right:-30px;top:-60px}
+.bn .dot{position:absolute;width:10px;height:10px;background:var(--gold);transform:rotate(45deg);right:435px;top:98px}
+.bn .bin{position:absolute;left:120px;top:84px;width:700px}
+.bn .crumb{font-size:13px;color:var(--ink2);letter-spacing:1px}
+.bn .crumb b{color:var(--dgold);font-weight:500}
+.bn .big{font-family:'Playfair Display',serif;font-size:17px;letter-spacing:6px;color:var(--dgold);font-weight:600;margin-top:30px}
+.bn h1{font-family:'Noto Serif TC',serif;font-size:52px;font-weight:600;letter-spacing:4px;line-height:1.3;margin-top:6px}
+.bn p{color:var(--ink2);font-size:17px;margin-top:14px}
+.bn .ln{display:flex;align-items:center;gap:10px;margin-top:22px}.bn .ln i{display:block;width:56px;height:1px;background:var(--gold)}.bn .ln b{display:block;width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
+/* tabs */
+.tabs{display:flex;gap:10px;flex-wrap:wrap}
+.tab{height:42px;padding:0 22px;border-radius:999px;border:1px solid var(--line);display:inline-flex;align-items:center;font-size:15px;color:var(--ink2);background:#FFFFFF}
+.tab.on{background:var(--navy);border-color:var(--navy);color:#FFFFFF}
+/* cards */
+.card{background:#FFFFFF;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.cat{font-size:13px;color:var(--dgold);font-weight:500;letter-spacing:1px}
+.date{font-size:13px;color:var(--ink2)}
+.h3{font-family:'Noto Serif TC',serif;font-size:21px;font-weight:600;line-height:1.5}
+.ex{color:var(--ink2);font-size:15px;line-height:1.8}
+.tag{display:inline-flex;align-items:center;height:28px;padding:0 12px;border-radius:999px;background:var(--pearl);color:var(--dgold);font-size:13px;font-weight:500}
+.ph{background:linear-gradient(160deg,#F4EDE1,#E9DCC4);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--dgold);gap:10px;font-size:14px}
+/* footer */
+.ft{background:var(--navy);color:#C9C3BC;padding:80px 0 0}
+.ft .cols{display:flex;gap:64px}
+.ft h4{color:var(--champ);font-size:15px;font-weight:500;letter-spacing:2px;margin-bottom:20px}
+.ft .lk{display:flex;flex-direction:column;gap:12px;font-size:15px}
+.ft .bar{border-top:1px solid rgba(217,183,122,.2);margin-top:64px;padding:24px 0;font-size:13px;display:flex;justify-content:space-between}
+.soc{width:44px;height:44px;border-radius:50%;border:1px solid rgba(217,183,122,.5);display:inline-flex;align-items:center;justify-content:center;color:var(--champ)}
+/* forms */
+.fl{display:flex;flex-direction:column;gap:8px;font-size:15px;font-weight:500}
+.fl .req{color:#C73B28}
+.in{height:52px;border:1px solid var(--line);border-radius:10px;background:#FFFFFF;padding:0 18px;display:flex;align-items:center;color:#8A8486;font-size:15px;font-weight:400}
+.ta{height:150px;align-items:flex-start;padding-top:14px}
+.chip{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px;border:1px solid var(--line);border-radius:10px;font-size:15px;font-weight:400;color:var(--ink2);background:#FFFFFF}
+.chip.on{border-color:var(--gold);color:var(--dgold);background:#FBF6EC}
+.box{width:18px;height:18px;border:1.5px solid #B9AE9C;border-radius:4px;display:inline-block}
+.chip.on .box{background:var(--gold);border-color:var(--gold)}
+.note{font-size:13px;color:var(--ink2)}
+</style><link rel="stylesheet" href="/assets/site.css"><script>window.SITE={endpoint:"{{settings.form_endpoint}}"};</script><script src="/assets/site.js"></script></head><body data-mode="d" data-page="index"><header class="hd"><a class="logo" href="index.html"><img src="/media/site/8aba46176fdb.png"><div><div class="t1">7E商學院</div><div class="t2">7E BUSINESS ACADEMY</div></div></a><nav class="nav"><a class="" href="about.html">關於7E</a><a class="" href="consultants.html">顧問團隊</a><a class="" href="articles.html">最新文章</a><a class="" href="news.html">最新消息</a><a class="" href="marketing.html">品牌行銷服務</a><a class="" href="training.html">企業內訓</a><a class="" href="courses.html">商業教育課程</a><a class="" href="contact.html">聯絡我們</a></nav><a href="{{settings.line_url}}" target="_blank" rel="noopener" class="pill"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 10v3M11 10v3M14 10l2 3v-3"/></svg>LINE 預約諮詢</a></header>
+<!-- 1 形象影片 -->
+<section style="background:var(--ivory);padding:72px 0 104px;position:relative;overflow:hidden">
+ <div style="position:absolute;width:900px;height:900px;border-radius:50%;border:1px solid rgba(181,131,51,.25);left:-420px;top:-380px"></div>
+ <div style="position:absolute;width:640px;height:640px;border-radius:50%;border:1px solid rgba(181,131,51,.22);right:-260px;top:300px"></div>
+ <div class="wrap" style="position:relative">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px">
+   <div><div class="en" style="font-size:18px;letter-spacing:8px;color:var(--dgold);font-weight:600"><span style="font-family:&quot;Noto Serif TC&quot;,serif">7</span>E BUSINESS ACADEMY</div>
+    <h1 class="serif" style="font-size:60px;font-weight:600;letter-spacing:5px;line-height:1.3;margin-top:8px">亞洲創業者<br>第一所商學院</h1></div>
+   <div style="width:420px;padding-bottom:10px"><div style="font-size:18px;color:var(--ink2);line-height:1.9">教育是企業的內核，品牌行銷是市場的語言。7E 用教育 × 商業雙引擎，讓好品牌走得更遠、影響更多人。</div>
+    <div style="font-size:15px;color:var(--dgold);margin-top:16px;letter-spacing:3px;font-weight:500">天賦定位 × 商模統整 × 資源連結</div></div>
+  </div>
+  <div style="width:1200px;height:675px;border-radius:20px;overflow:hidden;position:relative;box-shadow:0 30px 60px -30px rgba(33,46,62,.45)"><img src="/media/site/53889bf3abec.jpg" alt="7E商學院 官網封面" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+ </div>
+</section>
+
+<!-- 2 最新文章 -->
+<section style="padding:112px 0">
+ <div class="wrap">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px">
+   <div class="st left"><div class="ey">INSIGHTS</div><h2>最新文章</h2><div class="rule"><i></i><b></b><i></i></div><p>商業見析、品牌解析、人物訪談與轉型實務，陪創業者看懂下一步。</p></div>
+   <a href="articles.html" class="btn btn-line">查看全部文章 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8C6526" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+  </div>
+  <div class="tabs" style="margin-bottom:36px"><a class="tab on" href="articles.html">全部</a><a class="tab" href="articles.html#商業見析">商業見析</a><a class="tab" href="articles.html#品牌解析">品牌解析</a><a class="tab" href="articles.html#企業人物訪談">企業人物訪談</a><a class="tab" href="articles.html#產業轉型案例實務">產業轉型案例實務</a></div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px">{{#articles_home}}<a href="{{url}}" data-cat="{{category}}" data-text="{{title}} {{excerpt}}" class="card" style="display:block;color:inherit"><img src="{{cover}}" alt="{{title}}" style="width:100%;height:240px;object-fit:cover;display:block">
+<div style="padding:26px 28px 30px"><div style="display:flex;gap:14px;align-items:center"><span class="cat">{{category}}</span><span class="date">{{date_dot}}</span></div>
+<div class="h3" style="margin-top:10px">{{title}}</div><div class="ex" style="margin-top:10px">{{excerpt}}</div>
+<div class="more" style="margin-top:18px">閱讀全文 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8C6526" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></div></a>{{/articles_home}}</div>
+ </div>
+</section>
+
+<!-- 3 顧問團隊 -->
+<section style="background:var(--pearl);padding:112px 0">
+ <div class="wrap"><div class="st "><div class="ey">CONSULTANTS</div><h2>顧問團隊服務</h2><div class="rule"><i></i><b></b><i></i></div><p>四位顧問各有專長，從品牌、商模、轉型到人才，陪你把事情做成。</p></div>
+  <div style="display:flex;gap:24px">{{#consultants}}<div class="card" style="width:282px"><img src="{{photo}}" alt="{{name}}" style="width:100%;height:340px;object-fit:cover;object-position:center top;display:block">
+<div style="padding:22px 24px 26px"><div class="cat">{{title}}</div><div class="serif" style="font-size:20px;font-weight:600;margin-top:4px">{{name}}</div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:14px">{{#tags}}<span class="tag">{{.}}</span>{{/tags}}</div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:20px;border-top:1px solid var(--line);padding-top:16px"><a class="more" href="{{page_url}}">顧問介紹 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8C6526" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a href="{{settings.line_url}}" target="_blank" rel="noopener" style="font-size:14px;color:var(--navy);font-weight:500">預約諮詢</a></div></div></div>{{/consultants}}</div>
+  <div style="text-align:center;margin-top:48px"><a href="consultants.html" class="btn btn-navy">認識顧問團隊 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+ </div>
+</section>
+
+<!-- 4 服務總覽 -->
+<section style="background:var(--navy);padding:112px 0;position:relative;overflow:hidden">
+ <div style="position:absolute;width:760px;height:760px;border-radius:50%;border:1px solid rgba(217,183,122,.18);left:340px;top:-420px"></div>
+ <div class="wrap" style="position:relative"><div class="st dark"><div class="ey">OUR SERVICES</div><h2>服務總覽</h2><div class="rule"><i></i><b></b><i></i></div><p>教育 × 商業雙引擎：內核與外部品牌，一起長大。</p></div>
+  <div style="display:flex;gap:24px;align-items:stretch"><div style="width:282px;border:1px solid rgba(217,183,122,.28);border-radius:16px;padding:36px 28px;background:rgba(255,255,255,.03);display:flex;flex-direction:column">
+<div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(145deg,#D9B77A,#B58333);display:flex;align-items:center;justify-content:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#212E3E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+<div class="serif" style="color:#FFFFFF;font-size:23px;font-weight:600;margin-top:26px;line-height:1.4">品牌行銷 & 資源整合</div>
+<div class="en" style="color:var(--champ);font-size:14px;letter-spacing:3px;font-weight:600;margin-top:4px">BRAND × MARKETING</div>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:22px;color:#D6D0C8;font-size:15px;line-height:1.6;flex:1"><li style="display:flex;gap:10px;align-items:flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>品牌定位規劃</span></li><li style="display:flex;gap:10px;align-items:flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>品牌行銷策略</span></li><li style="display:flex;gap:10px;align-items:flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>商業活動企劃</span></li><li style="display:flex;gap:10px;align-items:flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>媒體曝光與商會人脈串接</span></li></ul>
+<div class="serif" style="color:var(--champ);font-size:15px;margin-top:26px;padding-top:18px;border-top:1px solid rgba(217,183,122,.25)">讓好品牌被看見，讓對的資源找上門</div>
+<a href="marketing.html" style="display:flex;align-items:center;gap:8px;color:#FFFFFF;font-size:15px;margin-top:18px">了解更多 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div><div style="width:282px;border:1px solid rgba(217,183,122,.28);border-radius:16px;padding:36px 28px;background:rgba(255,255,255,.03);display:flex;flex-direction:column">
+<div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(145deg,#D9B77A,#B58333);display:flex;align-items:center;justify-content:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#212E3E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></div>
+<div class="serif" style="color:#FFFFFF;font-size:23px;font-weight:600;margin-top:26px;line-height:1.4">顧問服務</div>
+<div class="en" style="color:var(--champ);font-size:14px;letter-spacing:3px;font-weight:600;margin-top:4px">CONSULTING</div>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:22px;color:#D6D0C8;font-size:15px;line-height:1.6;flex:1"><li style="display:flex;gap:10px;align-items:flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>行銷顧問：商模設計、經營策略</span></li><li style="display:flex;gap:10px;align-items:flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>產業轉型：政府補助與計畫書</span></li><li style="display:flex;gap:10px;align-items:flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>人才職涯：五獸聚力人才定位</span></li></ul>
+<div class="serif" style="color:var(--champ);font-size:15px;margin-top:26px;padding-top:18px;border-top:1px solid rgba(217,183,122,.25)">從策略到落地，不紙上談兵</div>
+<a href="consultants.html" style="display:flex;align-items:center;gap:8px;color:#FFFFFF;font-size:15px;margin-top:18px">了解更多 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div><div style="width:282px;border:1px solid rgba(217,183,122,.28);border-radius:16px;padding:36px 28px;background:rgba(255,255,255,.03);display:flex;flex-direction:column">
+<div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(145deg,#D9B77A,#B58333);display:flex;align-items:center;justify-content:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#212E3E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg></div>
+<div class="serif" style="color:#FFFFFF;font-size:23px;font-weight:600;margin-top:26px;line-height:1.4">企業內訓</div>
+<div class="en" style="color:var(--champ);font-size:14px;letter-spacing:3px;font-weight:600;margin-top:4px">CORPORATE TRAINING</div>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:22px;color:#D6D0C8;font-size:15px;line-height:1.6;flex:1"><li style="display:flex;gap:10px;align-items:flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>談出合作力：五獸聚力企業內訓</span></li><li style="display:flex;gap:10px;align-items:flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>團隊能力養成</span></li><li style="display:flex;gap:10px;align-items:flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>客製化內訓課程規劃</span></li></ul>
+<div class="serif" style="color:var(--champ);font-size:15px;margin-top:26px;padding-top:18px;border-top:1px solid rgba(217,183,122,.25)">教育是根，長出企業內核競爭力</div>
+<a href="training.html" style="display:flex;align-items:center;gap:8px;color:#FFFFFF;font-size:15px;margin-top:18px">了解更多 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div><div style="width:282px;border:1px solid rgba(217,183,122,.28);border-radius:16px;padding:36px 28px;background:rgba(255,255,255,.03);display:flex;flex-direction:column">
+<div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(145deg,#D9B77A,#B58333);display:flex;align-items:center;justify-content:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#212E3E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+<div class="serif" style="color:#FFFFFF;font-size:23px;font-weight:600;margin-top:26px;line-height:1.4">商業教育課程</div>
+<div class="en" style="color:var(--champ);font-size:14px;letter-spacing:3px;font-weight:600;margin-top:4px">BUSINESS EDUCATION</div>
+<ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:22px;color:#D6D0C8;font-size:15px;line-height:1.6;flex:1"><li style="display:flex;gap:10px;align-items:flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>創業者商業課程</span></li><li style="display:flex;gap:10px;align-items:flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>線上課程，購買後直接觀看</span></li><li style="display:flex;gap:10px;align-items:flex-start"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>實體工作坊與講座</span></li></ul>
+<div class="serif" style="color:var(--champ);font-size:15px;margin-top:26px;padding-top:18px;border-top:1px solid rgba(217,183,122,.25)">一套能被學習、實踐與複製的方法</div>
+<a href="courses.html" style="display:flex;align-items:center;gap:8px;color:#FFFFFF;font-size:15px;margin-top:18px">了解更多 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div></div>
+ </div>
+</section>
+
+<!-- 5 最新消息 IG -->
+<section style="padding:112px 0">
+ <div class="wrap">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px">
+   <div class="st left"><div class="ey">NEWS</div><h2>最新消息</h2><div class="rule"><i></i><b></b><i></i></div><p>同步 Instagram 貼文，課程、活動與顧問觀點第一手掌握。</p></div>
+   <a href="{{settings.ig_url}}" target="_blank" rel="noopener" class="btn btn-line"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8C6526" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg> 前往 Instagram</a>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,288px);gap:28px 16px">{{#news_home}}<a href="{{link}}" target="_blank" rel="noopener" style="display:block;width:288px;color:inherit"><div style="width:288px;height:384px;border-radius:12px;overflow:hidden;position:relative"><img src="{{image}}" alt="{{caption}}" style="width:288px;height:384px;object-fit:cover;display:block"><div style="position:absolute;right:12px;top:12px;width:32px;height:32px;border-radius:50%;background:rgba(33,46,62,.55);display:flex;align-items:center;justify-content:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg></div></div><div style="font-size:15px;line-height:1.7;margin-top:12px;color:var(--navy)">{{caption}}</div><div class="more" style="margin-top:6px;font-size:14px">在 Instagram 查看 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8C6526" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div></a>{{/news_home}}</div>
+ </div>
+</section>
+
+<!-- 6 三方連結 -->
+<section style="background:var(--ivory);padding:96px 0">
+ <div class="wrap"><div class="st "><div class="ey">FOLLOW US</div><h2>追蹤 7E</h2><div class="rule"><i></i><b></b><i></i></div><p>選一個你最常用的地方，我們在那裡等你。</p></div>
+  <div style="display:flex;gap:24px"><a class="card" href="{{settings.ig_url}}" target="_blank" rel="noopener" style="flex:1;padding:36px 32px;display:flex;flex-direction:column;gap:6px;color:inherit;text-decoration:none">
+<div style="display:flex;justify-content:space-between;align-items:center"><div style="width:56px;height:56px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8C6526" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg></div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8C6526" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+<div class="serif" style="font-size:22px;font-weight:600;margin-top:22px">Instagram</div><div class="en" style="font-size:18px;color:var(--dgold);font-weight:600">{{settings.ig_handle}}</div></a><a class="card" href="{{settings.fb_url}}" target="_blank" rel="noopener" style="flex:1;padding:36px 32px;display:flex;flex-direction:column;gap:6px;color:inherit;text-decoration:none">
+<div style="display:flex;justify-content:space-between;align-items:center"><div style="width:56px;height:56px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8C6526" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8C6526" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+<div class="serif" style="font-size:22px;font-weight:600;margin-top:22px">Facebook 粉絲專頁</div><div class="en" style="font-size:18px;color:var(--dgold);font-weight:600">7E 商學院</div></a><a class="card" href="{{settings.line_url}}" target="_blank" rel="noopener" style="flex:1;padding:36px 32px;display:flex;flex-direction:column;gap:6px;color:inherit;text-decoration:none">
+<div style="display:flex;justify-content:space-between;align-items:center"><div style="width:56px;height:56px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8C6526" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 10v3M11 10v3M14 10l2 3v-3"/></svg></div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8C6526" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+<div class="serif" style="font-size:22px;font-weight:600;margin-top:22px">官方 LINE@</div><div class="en" style="font-size:18px;color:var(--dgold);font-weight:600">{{settings.line_id}}</div></a></div></div>
+</section>
+
+<!-- 7 協力夥伴 -->
+<section style="padding:104px 0 112px">
+ <div class="wrap"><div class="st "><div class="ey">PARTNERS</div><h2>協力夥伴</h2><div class="rule"><i></i><b></b><i></i></div></div>
+  <div style="display:flex;gap:24px">{{#partners}}<div style="flex:1;height:140px;border:1px solid var(--line);border-radius:14px;background:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><img src="{{logo}}" alt="{{name}}" style="height:68px;max-width:200px;object-fit:contain;display:block;border-radius:0"><div style="font-size:13px;color:var(--ink2);margin-top:10px">{{name}}</div></div>{{/partners}}</div></div>
+</section>
+
+<section style="background:var(--ivory);padding:96px 0;position:relative;overflow:hidden">
+ <div style="position:absolute;width:640px;height:640px;border-radius:50%;border:1px solid rgba(181,131,51,.3);right:-200px;top:-260px"></div>
+ <div style="position:absolute;width:420px;height:420px;border-radius:50%;border:1px solid rgba(181,131,51,.25);right:-90px;top:-150px"></div>
+ <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;position:relative">
+  <div><div class="en" style="font-size:16px;letter-spacing:5px;color:var(--dgold);font-weight:600">FROM VISION TO LEGACY</div>
+   <div class="serif" style="font-size:40px;font-weight:600;letter-spacing:2px;margin-top:8px;line-height:1.35">你的品牌，現在走到第幾個 E？</div>
+   <div style="color:var(--ink2);font-size:17px;margin-top:12px">先做一次健檢，看見自己的位置，再決定下一步。</div></div>
+  <div style="display:flex;gap:14px"><a href="{{settings.form_personal}}" target="_blank" rel="noopener" class="btn btn-navy">預約檢視你的個人 7E <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a href="{{settings.form_biz}}" target="_blank" rel="noopener" class="btn btn-line">商業品牌 7E 健檢與諮詢</a></div>
+ </div>
+</section>
+<footer class="ft"><div class="wrap">
+ <div class="cols">
+  <div style="width:380px">
+   <div class="logo"><div style="width:60px;height:60px;border-radius:50%;background:#FFFFFF;display:flex;align-items:center;justify-content:center"><img src="/media/site/8aba46176fdb.png" style="width:46px;height:44px"></div>
+    <div><div class="t1" style="color:#FFFFFF">7E商學院</div><div class="t2" style="color:var(--champ)">7E BUSINESS ACADEMY</div></div></div>
+   <div class="serif" style="color:#FFFFFF;font-size:18px;margin-top:28px;letter-spacing:1px">天賦，是被看見之前的礦；<br>7E，是把它煉成光的地方。</div>
+   <div style="display:flex;gap:12px;margin-top:28px"><a href="{{settings.ig_url}}" target="_blank" rel="noopener" class="soc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg></a><a href="{{settings.fb_url}}" target="_blank" rel="noopener" class="soc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a><a href="{{settings.line_url}}" target="_blank" rel="noopener" class="soc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 10v3M11 10v3M14 10l2 3v-3"/></svg></a></div>
+  </div>
+  <div><h4>網站導覽</h4><div class="lk"><a href="about.html">關於7E</a><a href="consultants.html">顧問團隊</a><a href="articles.html">最新文章</a><a href="news.html">最新消息</a></div></div>
+  <div><h4>服務項目</h4><div class="lk"><a href="marketing.html">品牌行銷服務</a><a href="training.html">企業內訓</a><a href="courses.html">商業教育課程</a><a href="contact.html">聯絡我們</a></div></div>
+  <div style="margin-left:auto"><h4>聯絡資訊</h4><div class="lk">
+   <span style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 10v3M11 10v3M14 10l2 3v-3"/></svg>官方 LINE@：{{settings.line_id}}</span>
+   <span style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>專線：{{settings.phone}}</span>
+   <span style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>{{settings.email}}</span>
+   <span style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>{{settings.hours}}</span>
+   <span style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D9B77A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>{{settings.address}}</span></div></div>
+ </div>
+ <div class="bar"><span>© 2026 7E 商學院 7E Business Academy. All rights reserved.</span><span>隱私權政策　｜　網站使用條款</span></div>
+</div></footer></body></html>
