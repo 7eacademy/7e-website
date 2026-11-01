@@ -583,3 +583,20 @@ select.in{appearance:none;-webkit-appearance:none;cursor:pointer;background:#fff
 @media (min-width:1180px) and (max-width:1319px){.nav{gap:0}.nav>a{padding:10px 8px;font-size:14.5px}.hd-line .t-long{display:none}.hd-line .t-short{display:inline}}
 .member-card .form{border:0;box-shadow:none;padding:0;background:none}
 .agree .box{flex:none;margin-top:3px}
+/* 文章：開頭導言、內文圖片、文末行動呼籲、FAQ、延伸閱讀 */
+.prose>p:first-child{font-size:18.5px;line-height:1.95;color:var(--navy);font-weight:500;padding-bottom:6px}
+.prose img{display:block;max-width:100%;height:auto;margin:1.6em auto}
+.prose p>img{margin:.4em auto}
+.prose table{width:100%;border-collapse:collapse;font-size:15px}
+.prose th,.prose td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+.prose th{background:var(--ivory)}
+.art-cta{margin-top:40px;padding:26px 28px;border-radius:16px;background:var(--navy);color:#fff;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.art-cta p{margin:0;font-family:var(--serif);font-size:20px;line-height:1.6}
+.art-block{margin-top:48px}
+.art-h{font-family:var(--serif);font-size:24px;margin:0 0 12px}
+.art-links{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.art-links li{border-bottom:1px solid var(--line)}
+.art-links a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 2px;font-weight:500;color:var(--ink)}
+.art-links a:hover{color:var(--dgold)}
+.art-links svg{flex:none}
+@media (max-width:640px){.prose>p:first-child{font-size:17px}.art-cta{padding:22px 20px}.art-cta p{font-size:18px}.art-cta .btn{width:100%;justify-content:center}}

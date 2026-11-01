@@ -81,10 +81,37 @@ const isExt = (u) => /^https?:/.test(u || '');
 const settings = json('content/settings.json', {});
 const linkOf = (l) => ({ line: settings.line_url, biz: settings.form_biz, personal: settings.form_personal, four: settings.form_four, beast: settings.form_beast, contact: 'contact.html' }[String(l || '').trim()] || l || settings.line_url);
 
-const articles = collection('content/articles').filter((a) => on(a.published)).map((a) => {
-  const date = toDate(a.date), slug = slugOf(a._file);
-  return { ...a, date, date_dot: date.replace(/-/g, '.'), slug, url: `article-${slug}.html`, excerpt: a.excerpt || '', cover: a.cover || '', html: marked.parse(a.body || '') };
+const THUMBS = [];
+const THUMB_SEEN = new Set();
+const thumbOf = (src, w) => { const h = crypto.createHash('sha1').update(src + w).digest('hex').slice(0, 12); const out = `media/_t/${h}-${w}.jpg`; if (!THUMB_SEEN.has(out)) { THUMB_SEEN.add(out); THUMBS.push({ src, out, w }); } return out; };
+// 文章：SEO 設定（標題、描述、網址 slug、關鍵字、封面 alt）、文末 FAQ、延伸閱讀、行動呼籲
+const RESERVED = ['index', 'about', 'consultants', 'consultant-eling', 'consultant-vessi', 'consultant-su', 'articles', 'news', 'marketing', 'training', 'courses', 'contact', 'recaps', 'member', 'privacy', '404'];
+const cleanSlug = (v) => String(v || '').trim().toLowerCase().replace(/\.html$/, '').replace(/[^a-z0-9-]+/g, '-').replace(/^-+|-+$/g, '');
+const articlesRaw = collection('content/articles').filter((a) => on(a.published)).map((a) => {
+  const date = toDate(a.date), seo = a.seo || {};
+  let slug = cleanSlug(seo.slug) || 'article-' + slugOf(a._file);
+  if (RESERVED.includes(slug)) slug = 'article-' + slug;
+  return { ...a, seo, date, date_dot: date.replace(/-/g, '.'), slug, old_url: `article-${slugOf(a._file)}.html`, url: `${slug}.html`, excerpt: a.excerpt || '', cover: a.cover || '' };
 }).sort((a, b) => b.date.localeCompare(a.date));
+// 延伸閱讀連結：可填頁面（about.html）、文章 slug、文章標題或完整網址
+const resolveLink = (v) => {
+  const s = String(v || '').trim(); if (!s) return null;
+  if (/^(https?:|mailto:|tel:|#)/.test(s)) return { url: s, ext: /^https?:/.test(s) };
+  const k = cleanSlug(s), hit = articlesRaw.find((x) => x.slug === k || x.title === s || cleanSlug(x._file) === k);
+  if (hit) return { url: hit.url, title: hit.title };
+  return { url: /\.html$/.test(s) || s.includes('#') ? s : s + '.html' };
+};
+// 內文插入的圖片：自動壓縮成 1280px 寬，加上延遲載入
+const bodyImages = (html) => html.replace(/<img([^>]*?)src="\/?(media\/[^"]+\.(?:jpe?g|png|webp))"([^>]*)>/gi, (m, a, src, b) => {
+  const s = decodeURI(src);
+  return `<img${a}src="${exists(s) ? thumbOf(s, 1280) : src}"${b} loading="lazy">`;
+});
+const articles = articlesRaw.map((a) => {
+  const faqA = list(a.faq).filter((x) => x && x.q).map((x) => ({ q: x.q, a: String(x.a || ''), a_html: esc(String(x.a || '')).replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>').replace(/\n/g, '<br>') }));
+  const links = list(a.links).map((l) => { const r = resolveLink(l && l.link); return r ? { label: (l.label || r.title || r.url), url: r.url, ext: !!r.ext } : null; }).filter(Boolean);
+  const cta = a.cta && a.cta.link ? { text: a.cta.text || '', button: a.cta.button || '立即預約', link: linkOf(a.cta.link), ext: isExt(linkOf(a.cta.link)) } : null;
+  return { ...a, html: bodyImages(marked.parse(a.body || '')), faq_list: faqA, links_list: links, cta_box: cta ? [cta] : [] };
+});
 const featured = articles.find((a) => a.featured) || articles[0];
 
 const news = collection('content/news').filter((n) => on(n.published)).map((n) => ({ ...n, date: toDate(n.date), link: n.link || settings.ig_url })).sort((a, b) => b.date.localeCompare(a.date));
@@ -123,8 +150,6 @@ const recapsRaw = collection('content/recaps').filter((r) => on(r.show)).map((r)
   const date = toDate(r.date);
   return { ...r, date, date_dot: date.replace(/-/g, '.'), html: marked.parse(r.body || ''), photos: list(r.photos).slice(0, 10).map((p) => (typeof p === 'object' && p ? rel(p.image || p.src || '') : rel(p))).filter(Boolean) };
 }).sort((a, b) => b.date.localeCompare(a.date));
-const THUMBS = [];
-const thumbOf = (src, w) => { const h = crypto.createHash('sha1').update(src + w).digest('hex').slice(0, 12); const out = `media/_t/${h}-${w}.jpg`; THUMBS.push({ src, out, w }); return out; };
 const recaps = recapsRaw.map((r) => ({ ...r, photos: r.photos.map((p) => ({ thumb: thumbOf(p, 480), big: thumbOf(p, 1280), src: p })), count: r.photos.length }));
 
 // 各頁面的固定文字與圖片（後台「頁面內容」）：content/pages/*.json
@@ -169,21 +194,39 @@ const PAGES = [
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.mkdirSync(DIST, { recursive: true });
 const out = [];
+const SITE_URL = (settings.site_url || '').replace(/\/$/, '');
+const pageUrl = (file) => `${SITE_URL}/${file === 'index.html' ? '' : encodeURI(file.replace(/\.html$/, ''))}`;
 function page(file, tplName, view) {
   const tpl = withPartials(read(`templates/${tplName}.html`));
-  const html = render(tpl, [{ ...base, ...view }]);
+  const html = render(tpl, [{ ...base, canonical: SITE_URL ? pageUrl(file) : '', ...view }]);
   if (/\{\{/.test(html.replace(/<script[\s\S]*?<\/script>/g, ''))) console.warn('提醒：' + file + ' 還有未套用的 {{ }} 標籤');
   // 輸出前壓縮 HTML（移除註解與多餘換行），原始碼不易閱讀
   const min = html.replace(/<!--(?!\[if)[\s\S]*?-->/g, '').replace(/>\s*\n\s*</g, '><').replace(/\s*\n\s*/g, ' ');
   fs.writeFileSync(path.join(DIST, file), min); out.push(file);
 }
 for (const [name, title, nav, form] of PAGES) page(`${name}.html`, `pages/${name}`, { page_title: title, active: { [nav]: true }, p: pagesData[PAGE_DATA[name] || name] || {}, ...(form ? buildForm(form) : {}) });
-for (const a of articles) page(a.url, 'pages/_article', { ...a, page_title: a.title, body: a.html, active: { articles: true } });
+// 結構化資料（Google 搜尋、AI 摘要用）：文章、FAQ、麵包屑
+const ld = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
+for (const a of articles) {
+  const url = SITE_URL ? pageUrl(a.url) : '', img = a.cover ? (SITE_URL ? `${SITE_URL}/${encodeURI(a.cover)}` : a.cover) : '';
+  const desc = a.seo.description || a.excerpt || '';
+  const graph = [
+    { '@type': 'Article', headline: a.title, description: desc, image: img || undefined, datePublished: a.date, dateModified: a.date, inLanguage: 'zh-Hant-TW', keywords: [a.seo.keyword, a.seo.keywords].filter(Boolean).join('、') || undefined,
+      author: { '@type': 'Organization', name: '7E商學院', url: SITE_URL || undefined }, publisher: { '@type': 'Organization', name: '7E商學院 7E Business Academy', logo: SITE_URL ? { '@type': 'ImageObject', url: `${SITE_URL}/media/site/8aba46176fdb.png` } : undefined }, mainEntityOfPage: url || undefined },
+    { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: '首頁', item: SITE_URL ? SITE_URL + '/' : undefined }, { '@type': 'ListItem', position: 2, name: '最新文章', item: SITE_URL ? pageUrl('articles.html') : undefined }, { '@type': 'ListItem', position: 3, name: a.title, item: url || undefined }] },
+  ];
+  if (a.faq_list.length) graph.push({ '@type': 'FAQPage', mainEntity: a.faq_list.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) });
+  page(a.url, 'pages/_article', {
+    ...a, page_title: a.title, body: a.html, active: { articles: true },
+    seo_title: a.seo.title || '', meta_desc: desc, meta_keywords: [a.seo.keyword, a.seo.keywords].filter(Boolean).join(',').replace(/、/g, ','), og_image: img, og_type: 'article',
+    cover_alt: a.seo.cover_alt || a.title, jsonld: ld({ '@context': 'https://schema.org', '@graph': graph }),
+  });
+}
 
 for (const dir of ['media', 'images', 'assets']) if (exists(dir)) fs.cpSync(path.join(ROOT, dir), path.join(DIST, dir), { recursive: true });
 fs.writeFileSync(path.join(DIST, '404.html'), fs.readFileSync(path.join(DIST, 'index.html')));
 // 舊的手機版網址（/m/…）與已下架頁面，自動導向新頁面
-fs.writeFileSync(path.join(DIST, '_redirects'), ['/m/menu.html /index.html 301', '/m/ / 301', '/m/* /:splat 301', '/consultant-joey.html /consultants.html 301', ''].join('\n'));
+fs.writeFileSync(path.join(DIST, '_redirects'), ['/m/menu.html /index.html 301', '/m/ / 301', '/m/* /:splat 301', '/consultant-joey.html /consultants.html 301', ...articles.filter((a) => a.old_url !== a.url).flatMap((a) => [`/${a.old_url} /${a.slug} 301`, `/${a.old_url.replace(/\.html$/, '')} /${a.slug} 301`]), ''].join('\n'));
 // 產生縮圖（Cloudflare 建置時會安裝 sharp；沒有 sharp 時直接用原圖）
 let sharp = null;
 try { sharp = (await import('sharp')).default; } catch (e) { console.warn('提醒：沒有安裝 sharp，課程回顧照片直接使用原圖'); }
@@ -191,7 +234,7 @@ for (const t of THUMBS) {
   const src = path.join(ROOT, t.src), out = path.join(DIST, t.out);
   if (!fs.existsSync(src)) { console.warn('找不到照片：' + t.src); continue; }
   fs.mkdirSync(path.dirname(out), { recursive: true });
-  if (sharp) { try { await sharp(src).rotate().resize({ width: t.w, height: t.w, fit: 'inside', withoutEnlargement: true }).jpeg({ quality: t.w > 600 ? 80 : 72, mozjpeg: true }).toFile(out); continue; } catch (e) { console.warn('縮圖失敗，改用原圖：' + t.src); } }
+  if (sharp) { try { await sharp(src).rotate().resize({ width: t.w, height: t.w, fit: 'inside', withoutEnlargement: true }).flatten({ background: '#ffffff' }).jpeg({ quality: t.w > 600 ? 80 : 72, mozjpeg: true }).toFile(out); continue; } catch (e) { console.warn('縮圖失敗，改用原圖：' + t.src); } }
   fs.copyFileSync(src, out);
 }
 // 原圖不放上網站（只保留縮圖）
@@ -199,7 +242,7 @@ fs.rmSync(path.join(DIST, 'media/recaps'), { recursive: true, force: true });
 
 const site = (settings.site_url || '').replace(/\/$/, '');
 if (site) {
-  fs.writeFileSync(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${out.map((p) => `<url><loc>${site}/${p === 'index.html' ? '' : encodeURI(p)}</loc></url>`).join('')}</urlset>`);
+  fs.writeFileSync(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${out.map((p) => `<url><loc>${pageUrl(p)}</loc></url>`).join('')}</urlset>`);
   fs.writeFileSync(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${site}/sitemap.xml\n`);
 }
 console.log(`完成：${out.length} 頁（文章 ${articles.length}、消息 ${news.length}、課程 ${courses.length}、顧問 ${consultants.length}、課程回顧 ${recaps.length}）`);

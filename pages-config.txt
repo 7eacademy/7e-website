@@ -44,8 +44,65 @@ content:
         type: boolean
         default: true
       - name: body
-        label: 文章內文
+        label: 文章內文（選取文字可設粗體、連結；打「/」可插入標題、圖片、表格；圖片可直接拖進來或貼上）
         type: rich-text
+      - name: seo
+        label: ■ SEO 設定（不會顯示在內文）
+        type: object
+        fields:
+          - name: title
+            label: SEO 標題（搜尋結果的標題，建議 30 字內；空白就用文章標題）
+            type: string
+          - name: description
+            label: Meta 描述（搜尋結果下方的說明，建議 80 字內）
+            type: text
+          - name: slug
+            label: 網址 slug（英文小寫與 - ，例如 seven-core-values；發布後盡量不要改）
+            type: string
+          - name: keyword
+            label: 主關鍵字
+            type: string
+          - name: keywords
+            label: 次要關鍵字（用、分隔）
+            type: string
+          - name: cover_alt
+            label: 封面圖 alt（描述封面圖的文字）
+            type: string
+      - name: cta
+        label: ■ 文末行動呼籲（深藍色按鈕框，可留空）
+        type: object
+        fields:
+          - name: text
+            label: 呼籲文字
+            type: string
+          - name: button
+            label: 按鈕文字
+            type: string
+          - name: link
+            label: 按鈕連結（網址；或填 line、biz、personal、four、beast 代表網站設定裡的連結）
+            type: string
+      - name: faq
+        label: ■ FAQ（顯示在文末，並自動加上 FAQ 結構化資料，有助 SEO／AEO）
+        type: object
+        list: true
+        fields:
+          - name: q
+            label: 問題
+            type: string
+          - name: a
+            label: 回答
+            type: text
+      - name: links
+        label: ■ 內部連結（文末「延伸閱讀」）
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: 顯示文字（連到文章時可留空，自動用文章標題）
+            type: string
+          - name: link
+            label: 連結（頁面如 about.html、training.html；文章填它的網址 slug 或標題；也可填完整網址）
+            type: string
 
   - name: news
     label: 最新消息（IG 貼文）

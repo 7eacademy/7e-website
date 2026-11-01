@@ -156,7 +156,8 @@ function findMember_(userId) {
 // 防止試算表公式注入、限制長度
 function clean_(v) {
   var s = String(v == null ? '' : v).trim().slice(0, 500);
-  return /^[=+\-@]/.test(s) ? "'" + s : s;
+  // 開頭是 = + - @ 的防公式注入；0 開頭的數字（手機、電話）保留開頭的 0
+  return /^[=+\-@]/.test(s) || /^0\d/.test(s) ? "'" + s : s;
 }
 function json_(o) {
   return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON);
