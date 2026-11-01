@@ -6,7 +6,7 @@
     "name_sub": "Vessi Lin",
     "role": "7E 商學院 執行長｜企業策略顧問",
     "tag": "統籌：7E 顧問團隊服務",
-    "photo": "media/site/42a4a5b3b3a8.jpg",
+    "photo": "/media/site/42a4a5b3b3a8.jpg",
     "intro": "看懂企業、配置資本、推動成長。協助企業盤點現況、設計發展策略，整合資金與資本資源，將計畫真正落地，創造企業長期價值與成長動能。",
     "stats": [
       {
@@ -29,16 +29,13 @@
     "lead": "由 7E 執行長林彥廷統籌顧問團隊。",
     "items": [
       {
-        "title": "Web3／區塊鏈",
-        "sub": []
+        "title": "Web3／區塊鏈"
       },
       {
-        "title": "AML／合規與風險管理",
-        "sub": []
+        "title": "AML／合規與風險管理"
       },
       {
-        "title": "ESG／企業治理",
-        "sub": []
+        "title": "ESG／企業治理"
       },
       {
         "title": "產業轉型 & 政府補助",
@@ -47,16 +44,13 @@
         ]
       },
       {
-        "title": "企業經營與商業模式",
-        "sub": []
+        "title": "企業經營與商業模式"
       },
       {
-        "title": "投資與資產管理",
-        "sub": []
+        "title": "投資與資產管理"
       },
       {
-        "title": "其他",
-        "sub": []
+        "title": "其他"
       }
     ]
   },
@@ -275,7 +269,7 @@
       },
       {
         "image": "images/events/vessi-01.jpg",
-        "caption": "7E 品牌活動 與創辦人同台"
+        "caption": "品牌活動 與創辦人同台"
       },
       {
         "image": "images/events/vessi-05.jpg",
