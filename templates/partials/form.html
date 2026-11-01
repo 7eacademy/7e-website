@@ -1,0 +1,11 @@
+<form class="form js-form" data-form="{{form_name}}" data-ok="{{form_ok}}" novalidate>
+ {{#fields}}
+ {{#is_text}}<label class="fl {{#full}}full{{/full}}"><span>{{label}}{{#required}} <span class="req">*</span>{{/required}}</span><input class="in" type="{{input_type}}" name="{{label}}" placeholder="{{placeholder}}" {{#required}}required{{/required}}></label>{{/is_text}}
+ {{#is_textarea}}<label class="fl full"><span>{{label}}{{#required}} <span class="req">*</span>{{/required}}</span><textarea class="in" name="{{label}}" placeholder="{{placeholder}}" {{#required}}required{{/required}}></textarea></label>{{/is_textarea}}
+ {{#is_select}}<label class="fl {{#full}}full{{/full}}"><span>{{label}}{{#required}} <span class="req">*</span>{{/required}}</span><select class="in" name="{{label}}" {{#required}}required{{/required}}><option value="">{{placeholder}}</option>{{#options}}<option>{{.}}</option>{{/options}}</select></label>{{/is_select}}
+ {{#is_checks}}<div class="fl full" {{#required}}data-need-one{{/required}}><span>{{label}}{{#required}} <span class="req">*</span>{{/required}}</span><div class="chips">{{#options}}<label class="chip"><input type="checkbox" name="{{label}}" value="{{.}}"><span class="box"></span>{{.}}</label>{{/options}}</div></div>{{/is_checks}}
+ {{#is_radios}}<div class="fl full" {{#required}}data-need-one{{/required}}><span>{{label}}{{#required}} <span class="req">*</span>{{/required}}</span><div class="chips">{{#options}}<label class="chip"><input type="radio" name="{{label}}" value="{{.}}"><span class="box" style="border-radius:50%"></span>{{.}}</label>{{/options}}</div></div>{{/is_radios}}
+ {{/fields}}
+ <div class="form-foot full"><label class="agree"><input type="checkbox" name="同意隱私權政策" value="是" required><span class="box"></span>{{form_agree}}</label><button type="submit" class="btn btn-navy">{{form_submit}} {{> icon-arrow}}</button></div>
+ <p class="msg full" role="status"></p>
+</form>

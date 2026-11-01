@@ -1,0 +1,13 @@
+{{> head}}{{> header}}
+<section class="banner"><div class="ring"></div><div class="word">News</div><div class="wrap">
+ <div class="crumb"><a href="index.html">首頁</a>　/　<b>最新消息</b></div>
+ <div class="eyebrow">NEWS</div><h1>最新消息</h1><p>同步官方 Instagram，課程、活動與顧問觀點一篇一篇呈現。</p>
+</div></section>
+<section class="sec"><div class="wrap">
+ <div class="head-row"><div style="display:flex;align-items:center;gap:14px"><span style="width:60px;height:60px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;background:#fff"><img src="media/site/8aba46176fdb.png" alt="" style="width:40px;height:40px"></span><div><b style="font-size:18px">{{settings.ig_handle}}</b><div class="note">7E 商學院・官方 Instagram</div></div></div>
+  <a class="btn btn-navy" href="{{settings.ig_url}}" target="_blank" rel="noopener">{{> icon-ig}} 追蹤 Instagram</a></div>
+ <div class="g g-4">{{#news_all}}<a class="ig" href="{{link}}" target="_blank" rel="noopener"><div class="ph"><img src="{{image}}" alt="" loading="lazy"><span class="badge">{{> icon-ig}}</span></div><p>{{caption}}</p><span class="more">在 Instagram 查看 {{> icon-arrow}}</span></a>{{/news_all}}</div>
+ <div class="center mt-l"><a class="btn btn-line" href="{{settings.ig_url}}" target="_blank" rel="noopener">到 Instagram 看更多 {{> icon-arrow}}</a></div>
+</div></section>
+{{> cta}}
+{{> footer}}

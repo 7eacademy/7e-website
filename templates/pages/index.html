@@ -1,0 +1,67 @@
+{{> head}}{{> header}}
+<section class="hero">
+ <div class="arc" style="width:760px;aspect-ratio:1;left:-380px;top:-340px"></div><div class="arc" style="width:520px;aspect-ratio:1;right:-220px;bottom:-260px"></div>
+ <div class="wrap hero-grid">
+  <div>
+   <div class="eyebrow">7E BUSINESS ACADEMY</div>
+   <h1>亞洲創業者<br>第一所商學院</h1>
+   <p class="intro">教育是企業的內核，品牌行銷是市場的語言。7E 用教育 × 商業雙引擎，讓好品牌走得更遠、影響更多人。</p>
+   <div class="formula">天賦定位 × 商模統整 × 資源連結</div>
+  </div>
+  <div class="hero-visual">
+   <div class="main"><img src="media/site/53889bf3abec.jpg" alt="7E 商學院：亞洲創業者第一所商學院"></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="articles"><div class="wrap">
+ <div class="head-row"><div class="head"><div class="eyebrow">INSIGHTS</div><h2 class="title">最新文章</h2><div class="rule"><i></i><b></b><i></i></div><p class="lead">商業見析、品牌解析、人物訪談與轉型實務，陪創業者看懂下一步。</p></div><a class="btn btn-line" href="articles.html">查看全部文章 {{> icon-arrow}}</a></div>
+ <div class="tabs"><a class="tab on" href="articles.html">全部</a><a class="tab" href="articles.html#商業見析">商業見析</a><a class="tab" href="articles.html#品牌解析">品牌解析</a><a class="tab" href="articles.html#企業人物訪談">企業人物訪談</a><a class="tab" href="articles.html#產業轉型案例實務">產業轉型案例實務</a></div>
+ <div class="rail c3 mt" data-rail>
+  {{#articles_home}}<a class="card post" href="{{url}}"><div class="ph"><img src="{{cover}}" alt="{{title}}" loading="lazy"></div><div class="bd"><div class="meta"><span class="cat">{{category}}</span><span class="date">{{date_dot}}</span></div><h3 class="h3">{{title}}</h3><p class="ex">{{excerpt}}</p><span class="more">閱讀全文 {{> icon-arrow}}</span></div></a>{{/articles_home}}
+ </div>
+ {{> rail-ctrl}}
+</div></section>
+
+<section class="sec bg-ivory" id="consultants"><div class="wrap">
+ <div class="head-row"><div class="head"><div class="eyebrow">CONSULTANTS</div><h2 class="title">顧問團隊服務</h2><div class="rule"><i></i><b></b><i></i></div><p class="lead">三位顧問各有專長，從品牌、商模、轉型到人才，陪你把事情做成。</p></div></div>
+ <div class="rail c3" data-rail>
+  {{#consultants}}<article class="card person"><a class="ph" href="{{url}}"><img src="{{photo}}" alt="{{name}}" loading="lazy"></a><div class="bd"><div class="cat">{{title}}</div><a class="nm" href="{{url}}">{{name}}</a><div class="tags">{{#tags}}<span class="tag">{{.}}</span>{{/tags}}</div><div class="acts"><a class="more" href="{{url}}">顧問介紹 {{> icon-arrow}}</a><a href="{{settings.line_url}}" target="_blank" rel="noopener" style="font-weight:500;font-size:14px">預約諮詢</a></div></div></article>{{/consultants}}
+ </div>
+ {{> rail-ctrl}}
+ <div class="center mt"><a class="btn btn-line" href="consultants.html">認識顧問團隊 {{> icon-arrow}}</a></div>
+</div></section>
+
+<section class="sec bg-navy" id="services"><div class="wrap">
+ <div class="head center"><div class="eyebrow">OUR SERVICES</div><h2 class="title">服務總覽</h2><div class="rule"><i></i><b></b><i></i></div><p class="lead">教育 × 商業雙引擎：內核與外部品牌，一起長大。</p></div>
+ <div class="g g-4">
+  <a class="svc" href="marketing.html"><h3>品牌行銷 & 資源整合</h3><div class="en">BRAND × MARKETING</div><div class="who">統籌：黃凱鈴</div><ul><li>創業輔導（1 對 1 陪跑專案）</li><li>品牌定位規劃</li><li>品牌行銷策略</li><li>商業活動企劃</li><li>媒體曝光與商會人脈串接</li></ul><div class="tagline">讓好品牌被看見，讓對的資源找上門</div><span class="more">了解更多 {{> icon-arrow}}</span></a>
+  <a class="svc" href="consultants.html"><h3>顧問團隊服務</h3><div class="en">CONSULTING</div><div class="who">統籌：7E 執行長 林彥廷</div><ul><li>Web3／區塊鏈</li><li>AML／合規與風險管理</li><li>ESG／企業治理</li><li>產業轉型 & 政府補助（含專案補助執行顧問媒合）</li><li>企業經營與商業模式</li><li>投資與資產管理</li><li>其他</li></ul><div class="tagline">從策略到落地，不紙上談兵</div><span class="more">了解更多 {{> icon-arrow}}</span></a>
+  <a class="svc" href="training.html"><h3>企業內訓</h3><div class="en">CORPORATE TRAINING</div><div class="who">統籌：蘇琮瑜</div><ul><li>談出合作力：五獸聚力企業內訓</li><li>團隊能力養成</li><li>客製化內訓課程規劃</li></ul><div class="tagline">教育是根，長出企業內核競爭力</div><span class="more">了解更多 {{> icon-arrow}}</span></a>
+  <a class="svc" href="courses.html"><h3>商業教育課程</h3><div class="en">BUSINESS EDUCATION</div><div class="who">統籌：蘇琮瑜</div><ul><li>創業者商業課程</li><li>線上課程，購買後直接觀看</li><li>實體工作坊與講座</li></ul><div class="tagline">一套能被學習、實踐與複製的方法</div><span class="more">了解更多 {{> icon-arrow}}</span></a>
+ </div>
+</div></section>
+
+<section class="sec bg-pearl" id="news"><div class="wrap">
+ <div class="head-row"><div class="head"><div class="eyebrow">NEWS</div><h2 class="title">最新消息</h2><div class="rule"><i></i><b></b><i></i></div><p class="lead">同步 Instagram 貼文，課程、活動與顧問觀點第一手掌握。</p></div><a class="btn btn-line" href="{{settings.ig_url}}" target="_blank" rel="noopener">前往 Instagram {{> icon-arrow}}</a></div>
+ <div class="rail c4" data-rail>
+  {{#news_home}}<a class="ig" href="{{link}}" target="_blank" rel="noopener"><div class="ph"><img src="{{image}}" alt="" loading="lazy"><span class="badge">{{> icon-ig}}</span></div><p>{{caption}}</p><span class="more">在 Instagram 查看 {{> icon-arrow}}</span></a>{{/news_home}}
+ </div>
+ {{> rail-ctrl}}
+</div></section>
+
+<section class="sec bg-ivory" id="follow"><div class="wrap">
+ <div class="head center"><div class="eyebrow">FOLLOW US</div><h2 class="title">追蹤 7E</h2><div class="rule"><i></i><b></b><i></i></div><p class="lead">選一個你最常用的地方，我們在那裡等你。</p></div>
+ <div class="g g-3">
+  <a class="follow" href="{{settings.ig_url}}" target="_blank" rel="noopener"><span class="fi">{{> icon-ig}}</span><b>Instagram<small style="display:block;font-weight:400;font-size:14px;color:var(--ink2)">{{settings.ig_handle}}</small></b>{{> icon-arrow}}</a>
+  <a class="follow" href="{{settings.fb_url}}" target="_blank" rel="noopener"><span class="fi">{{> icon-fb}}</span><b>Facebook 粉絲專頁<small style="display:block;font-weight:400;font-size:14px;color:var(--ink2)">7E 商學院</small></b>{{> icon-arrow}}</a>
+  <a class="follow" href="{{settings.line_url}}" target="_blank" rel="noopener"><span class="fi" style="border:0">{{> icon-line}}</span><b>官方 LINE@<small style="display:block;font-weight:400;font-size:14px;color:var(--ink2)">{{settings.line_id}}</small></b>{{> icon-arrow}}</a>
+ </div>
+</div></section>
+
+<section class="sec" id="partners"><div class="wrap">
+ <div class="head center"><div class="eyebrow">PARTNERS</div><h2 class="title">協力夥伴</h2><div class="rule"><i></i><b></b><i></i></div></div>
+ <div class="logos">{{#partners}}<div class="logo-card"><img src="{{logo}}" alt="{{name}}" loading="lazy"><span>{{name}}</span></div>{{/partners}}</div>
+</div></section>
+{{> cta}}
+{{> footer}}

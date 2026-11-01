@@ -1,0 +1,40 @@
+<header class="hd">
+ <div class="wrap">
+  <a class="logo" href="index.html" aria-label="7E商學院 首頁"><img src="media/site/8aba46176fdb.png" alt=""><span><b>7E商學院</b><small>7E BUSINESS ACADEMY</small></span></a>
+  <nav class="nav" aria-label="主選單">
+   <a href="about.html" class="{{#active.about}}on{{/active.about}}">關於7E</a>
+   <a href="consultants.html" class="{{#active.consultants}}on{{/active.consultants}}">顧問團隊</a>
+   <a href="articles.html" class="{{#active.articles}}on{{/active.articles}}">最新文章</a>
+   <a href="news.html" class="{{#active.news}}on{{/active.news}}">最新消息</a>
+   <a href="marketing.html" class="{{#active.marketing}}on{{/active.marketing}}">品牌行銷服務</a>
+   <a href="training.html" class="{{#active.training}}on{{/active.training}}">企業內訓</a>
+   <a href="courses.html" class="{{#active.courses}}on{{/active.courses}}">商業教育課程</a>
+   <a href="contact.html" class="{{#active.contact}}on{{/active.contact}}">聯絡我們</a>
+  </nav>
+  <div class="hd-act">
+   <a class="hd-line" href="{{settings.line_url}}" target="_blank" rel="noopener">{{> icon-line-w}}<span class="t-long">LINE 預約諮詢</span><span class="t-short">預約</span></a>
+   <button class="burger" type="button" data-open-menu aria-label="開啟選單"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F2B3A" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M9 18h12"/></svg></button>
+  </div>
+ </div>
+</header>
+<div class="drawer" id="drawer" aria-hidden="true">
+ <div class="drawer-bg" data-close-menu></div>
+ <div class="drawer-panel" role="dialog" aria-label="選單">
+  <div class="drawer-top"><a class="logo" href="index.html"><img src="media/site/8aba46176fdb.png" alt=""><span><b>7E商學院</b><small>7E BUSINESS ACADEMY</small></span></a>
+   <button class="burger" type="button" data-close-menu aria-label="關閉選單" style="display:inline-flex"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1F2B3A" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+  <nav class="drawer-nav">
+   <a href="about.html" class="{{#active.about}}on{{/active.about}}">關於7E {{> icon-arrow}}</a>
+   <a href="consultants.html" class="{{#active.consultants}}on{{/active.consultants}}">顧問團隊 {{> icon-arrow}}</a>
+   <a href="articles.html" class="{{#active.articles}}on{{/active.articles}}">最新文章 {{> icon-arrow}}</a>
+   <a href="news.html" class="{{#active.news}}on{{/active.news}}">最新消息 {{> icon-arrow}}</a>
+   <a href="marketing.html" class="{{#active.marketing}}on{{/active.marketing}}">品牌行銷服務 {{> icon-arrow}}</a>
+   <a href="training.html" class="{{#active.training}}on{{/active.training}}">企業內訓 {{> icon-arrow}}</a>
+   <a href="courses.html" class="{{#active.courses}}on{{/active.courses}}">商業教育課程 {{> icon-arrow}}</a>
+   <a href="contact.html" class="{{#active.contact}}on{{/active.contact}}">聯絡我們 {{> icon-arrow}}</a>
+  </nav>
+  <div class="drawer-foot">
+   <a class="btn btn-green" href="{{settings.line_url}}" target="_blank" rel="noopener">{{> icon-line-w}} LINE 預約諮詢</a>
+  </div>
+ </div>
+</div>
+<main>
