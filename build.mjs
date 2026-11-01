@@ -139,6 +139,7 @@ function prepPage(p, key) {
     const r = {}; for (const [k, v] of Object.entries(o)) r[k] = walk(v);
     if (Array.isArray(r.sessions)) { r.sessions = r.sessions.map((s, si) => ({ ...s, photos: list(s.photos).map((ph, i) => ({ src: rel(typeof ph === 'object' ? ph.image : ph), lb: key, caption_alt: s.title, caption: i === 0 ? s.title : '', big_first: si === 0 && i === 0 && r.big_first !== false })) })); }
     if (r.youtube_url !== undefined) r.youtube_id = ytId(r.youtube_url);
+    if (typeof r.text === 'string' && r.title !== undefined) r.text_html = esc(r.text).replace(/\n/g, '<br>');
     if (Array.isArray(r.flow)) r.flow_items = r.flow.map((t, i) => ({ text: t, first: i === 0 }));
     for (const k of Object.keys(r)) if (/(photos|boards|screenshots|images)$/.test(k) && Array.isArray(r[k])) r[k] = r[k].map((x) => (typeof x === 'string' ? rel(x) : x));
     return r;
@@ -163,7 +164,7 @@ const PAGES = [
   ['consultant-eling', '黃凱鈴｜顧問團隊', 'consultants', 'eling'], ['consultant-vessi', '林彥廷｜顧問團隊', 'consultants', 'vessi'], ['consultant-su', '蘇琮瑜｜顧問團隊', 'consultants', 'su'],
   ['articles', '最新文章', 'articles'], ['news', '最新消息', 'news'],
   ['marketing', '品牌行銷服務', 'marketing'], ['training', '企業內訓', 'training', 'training'], ['courses', '商業教育課程', 'courses'],
-  ['contact', '聯絡我們', 'contact', 'contact'], ['recaps', '課程回顧', 'courses'],
+  ['contact', '聯絡我們', 'contact', 'contact'], ['recaps', '課程回顧', 'courses'], ['member', '加入會員', 'member'], ['privacy', '隱私權政策', 'privacy'],
 ];
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.mkdirSync(DIST, { recursive: true });

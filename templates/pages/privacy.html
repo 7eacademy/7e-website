@@ -1,0 +1,14 @@
+{{> head}}{{> header}}
+{{> banner}}
+<section class="sec"><div class="wrap" style="max-width:860px">
+ <p class="note">{{p.updated}}</p>
+ <div class="prose mt">{{#p.sections}}<h2>{{title}}</h2><p>{{{text_html}}}</p>{{/p.sections}}</div>
+ <div class="card card-pad mt-l"><h3 class="h3">{{p.contact_title}}</h3>
+  <div class="info-list mt-s">
+   <div>{{> icon-line}}官方 LINE@：{{settings.line_id}}</div>
+   <div>{{> icon-phone}}專線：{{settings.phone}}</div>
+   <div>{{> icon-mail}}{{settings.email}}</div>
+   <div>{{> icon-pin}}{{settings.address}}</div>
+  </div></div>
+</div></section>
+{{> footer}}

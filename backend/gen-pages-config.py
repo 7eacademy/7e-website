@@ -5,7 +5,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGES = [('common','全站共用（頁尾、預約區、最下方 CTA）'),('home','頁面｜首頁'),('about','頁面｜關於7E'),('consultants','頁面｜顧問團隊列表'),
  ('eling','頁面｜顧問完整介紹：黃凱鈴'),('vessi','頁面｜顧問完整介紹：林彥廷'),('su','頁面｜顧問完整介紹：蘇琮瑜'),
  ('marketing','頁面｜品牌行銷服務'),('training','頁面｜企業內訓'),('courses','頁面｜商業教育課程'),
- ('articles','頁面｜最新文章（頁首文字）'),('news','頁面｜最新消息（頁首文字）'),('recaps','頁面｜課程回顧（頁首文字）'),('contact','頁面｜聯絡我們')]
+ ('articles','頁面｜最新文章（頁首文字）'),('news','頁面｜最新消息（頁首文字）'),('recaps','頁面｜課程回顧（頁首文字）'),('contact','頁面｜聯絡我們'),('member','頁面｜加入會員'),('privacy','頁面｜隱私權政策')]
 L = {
  'banner':'頁面上方大標區','word':'背景大字（英文）','eyebrow':'小標（英文）','title':'標題','title_1':'標題第一行','title_2':'標題第二行','text':'內文','text_1':'內文（第一段）','text_2':'內文（第二段）','lead':'說明文字','note':'備註文字','intro':'介紹',
  'button':'按鈕文字','button_1':'按鈕 1 文字','button_2':'按鈕 2 文字','image':'圖片','image_1':'圖片 1','image_2':'圖片 2','photo':'照片','photos':'照片（可多張）','cover':'封面圖','avatar':'頭像','logo':'Logo','logo_text':'沒有 Logo 時顯示的文字',
@@ -24,7 +24,7 @@ L = {
  'strong':'粗體標語','approach':'內訓方式','beasts':'職能五獸','fit_label':'「適合」標題','fit':'適合對象','gain_label':'「可以得到」標題','gain':'可以得到','programs':'四大課程主軸','bullets':'重點','lecturer':'講師','lecturers':'講師陣容','focus':'照片對焦位置（例：center 15%）',
  'audience':'依對象規劃','focus_label':'「課程重點」標題','result_label':'「預期成果」標題','result':'預期成果','compare':'比較表','item':'項目','general':'一般企業培訓','ours':'7E 企業內訓','clients':'合作企業','faq':'常見問題區','booking':'預約區','enroll':'報名流程','online':'線上課程區','demo_title':'示意卡標題','demo_member':'示意會員','demo':'示意課程','percent':'完成度（數字）',
  'search_placeholder':'搜尋框提示文字','empty':'沒有內容時顯示','account_note':'帳號說明','follow_button':'追蹤按鈕','more_button':'看更多按鈕','book_button':'預約按鈕','card':'聯絡資訊卡','line_label':'LINE 標題','line_note':'LINE 說明','phone_label':'電話標題','email_label':'Email 標題','email_note':'Email 說明','hours_label':'時間標題','hours_note':'時間說明','address_label':'地址標題','address_note':'地址說明','form':'表單區',
- 'cta':'最下方行動區（全站共用）','footer':'頁尾','slogan_1':'頁尾標語第一行','slogan_2':'頁尾標語第二行','copyright':'版權文字','info_1':'說明 1','info_2':'說明 2（後面會接地址）','info_3':'說明 3',
+ 'cta':'最下方行動區（全站共用）','member_button':'加入會員按鈕','join':'LINE 加入區','hello':'問候語','interests_label':'興趣欄位標題','interests':'有興趣的服務選項','industries':'產業別選項','sizes':'公司人數選項','agree':'同意隱私權政策文字','subscribe':'同意接收訊息文字','update_button':'更新資料按鈕','existing':'已是會員提示','done':'完成畫面','line_button':'加 LINE 好友按鈕','back_button':'回首頁按鈕','updated':'更新完成文字／最後更新日期','messages':'提示訊息','verifying':'確認中','not_ready':'尚未設定時','error':'登入失敗','expired':'逾時','missing':'缺必填','bad_email':'Email 格式錯誤','fail':'送出失敗','benefits':'會員好處','sections':'條文段落','contact_title':'聯絡方式標題','footer':'頁尾','slogan_1':'頁尾標語第一行','slogan_2':'頁尾標語第二行','copyright':'版權文字','info_1':'說明 1','info_2':'說明 2（後面會接地址）','info_3':'說明 3',
 }
 IMG = re.compile(r'(image|image_\d|photo|logo|avatar|cover)$')
 LONG = {'text','text_1','text_2','lead','intro','desc','note','quote_note','bio','note_1','note_2','extra_text','highlight_text','website_text','projects','closing','v','result','general','ours','help_text','lessons_note'}

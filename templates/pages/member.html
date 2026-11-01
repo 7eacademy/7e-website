@@ -1,0 +1,43 @@
+{{> head}}{{> header}}
+{{> banner}}
+<section class="sec"><div class="wrap member-wrap">
+ <div class="card card-pad member-card" id="member-app" data-channel="{{settings.line_login_channel_id}}" data-line-url="{{settings.line_url}}">
+  <!-- 1. 尚未登入 -->
+  <div data-step="start">
+   <h2 class="h3" style="font-size:24px">{{p.join.title}}</h2>
+   <p class="ex mt-s">{{p.join.text}}</p>
+   <button type="button" class="btn btn-green btn-block mt" data-line-login>{{> icon-line-w}} {{p.join.button}}</button>
+   <p class="note mt-s">{{p.join.note}}</p>
+  </div>
+  <!-- 2. 確認中 -->
+  <div data-step="loading" hidden><p class="ex center">{{p.messages.verifying}}</p></div>
+  <!-- 3. 填資料 -->
+  <form data-step="form" class="form" novalidate hidden>
+   <div class="full member-hello"><img class="av" alt="" data-pic hidden><div><h2 class="h3" style="font-size:22px">{{p.form.title}}</h2><p class="note">{{p.form.hello}}<b data-lname></b>　{{p.form.text}}</p><p class="note" data-existing hidden>{{p.form.existing}}</p></div></div>
+   <label class="fl"><span>姓名 <span class="req">*</span></span><input class="in" name="name" autocomplete="name" required></label>
+   <label class="fl"><span>手機 <span class="req">*</span></span><input class="in" name="phone" type="tel" autocomplete="tel" placeholder="0912-345-678" required></label>
+   <label class="fl full"><span>Email <span class="req">*</span></span><input class="in" name="email" type="email" autocomplete="email" placeholder="name@example.com" required></label>
+   <label class="fl"><span>公司／品牌名稱</span><input class="in" name="company" autocomplete="organization"></label>
+   <label class="fl"><span>職稱</span><input class="in" name="title" autocomplete="organization-title"></label>
+   <label class="fl"><span>產業別</span><select class="in" name="industry"><option value="">請選擇</option>{{#p.form.industries}}<option>{{.}}</option>{{/p.form.industries}}</select></label>
+   <label class="fl"><span>公司人數</span><select class="in" name="size"><option value="">請選擇</option>{{#p.form.sizes}}<option>{{.}}</option>{{/p.form.sizes}}</select></label>
+   <div class="fl full"><span>{{p.form.interests_label}}</span><div class="chips">{{#p.form.interests}}<label class="chip"><input type="checkbox" name="interests" value="{{.}}"><span class="box"></span>{{.}}</label>{{/p.form.interests}}</div></div>
+   <div class="full"><label class="agree"><input type="checkbox" name="agree" required><span class="box"></span><span>{{p.form.agree}}（<a href="privacy.html" target="_blank">查看</a>）</span></label>
+    <label class="agree mt-s"><input type="checkbox" name="subscribe" checked><span class="box"></span><span>{{p.form.subscribe}}</span></label></div>
+   <div class="form-foot full"><button type="submit" class="btn btn-navy" data-submit data-label-join="{{p.form.button}}" data-label-update="{{p.form.update_button}}">{{p.form.button}} {{> icon-arrow}}</button></div>
+   <p class="msg full" role="status"></p>
+  </form>
+  <!-- 4. 完成 -->
+  <div data-step="done" class="center" hidden>
+   <h2 class="h3" style="font-size:24px" data-done-title data-updated="{{p.done.updated}}">{{p.done.title}}</h2>
+   <p class="ex mt-s">{{p.done.text}}</p>
+   <div class="btns stack-m mt" style="justify-content:center"><a class="btn btn-green" href="{{settings.line_url}}" target="_blank" rel="noopener">{{> icon-line-w}} {{p.done.line_button}}</a><a class="btn btn-line" href="index.html">{{p.done.back_button}}</a></div>
+  </div>
+  <p class="msg" data-top-msg role="status"></p>
+  <div hidden id="member-msg" data-not_ready="{{p.messages.not_ready}}" data-error="{{p.messages.error}}" data-expired="{{p.messages.expired}}" data-missing="{{p.messages.missing}}" data-bad_email="{{p.messages.bad_email}}" data-fail="{{p.messages.fail}}"></div>
+ </div>
+ {{#p.benefits}}<div class="member-benefits"><div class="eyebrow">{{eyebrow}}</div><h2 class="title">{{title}}</h2><div class="rule"><i></i><b></b><i></i></div>
+  <div class="g mt">{{#items}}<div class="hl"><b>{{title}}</b><p>{{text}}</p></div>{{/items}}</div></div>{{/p.benefits}}
+</div></section>
+<script src="assets/member.js" defer></script>
+{{> footer}}

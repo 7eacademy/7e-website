@@ -18,7 +18,8 @@
     "hours_note": "國定假日休息",
     "address_label": "公司地址",
     "address_note": "實體諮詢請先預約",
-    "button": "加入官方 LINE@"
+    "button": "加入官方 LINE@",
+    "member_button": "加入 7E 會員"
   },
   "form": {
     "title": "線上諮詢表單",
