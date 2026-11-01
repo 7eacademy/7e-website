@@ -188,7 +188,7 @@ content:
         label: 顧問個人頁
         type: select
         options:
-          values: [consultant-eling, consultant-vessi, consultant-joey, consultant-su]
+          values: [consultant-eling, consultant-vessi, consultant-su]
       - name: order
         label: 排序
         type: number
@@ -262,3 +262,35 @@ content:
       - name: site_url
         label: 網站正式網址（用於 Google 搜尋網站地圖）
         type: string
+
+  - name: forms
+    label: 官網預約表單欄位（進階）
+    type: file
+    path: content/forms.json
+    format: json
+    fields:
+      - name: eling
+        label: 黃凱鈴 預約表單
+        type: object
+        fields: &formfields
+          - { name: name, label: 表單名稱（試算表分頁名）, type: string }
+          - { name: submit, label: 送出按鈕文字, type: string }
+          - { name: agree, label: 同意條款文字, type: string }
+          - { name: ok, label: 送出成功訊息, type: string }
+          - name: fields
+            label: 欄位
+            type: object
+            list: true
+            fields:
+              - { name: label, label: 欄位名稱, type: string }
+              - name: type
+                label: 類型
+                type: select
+                options: { values: [text, email, tel, select, textarea, checks, radios] }
+              - { name: placeholder, label: 提示文字, type: string }
+              - { name: options, label: 選項（下拉／勾選／單選用）, type: string, list: true }
+              - { name: required, label: 必填, type: boolean }
+      - { name: vessi, label: 林彥廷 預約表單, type: object, fields: *formfields }
+      - { name: su, label: 蘇琮瑜 預約表單, type: object, fields: *formfields }
+      - { name: training, label: 企業內訓諮詢表單, type: object, fields: *formfields }
+      - { name: contact, label: 聯絡我們表單, type: object, fields: *formfields }
