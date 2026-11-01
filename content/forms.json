@@ -1,0 +1,582 @@
+{
+ "eling": {
+  "name": "顧問預約｜黃凱鈴",
+  "fields": [
+   {
+    "label": "聯絡人姓名",
+    "required": true,
+    "type": "text",
+    "placeholder": "請輸入姓名"
+   },
+   {
+    "label": "聯絡電話",
+    "required": true,
+    "type": "tel",
+    "placeholder": "0912-345-678"
+   },
+   {
+    "label": "Email",
+    "required": true,
+    "type": "email",
+    "placeholder": "name@example.com"
+   },
+   {
+    "label": "LINE ID",
+    "required": false,
+    "type": "text",
+    "placeholder": "選填"
+   },
+   {
+    "label": "公司／品牌名稱",
+    "required": true,
+    "type": "text",
+    "placeholder": "請輸入公司或品牌名稱"
+   },
+   {
+    "label": "職稱",
+    "required": false,
+    "type": "text",
+    "placeholder": "例：負責人、行銷主管"
+   },
+   {
+    "label": "產業別",
+    "required": true,
+    "type": "select",
+    "placeholder": "請選擇",
+    "options": [
+     "餐飲／食品",
+     "美業／健康",
+     "零售／電商",
+     "製造／工業",
+     "科技／資訊",
+     "教育／培訓",
+     "生技／醫療",
+     "服務業",
+     "其他"
+    ]
+   },
+   {
+    "label": "品牌成立年數",
+    "required": false,
+    "type": "select",
+    "placeholder": "請選擇",
+    "options": [
+     "籌備中",
+     "未滿 1 年",
+     "1–3 年",
+     "3–5 年",
+     "5–10 年",
+     "10 年以上"
+    ]
+   },
+   {
+    "label": "公司人數",
+    "required": false,
+    "type": "select",
+    "placeholder": "請選擇",
+    "options": [
+     "1–5 人",
+     "6–10 人",
+     "11–30 人",
+     "31–50 人",
+     "51–100 人",
+     "100 人以上"
+    ]
+   },
+   {
+    "label": "主要產品／服務",
+    "required": false,
+    "type": "text",
+    "placeholder": "簡述你的產品或服務"
+   },
+   {
+    "label": "你覺得品牌目前在商業品牌 7E 的哪個階段？",
+    "required": false,
+    "type": "radios",
+    "options": [
+     "Explore 探索",
+     "Evolve 進化",
+     "Empower 賦能",
+     "Execute 執行",
+     "Engage 參與",
+     "Enhance 提升",
+     "Elevate 升華",
+     "不確定"
+    ]
+   },
+   {
+    "label": "想諮詢的主題（可複選）",
+    "required": true,
+    "type": "checks",
+    "options": [
+     "品牌定位",
+     "品牌行銷策略",
+     "商業模式",
+     "商業提案與談判",
+     "資源整合／商會人脈",
+     "媒體曝光",
+     "創業陪跑",
+     "其他"
+    ]
+   },
+   {
+    "label": "希望諮詢方式",
+    "required": false,
+    "type": "select",
+    "placeholder": "線上視訊／台中實體",
+    "options": [
+     "線上視訊",
+     "台中實體（北屯區）",
+     "電話",
+     "都可以"
+    ]
+   },
+   {
+    "label": "方便聯絡時段",
+    "required": false,
+    "type": "select",
+    "placeholder": "請選擇",
+    "options": [
+     "不限",
+     "平日上午",
+     "平日下午",
+     "平日晚上",
+     "假日"
+    ]
+   },
+   {
+    "label": "目前最想解決的問題",
+    "required": true,
+    "type": "textarea",
+    "placeholder": "簡單描述品牌現況與想解決的問題"
+   }
+  ],
+  "submit": "送出預約",
+  "agree": "我已閱讀並同意隱私權政策",
+  "ok": "已收到你的預約！顧問團隊會在 3 個工作天內與你聯繫。"
+ },
+ "vessi": {
+  "name": "顧問預約｜林彥廷",
+  "fields": [
+   {
+    "label": "聯絡人姓名",
+    "required": true,
+    "type": "text",
+    "placeholder": "請輸入姓名"
+   },
+   {
+    "label": "聯絡電話",
+    "required": true,
+    "type": "tel",
+    "placeholder": "0912-345-678"
+   },
+   {
+    "label": "Email",
+    "required": true,
+    "type": "email",
+    "placeholder": "name@company.com"
+   },
+   {
+    "label": "職稱",
+    "required": false,
+    "type": "text",
+    "placeholder": "例：負責人、財務主管"
+   },
+   {
+    "label": "公司名稱",
+    "required": true,
+    "type": "text",
+    "placeholder": "請輸入公司名稱"
+   },
+   {
+    "label": "產業別",
+    "required": true,
+    "type": "select",
+    "placeholder": "請選擇",
+    "options": [
+     "餐飲／食品",
+     "美業／健康",
+     "零售／電商",
+     "製造／工業",
+     "科技／資訊",
+     "教育／培訓",
+     "生技／醫療",
+     "服務業",
+     "其他"
+    ]
+   },
+   {
+    "label": "成立年數",
+    "required": false,
+    "type": "select",
+    "placeholder": "請選擇",
+    "options": [
+     "籌備中",
+     "未滿 1 年",
+     "1–3 年",
+     "3–5 年",
+     "5–10 年",
+     "10 年以上"
+    ]
+   },
+   {
+    "label": "資本額",
+    "required": false,
+    "type": "text",
+    "placeholder": "例：500 萬"
+   },
+   {
+    "label": "年營業額規模",
+    "required": false,
+    "type": "select",
+    "placeholder": "請選擇",
+    "options": [
+     "500 萬以下",
+     "500–1,000 萬",
+     "1,000–3,000 萬",
+     "3,000 萬–1 億",
+     "1 億以上",
+     "不便透露"
+    ]
+   },
+   {
+    "label": "公司人數",
+    "required": false,
+    "type": "select",
+    "placeholder": "請選擇",
+    "options": [
+     "1–5 人",
+     "6–10 人",
+     "11–30 人",
+     "31–50 人",
+     "51–100 人",
+     "100 人以上"
+    ]
+   },
+   {
+    "label": "企業目前階段",
+    "required": true,
+    "type": "radios",
+    "options": [
+     "新創籌備",
+     "穩定經營",
+     "擴張成長",
+     "轉型升級"
+    ]
+   },
+   {
+    "label": "想諮詢的服務（可複選）",
+    "required": true,
+    "type": "checks",
+    "options": [
+     "企業現況診斷",
+     "商業模式優化",
+     "成長策略規劃",
+     "新事業發展",
+     "資金需求規劃",
+     "增資與股權規劃",
+     "融資與資金取得",
+     "投資評估與布局",
+     "專案規劃與執行"
+    ]
+   },
+   {
+    "label": "預計資金需求規模",
+    "required": false,
+    "type": "select",
+    "placeholder": "請選擇（無資金需求可略過）",
+    "options": [
+     "無資金需求",
+     "500 萬以下",
+     "500–1,000 萬",
+     "1,000–3,000 萬",
+     "3,000 萬以上",
+     "尚未評估"
+    ]
+   },
+   {
+    "label": "希望完成時程",
+    "required": false,
+    "type": "select",
+    "placeholder": "請選擇",
+    "options": [
+     "1 個月內",
+     "3 個月內",
+     "半年內",
+     "一年內",
+     "尚未確定"
+    ]
+   },
+   {
+    "label": "需求說明",
+    "required": true,
+    "type": "textarea",
+    "placeholder": "目前企業狀況、想達成的目標或遇到的問題"
+   }
+  ],
+  "submit": "送出預約",
+  "agree": "我已閱讀並同意隱私權政策",
+  "ok": "已收到你的預約！顧問團隊會在 3 個工作天內與你聯繫。"
+ },
+ "su": {
+  "name": "顧問預約｜蘇琮瑜",
+  "fields": [
+   {
+    "label": "聯絡人姓名",
+    "required": true,
+    "type": "text",
+    "placeholder": "請輸入姓名"
+   },
+   {
+    "label": "聯絡電話",
+    "required": true,
+    "type": "tel",
+    "placeholder": "0912-345-678"
+   },
+   {
+    "label": "Email",
+    "required": true,
+    "type": "email",
+    "placeholder": "name@company.com"
+   },
+   {
+    "label": "職稱",
+    "required": false,
+    "type": "text",
+    "placeholder": "例：負責人、人資主管"
+   },
+   {
+    "label": "公司名稱",
+    "required": true,
+    "type": "text",
+    "placeholder": "請輸入公司名稱"
+   },
+   {
+    "label": "公司人數",
+    "required": true,
+    "type": "text",
+    "placeholder": "例：25 人"
+   },
+   {
+    "label": "是否有分部門",
+    "required": true,
+    "type": "radios",
+    "options": [
+     "有",
+     "否"
+    ]
+   },
+   {
+    "label": "部門名稱（如有）",
+    "required": true,
+    "type": "text",
+    "placeholder": "例：業務部、行政部、生產部；如無請填「否」"
+   },
+   {
+    "label": "公司目前主要遇到的問題",
+    "required": true,
+    "type": "textarea",
+    "placeholder": "例：人員流動高、跨部門溝通卡關、主管帶人困難"
+   },
+   {
+    "label": "想了解的服務（可複選）",
+    "required": false,
+    "type": "checks",
+    "options": [
+     "企業內訓",
+     "職場能力培訓",
+     "溝通領導",
+     "生涯發展顧問",
+     "不確定，想先諮詢"
+    ]
+   },
+   {
+    "label": "希望諮詢方式",
+    "required": false,
+    "type": "select",
+    "placeholder": "線上視訊／台中實體",
+    "options": [
+     "線上視訊",
+     "台中實體（北屯區）",
+     "電話",
+     "都可以"
+    ]
+   }
+  ],
+  "submit": "送出預約",
+  "agree": "我已閱讀並同意隱私權政策",
+  "ok": "已收到你的預約！顧問團隊會在 3 個工作天內與你聯繫。"
+ },
+ "training": {
+  "name": "企業內訓諮詢",
+  "fields": [
+   {
+    "label": "聯絡人姓名",
+    "required": true,
+    "type": "text",
+    "placeholder": "請輸入姓名"
+   },
+   {
+    "label": "公司名稱",
+    "required": true,
+    "type": "text",
+    "placeholder": "請輸入公司名稱"
+   },
+   {
+    "label": "職稱",
+    "required": false,
+    "type": "text",
+    "placeholder": "例：人資主管"
+   },
+   {
+    "label": "聯絡電話",
+    "required": true,
+    "type": "tel",
+    "placeholder": "02-1234-5678"
+   },
+   {
+    "label": "Email",
+    "required": true,
+    "type": "email",
+    "placeholder": "name@company.com"
+   },
+   {
+    "label": "公司規模",
+    "required": false,
+    "type": "select",
+    "placeholder": "請選擇",
+    "options": [
+     "1–10 人",
+     "11–50 人",
+     "51–100 人",
+     "101–300 人",
+     "300 人以上"
+    ]
+   },
+   {
+    "label": "預計參訓人數",
+    "required": false,
+    "type": "text",
+    "placeholder": "例：30"
+   },
+   {
+    "label": "預計上課時間",
+    "required": false,
+    "type": "text",
+    "placeholder": ""
+   },
+   {
+    "label": "上課形式",
+    "required": false,
+    "type": "radios",
+    "options": [
+     "實體教室",
+     "線上",
+     "都可以"
+    ]
+   },
+   {
+    "label": "想了解的主題（可複選）",
+    "required": false,
+    "type": "checks",
+    "options": [
+     "人才定位",
+     "團隊能力養成",
+     "品牌與行銷",
+     "經營與轉型",
+     "五獸聚力入門課",
+     "不確定，想先諮詢"
+    ]
+   },
+   {
+    "label": "需求說明",
+    "required": false,
+    "type": "textarea",
+    "placeholder": "目前團隊遇到的狀況、希望達成的目標"
+   }
+  ],
+  "submit": "送出預約",
+  "agree": "我已閱讀並同意 7E 商學院隱私權政策",
+  "ok": "已收到你的內訓諮詢！7E 團隊會在 2 個工作天內與你聯繫。"
+ },
+ "contact": {
+  "name": "聯絡我們",
+  "fields": [
+   {
+    "label": "姓名",
+    "required": true,
+    "type": "text",
+    "placeholder": "請輸入您的姓名"
+   },
+   {
+    "label": "聯絡電話",
+    "required": true,
+    "type": "tel",
+    "placeholder": "0912-345-678"
+   },
+   {
+    "label": "Email",
+    "required": true,
+    "type": "email",
+    "placeholder": "name@example.com"
+   },
+   {
+    "label": "公司 / 品牌名稱",
+    "required": false,
+    "type": "text",
+    "placeholder": "選填"
+   },
+   {
+    "label": "諮詢項目（可複選）",
+    "required": false,
+    "type": "checks",
+    "options": [
+     "品牌行銷服務",
+     "顧問諮詢",
+     "企業內訓",
+     "商業教育課程",
+     "合作提案",
+     "其他"
+    ]
+   },
+   {
+    "label": "需求說明",
+    "required": true,
+    "type": "textarea",
+    "placeholder": "請簡述您的需求、預算或期望時程"
+   },
+   {
+    "label": "如何得知 7E",
+    "required": false,
+    "type": "select",
+    "placeholder": "請選擇",
+    "options": [
+     "Instagram",
+     "Facebook",
+     "官方 LINE@",
+     "朋友推薦",
+     "商會／社群活動",
+     "她薈HERHUI女性生態圈",
+     "搜尋引擎",
+     "其他"
+    ]
+   },
+   {
+    "label": "方便聯絡時段",
+    "required": false,
+    "type": "select",
+    "placeholder": "請選擇",
+    "options": [
+     "不限",
+     "平日上午",
+     "平日下午",
+     "平日晚上",
+     "假日"
+    ]
+   }
+  ],
+  "submit": "送出諮詢",
+  "agree": "我已閱讀並同意 7E 商學院隱私權政策",
+  "ok": "已收到你的諮詢！我們會在 1–2 個工作天內回覆。"
+ }
+}
