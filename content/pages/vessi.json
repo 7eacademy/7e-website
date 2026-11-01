@@ -1,0 +1,325 @@
+{
+  "hero": {
+    "crumb": "林彥廷",
+    "eyebrow": "BUSINESS STRATEGY CONSULTANT",
+    "name": "林彥廷",
+    "name_sub": "Vessi Lin",
+    "role": "7E 商學院 執行長｜企業策略顧問",
+    "tag": "統籌：7E 顧問團隊服務",
+    "photo": "media/site/42a4a5b3b3a8.jpg",
+    "intro": "看懂企業、配置資本、推動成長。協助企業盤點現況、設計發展策略，整合資金與資本資源，將計畫真正落地，創造企業長期價值與成長動能。",
+    "stats": [
+      {
+        "num": "策略",
+        "label": "STRATEGY"
+      },
+      {
+        "num": "資本",
+        "label": "CAPITAL"
+      },
+      {
+        "num": "執行",
+        "label": "EXECUTION"
+      }
+    ]
+  },
+  "advisory": {
+    "eyebrow": "ADVISORY TEAM",
+    "title": "顧問團隊服務",
+    "lead": "由 7E 執行長林彥廷統籌顧問團隊。",
+    "items": [
+      {
+        "title": "Web3／區塊鏈",
+        "sub": []
+      },
+      {
+        "title": "AML／合規與風險管理",
+        "sub": []
+      },
+      {
+        "title": "ESG／企業治理",
+        "sub": []
+      },
+      {
+        "title": "產業轉型 & 政府補助",
+        "sub": [
+          "專案補助執行顧問媒合"
+        ]
+      },
+      {
+        "title": "企業經營與商業模式",
+        "sub": []
+      },
+      {
+        "title": "投資與資產管理",
+        "sub": []
+      },
+      {
+        "title": "其他",
+        "sub": []
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "SERVICES",
+    "title": "服務內容",
+    "lead": "策略 × 資本 × 執行，讓好計畫成為企業的成長引擎。",
+    "cards": [
+      {
+        "label": "01・BUSINESS DEVELOPMENT",
+        "title": "企業發展顧問",
+        "text": "釐清方向，打造可持續成長的企業",
+        "items": [
+          "企業現況與需求診斷",
+          "商業模式優化",
+          "成長策略規劃",
+          "新事業發展",
+          "企業轉型與升級"
+        ]
+      },
+      {
+        "label": "02・CAPITAL & INVESTMENT",
+        "title": "資本配置與投資策略",
+        "text": "讓資金進來，並創造更大的價值",
+        "items": [
+          "資金需求規劃",
+          "資本結構設計",
+          "增資與股權規劃",
+          "融資策略與資金取得",
+          "資金配置與使用效益",
+          "投資機會評估與布局",
+          "投資放大與資產增值策略"
+        ]
+      },
+      {
+        "label": "03・PROJECT EXECUTION",
+        "title": "專案策略與執行",
+        "text": "從策略到落地，確保成果真正實現",
+        "items": [
+          "專案架構規劃",
+          "跨團隊協調",
+          "執行策略與進度管理",
+          "成果落地與效益追蹤",
+          "後續商業發展規劃"
+        ]
+      }
+    ]
+  },
+  "courses": {
+    "eyebrow": "7E COURSES",
+    "title": "在 7E 的課程",
+    "lead": "課程內容可依企業或學員需求客製化調整；企業內訓、專題演講及大型活動另行洽詢。",
+    "items": [
+      {
+        "duration": "3 小時",
+        "title": "數位資產防詐與風險管理實戰",
+        "intro": "透過實際案例解析，協助學員辨識投資詐騙、假交易平台與資金盤，建立正確的風險意識與資產保護能力。",
+        "outline": [
+          "數位資產產業現況",
+          "常見詐騙手法解析",
+          "資金盤與龐氏騙局辨識",
+          "交易所風險評估",
+          "錢包安全與資產保護",
+          "真實案例分享與解析"
+        ]
+      },
+      {
+        "duration": "3 小時",
+        "title": "Web3 與區塊鏈商業應用趨勢",
+        "intro": "了解 Web3 產業現況與未來趨勢，看懂區塊鏈如何改變金融、社群、商業模式與數位經濟。",
+        "outline": [
+          "Web1、Web2、Web3 演進",
+          "區塊鏈產業生態",
+          "中心化與去中心化差異",
+          "DAO 組織運作模式",
+          "RWA 資產代幣化趨勢",
+          "Web3 商業案例分析"
+        ]
+      },
+      {
+        "duration": "3 小時",
+        "title": "數位資產合規與 AML 實務",
+        "intro": "從國際監管趨勢出發，介紹虛擬資產產業的反洗錢制度、法規要求與實務應用，適合金融、法遵與企業管理人員。",
+        "outline": [
+          "AML 基本概念",
+          "FATF 與國際監管架構",
+          "Travel Rule 介紹",
+          "VASP 監管制度",
+          "台灣虛擬資產法規發展",
+          "合規風險與案例分析"
+        ]
+      }
+    ],
+    "extra_title": "ESG 永續議題座談",
+    "extra_text": "具國際企業 ESG 碩士背景與 ISO 14064／14067／14068-1 查證員資格，可受邀擔任 ESG、碳管理與企業永續相關座談與講座。",
+    "button": "課程與講座洽詢"
+  },
+  "plans": {
+    "eyebrow": "ADVISORY",
+    "title": "顧問方案",
+    "lead": "依企業需求規劃，費用另行洽詢。",
+    "items": [
+      {
+        "title": "Web3 產業顧問",
+        "items": [
+          "商業模式規劃",
+          "Web3 專案評估",
+          "產業資源媒合",
+          "生態圈合作建議"
+        ]
+      },
+      {
+        "title": "數位資產合規顧問",
+        "items": [
+          "AML 制度規劃",
+          "風險評估",
+          "法遵諮詢",
+          "營運流程檢視"
+        ]
+      },
+      {
+        "title": "企業專案顧問",
+        "items": [
+          "商業模式設計",
+          "募資規劃",
+          "Pitch Deck 優化",
+          "產業資源導入"
+        ]
+      }
+    ]
+  },
+  "results": {
+    "eyebrow": "CASE STUDIES",
+    "title": "代表實績",
+    "stats": [
+      {
+        "num": "US$144 萬",
+        "label": "兩年加密貨幣客戶投入金額"
+      },
+      {
+        "num": "US$5.78 億",
+        "label": "兩年市場操作總量"
+      },
+      {
+        "num": "NT$4,000 萬",
+        "label": "單一製造業增資案"
+      }
+    ],
+    "label": "實績",
+    "items": [
+      {
+        "title": "數位資產客戶服務",
+        "text": "兩年加密貨幣客戶投入金額 144 萬美金，市場操作總量達 5 億 7,800 萬美金"
+      },
+      {
+        "title": "製造業企業增資",
+        "text": "單一製造業企業經手增資案金額達 4,000 萬台幣"
+      }
+    ]
+  },
+  "resume": {
+    "eyebrow": "PROFILE",
+    "title": "學經歷",
+    "col_1": "領域",
+    "col_2": "代表資歷",
+    "rows": [
+      {
+        "k": "學歷",
+        "v": "中國文化大學 國際企業管理學系；國際企業管理研究所 ESG 產學碩士（2025–）"
+      },
+      {
+        "k": "現任",
+        "v": "7E 商學院執行長；海灣動力股份有限公司 董事長；傳 DAO（Starship DAO）創辦人"
+      },
+      {
+        "k": "區塊鏈",
+        "v": "ABA 中華亞太區塊鏈推廣協會 區塊鏈及永續發展顧問；台北數位資產商業同業協會 TDAA 策略分析師；萬旭浤科技 Moon Group 洗錢防制合作夥伴"
+      },
+      {
+        "k": "合作",
+        "v": "CoinW／MEXC 合作代理、UK TRUST 信託合作夥伴、Vantage 外匯 CFD 券商代理"
+      },
+      {
+        "k": "社團",
+        "v": "國際扶輪 3523 地區 2025–26 扶青地區顧問、2024–25 扶青地區代表；扶青創社社長"
+      },
+      {
+        "k": "講座",
+        "v": "虛擬通貨法規政策峰會講者、鉅亨網加密貨幣題材直播講者；臺北藝術大學、中山醫學大學、臺灣師範大學、靜宜大學講師；遊戲橘子 GASH 部門區塊鏈內部教學"
+      },
+      {
+        "k": "經歷",
+        "v": "八宇國際股份有限公司 行銷策劃專員；中國文化大學學生會 會長、商學院 學院代表"
+      }
+    ]
+  },
+  "certs": {
+    "eyebrow": "CERTIFICATIONS",
+    "title": "專業認證",
+    "items": [
+      "ISO 14064-1 內部查證員",
+      "ISO 14067 內部查證員",
+      "ISO 14068-1 內部查證員",
+      "ACAMS 國際防洗錢師時數",
+      "BCG Introduction to Strategy Consulting",
+      "Crystal Intelligence License Partner"
+    ]
+  },
+  "gallery": {
+    "eyebrow": "TALKS & EVENTS",
+    "title": "講座與活動",
+    "items": [
+      {
+        "image": "images/events/vessi-02.jpg",
+        "caption": "虛擬通貨法規政策峰會 與談講者"
+      },
+      {
+        "image": "images/events/vessi-01.jpg",
+        "caption": "7E 品牌活動 與創辦人同台"
+      },
+      {
+        "image": "images/events/vessi-05.jpg",
+        "caption": "WORLD TOUR 台北場 座談分享"
+      },
+      {
+        "image": "images/events/vessi-06.jpg",
+        "caption": "企業內部區塊鏈教學"
+      },
+      {
+        "image": "images/events/vessi-07.jpg",
+        "caption": "大學講座：ESBI 財富象限"
+      },
+      {
+        "image": "images/events/vessi-04.jpg",
+        "caption": "校園金融市場講座"
+      },
+      {
+        "image": "images/events/vessi-03.jpg",
+        "caption": "交易所合作講座"
+      },
+      {
+        "image": "images/events/vessi-09.jpg",
+        "caption": "Starship DAO 校園分享"
+      },
+      {
+        "image": "images/events/vessi-10.jpg",
+        "caption": "中山醫學大學 感謝狀"
+      }
+    ]
+  },
+  "industries": {
+    "eyebrow": "INDUSTRIES",
+    "title": "適用產業",
+    "tags": [
+      "綠能環保 Clean Energy",
+      "製造科技 Manufacturing",
+      "數位科技 Digital Tech",
+      "農漁生技 Agri & Biotech",
+      "消費零售 Consumer",
+      "文創藝文 Arts & Culture",
+      "教育培訓 Education"
+    ],
+    "quote": "整合資源，連結機會，驅動企業成長。",
+    "quote_by": "— 林彥廷 Vessi Lin"
+  }
+}

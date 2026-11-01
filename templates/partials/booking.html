@@ -1,11 +1,10 @@
-<section class="sec bg-pearl" id="booking"><div class="wrap form-wrap">
- <div><div class="eyebrow">BOOKING</div><h2 class="title">預約諮詢</h2><div class="rule"><i></i><b></b><i></i></div>
-  <p class="lead">留下你的需求，顧問團隊會在 3 個工作天內與你聯繫，安排 60–90 分鐘的一對一諮詢。</p>
+{{#common.booking}}<section class="sec bg-pearl" id="booking"><div class="wrap form-wrap">
+ <div>{{> shead}}
   <div class="info-list">
-   <div>{{> icon-clock}}諮詢時長約 60–90 分鐘，線上或實體皆可</div>
-   <div>{{> icon-pin}}實體諮詢地點：{{settings.address}}</div>
-   <div>{{> icon-line}}急件可直接加官方 LINE@ 詢問</div>
+   <div>{{> icon-clock}}{{info_1}}</div>
+   <div>{{> icon-pin}}{{info_2}}{{settings.address}}</div>
+   <div>{{> icon-line}}{{info_3}}</div>
   </div>
  </div>
  {{> form}}
-</div></section>
+</div></section>{{/common.booking}}

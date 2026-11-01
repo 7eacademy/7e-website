@@ -1,0 +1,15 @@
+{{#p.hero}}<section class="banner" style="padding-bottom:clamp(40px,6vw,88px)"><div class="ring"></div><div class="wrap">
+ <div class="crumb"><a href="index.html">首頁</a>　/　<a href="consultants.html">顧問團隊</a>　/　<b>{{crumb}}</b></div>
+ <div class="p-hero mt">
+  <div class="photo-frame"><img src="{{photo}}" alt="{{name}}"></div>
+  <div>
+   <div class="eyebrow">{{eyebrow}}</div>
+   <h1>{{name}}<small>{{name_sub}}</small></h1>
+   <div class="role">{{role}}</div>
+   {{#tag}}<span class="tag" style="background:var(--navy);color:var(--champ);margin-top:12px">{{tag}}</span>{{/tag}}
+   <p class="lead" style="max-width:none">{{intro}}</p>
+   <div class="p-stats">{{#stats}}<div><b>{{num}}</b><span>{{label}}</span></div>{{/stats}}</div>
+   <div class="btns stack-m mt"><a class="btn btn-navy" href="#booking">預約一對一諮詢 {{> icon-arrow}}</a><a class="btn btn-green" href="{{settings.line_url}}" target="_blank" rel="noopener">{{> icon-line-w}} LINE 直接詢問</a></div>
+  </div>
+ </div>
+</div></section>{{/p.hero}}

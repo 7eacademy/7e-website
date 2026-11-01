@@ -1,8 +1,5 @@
 {{> head}}{{> header}}
-<section class="banner"><div class="ring"></div><div class="word">Consultants</div><div class="wrap">
- <div class="crumb"><a href="index.html">首頁</a>　/　<b>顧問團隊</b></div>
- <div class="eyebrow">CONSULTANTS</div><h1>顧問團隊服務</h1><p>三位顧問，從品牌、商模、轉型到人才，陪你從定位走到落地。</p>
-</div></section>
+{{> banner}}
 <section class="sec"><div class="wrap">
  <div class="g">
   {{#consultants}}<article class="card person-row {{#_odd}}rev{{/_odd}}">
@@ -13,7 +10,7 @@
     <div class="tags">{{#tags}}<span class="tag">{{.}}</span>{{/tags}}</div>
     <p class="ex">{{intro}}</p>
     <div class="case-box"><b>{{case_label}}</b>　{{case_text}}</div>
-    <div class="btns stack-m"><a class="btn btn-navy" href="{{settings.line_url}}" target="_blank" rel="noopener">預約諮詢</a><a class="btn btn-line" href="{{url}}">完整介紹與案例 {{> icon-arrow}}</a></div>
+    <div class="btns stack-m"><a class="btn btn-navy" href="{{settings.line_url}}" target="_blank" rel="noopener">{{p.book_button}}</a><a class="btn btn-line" href="{{url}}">{{p.more_button}} {{> icon-arrow}}</a></div>
    </div>
   </article>{{/consultants}}
  </div>

@@ -1,0 +1,182 @@
+{
+  "hero": {
+    "crumb": "黃凱鈴",
+    "eyebrow": "BRAND MARKETING CONSULTANT",
+    "name": "黃凱鈴",
+    "name_sub": "（小鈴 Eling）",
+    "role": "7E 商學院創辦人・連結力導師・企業大小提案講師",
+    "tag": "統籌：品牌行銷 & 資源整合",
+    "photo": "media/site/248f91e61d0a.jpg",
+    "intro": "天生擁有朱雀的連結天賦，擅長看見每個人的價值，把對的人放在一起；也有創業者的原則與決斷，說到做到，陪人把事情做成。",
+    "stats": [
+      {
+        "num": "13",
+        "label": "年銷售成交經驗"
+      },
+      {
+        "num": "5",
+        "label": "年人才定位輔導"
+      },
+      {
+        "num": "3",
+        "label": "年品牌行銷專案"
+      }
+    ]
+  },
+  "expertise": {
+    "eyebrow": "EXPERTISE",
+    "title": "擅長領域",
+    "items": [
+      "品牌行銷策略規劃",
+      "人脈資源整合",
+      "大型商業提案計劃書撰寫",
+      "商業提案與談判",
+      "創業陪跑輔導",
+      "企業人才定位輔導"
+    ]
+  },
+  "cases": {
+    "eyebrow": "CASE STUDIES",
+    "title": "代表性案例",
+    "label": "案例實務",
+    "items": [
+      {
+        "title": "台中食品代工廠 & 泡菜品牌 B2B 行銷",
+        "text": "促成破億規模合作，操盤品牌行銷專案"
+      },
+      {
+        "title": "北部藝人演藝經紀品牌",
+        "text": "線上品牌行銷 + 線下活動策劃，提升品牌與藝人商業能見度"
+      },
+      {
+        "title": "台中 30 年以上清潔品牌",
+        "text": "輔導品牌定位轉型，重塑市場形象"
+      },
+      {
+        "title": "億級生技研發集團",
+        "text": "品牌運營策略與品牌行銷執行"
+      }
+    ]
+  },
+  "people_first": {
+    "eyebrow": "PEOPLE FIRST",
+    "title": "以人為本，先回到內核",
+    "lead": "小鈴的課程都圍繞「人才定位」與「天賦」，這也是 7E 商學院更重視人、以人為本的原因。商業與企業品牌，應當先回歸內核：拉回自己的人才與商業競爭力，再去進化，用 AI 應用與工具放大自己、放大品牌。",
+    "intro": "這幾年輔導企業與創辦人，最重要的思維能力不是只有做行銷，而是拉回來看三件事：",
+    "pillars": [
+      {
+        "title": "看團隊（軍隊）",
+        "text": "人放對位置，團隊才有戰力。"
+      },
+      {
+        "title": "看戰略（怎麼在市場打仗）",
+        "text": "知道在哪裡打、怎麼打、跟誰一起打。"
+      },
+      {
+        "title": "找定位（不被取代的價值）",
+        "text": "找到別人取代不了的那一塊。"
+      }
+    ],
+    "flow": [
+      "人才定位・天賦",
+      "商業競爭力",
+      "AI 應用與工具放大"
+    ]
+  },
+  "talent": {
+    "eyebrow": "TALENT COURSES",
+    "title": "人才定位・天賦課程",
+    "lead": "從認識自己開始，看懂天賦、潛能與適合的角色，再把它用在團隊與事業上。",
+    "tags": [
+      "職能四獸",
+      "五獸聚力",
+      "生命靈數",
+      "天賦密碼",
+      "財富密碼",
+      "1 對 1 天賦諮詢"
+    ],
+    "gallery_title": "商業課程 & 企業內訓",
+    "show_recap": true,
+    "sessions": [
+      {
+        "title": "合作企業內部公開課｜天賦・使命・定位",
+        "photos": [
+          "images/eling/bv-01.jpg",
+          "images/eling/bv-02.jpg",
+          "images/eling/bv-05.jpg",
+          "images/eling/bv-03.jpg",
+          "images/eling/bv-07.jpg",
+          "images/eling/bv-10.jpg"
+        ]
+      },
+      {
+        "title": "團隊內訓｜生命靈數 透過數字更靠近自己",
+        "photos": [
+          "images/eling/team-01.jpg",
+          "images/eling/team-04.jpg",
+          "images/eling/team-02.jpg",
+          "images/eling/team-03.jpg"
+        ]
+      },
+      {
+        "title": "生命靈數課程｜今日課程 生命靈數解析",
+        "photos": [
+          "images/eling/class-03.jpg",
+          "images/eling/class-01.jpg",
+          "images/eling/class-05.jpg",
+          "images/eling/class-02.jpg",
+          "images/eling/class-04.jpg"
+        ]
+      },
+      {
+        "title": "「遇見・生命靈數」講座",
+        "photos": [
+          "images/eling/numerology-02.jpg",
+          "images/eling/numerology-01.jpg",
+          "images/eling/numerology-03.jpg"
+        ]
+      }
+    ],
+    "big_first": false
+  },
+  "testimonials": {
+    "eyebrow": "TESTIMONIALS",
+    "title": "學員反饋",
+    "lead": "來自學員的真實回饋，點圖可放大。",
+    "boards": [
+      "images/eling/feedback/board-01.jpg",
+      "images/eling/feedback/board-02.jpg",
+      "images/eling/feedback/board-03.jpg",
+      "images/eling/feedback/board-04.jpg",
+      "images/eling/feedback/board-05.jpg",
+      "images/eling/feedback/board-06.jpg",
+      "images/eling/feedback/board-07.jpg",
+      "images/eling/feedback/board-08.jpg"
+    ],
+    "screenshots": [
+      "images/eling/feedback/line-02.jpg",
+      "images/eling/feedback/line-03.jpg",
+      "images/eling/feedback/line-04.jpg",
+      "images/eling/feedback/line-08.jpg",
+      "images/eling/feedback/line-09.jpg",
+      "images/eling/feedback/line-10.jpg",
+      "images/eling/feedback/line-11.jpg"
+    ]
+  },
+  "interview": {
+    "eyebrow": "MEDIA INTERVIEW",
+    "title": "媒體訪談",
+    "subtitle": "乘著夢想 改寫創造卓越人生（ft. 小鈴）",
+    "text": "分享從個人品牌走到商學院的創業歷程，以及用天賦定位陪伴人才與企業成長的初心。",
+    "photos": [
+      "images/eling/interview/photo-01.jpg",
+      "images/eling/interview/photo-02.jpg",
+      "images/eling/interview/photo-03.jpg",
+      "images/eling/interview/photo-04.jpg",
+      "images/eling/interview/photo-05.jpg"
+    ],
+    "youtube_url": "https://youtu.be/L6ASS2pu11E",
+    "cover": "images/eling/interview/cover.jpg",
+    "button": "在 YouTube 觀看"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "hero": {
+    "eyebrow": "7E BUSINESS ACADEMY",
+    "title_1": "亞洲創業者",
+    "title_2": "第一所商學院",
+    "intro": "教育是企業的內核，品牌行銷是市場的語言。7E 用教育 × 商業雙引擎，讓好品牌走得更遠、影響更多人。",
+    "formula": "天賦定位 × 商模統整 × 資源連結",
+    "image": "media/site/53889bf3abec.jpg"
+  },
+  "articles": {
+    "eyebrow": "INSIGHTS",
+    "title": "最新文章",
+    "lead": "商業見析、品牌解析、人物訪談與轉型實務，陪創業者看懂下一步。",
+    "button": "查看全部文章"
+  },
+  "consultants": {
+    "eyebrow": "CONSULTANTS",
+    "title": "顧問團隊服務",
+    "lead": "三位顧問各有專長，從品牌、商模、轉型到人才，陪你把事情做成。",
+    "button": "認識顧問團隊"
+  },
+  "services": {
+    "eyebrow": "OUR SERVICES",
+    "title": "服務總覽",
+    "lead": "教育 × 商業雙引擎：內核與外部品牌，一起長大。",
+    "cards": [
+      {
+        "title": "品牌行銷 & 資源整合",
+        "en": "BRAND × MARKETING",
+        "who": "統籌：黃凱鈴",
+        "items": [
+          "創業輔導（1 對 1 陪跑專案）",
+          "品牌定位規劃",
+          "品牌行銷策略",
+          "商業活動企劃",
+          "媒體曝光與商會人脈串接"
+        ],
+        "tagline": "讓好品牌被看見，讓對的資源找上門",
+        "link": "marketing.html"
+      },
+      {
+        "title": "顧問團隊服務",
+        "en": "CONSULTING",
+        "who": "統籌：7E 執行長 林彥廷",
+        "items": [
+          "Web3／區塊鏈",
+          "AML／合規與風險管理",
+          "ESG／企業治理",
+          "產業轉型 & 政府補助（含專案補助執行顧問媒合）",
+          "企業經營與商業模式",
+          "投資與資產管理",
+          "其他"
+        ],
+        "tagline": "從策略到落地，不紙上談兵",
+        "link": "consultants.html"
+      },
+      {
+        "title": "企業內訓",
+        "en": "CORPORATE TRAINING",
+        "who": "統籌：蘇琮瑜",
+        "items": [
+          "談出合作力：五獸聚力企業內訓",
+          "團隊能力養成",
+          "客製化內訓課程規劃"
+        ],
+        "tagline": "教育是根，長出企業內核競爭力",
+        "link": "training.html"
+      },
+      {
+        "title": "商業教育課程",
+        "en": "BUSINESS EDUCATION",
+        "who": "統籌：蘇琮瑜",
+        "items": [
+          "創業者商業課程",
+          "線上課程，購買後直接觀看",
+          "實體工作坊與講座"
+        ],
+        "tagline": "一套能被學習、實踐與複製的方法",
+        "link": "courses.html"
+      }
+    ]
+  },
+  "news": {
+    "eyebrow": "NEWS",
+    "title": "最新消息",
+    "lead": "同步 Instagram 貼文，課程、活動與顧問觀點第一手掌握。",
+    "button": "前往 Instagram"
+  },
+  "follow": {
+    "eyebrow": "FOLLOW US",
+    "title": "追蹤 7E",
+    "lead": "選一個你最常用的地方，我們在那裡等你。",
+    "fb_name": "7E 商學院"
+  },
+  "partners": {
+    "eyebrow": "PARTNERS",
+    "title": "協力夥伴"
+  }
+}

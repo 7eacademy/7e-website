@@ -1,21 +1,18 @@
 {{> head}}{{> header}}
-<section class="banner"><div class="ring"></div><div class="word">Contact</div><div class="wrap">
- <div class="crumb"><a href="index.html">首頁</a>　/　<b>聯絡我們</b></div>
- <div class="eyebrow">CONTACT US</div><h1>聯絡我們</h1><p>不論是品牌、顧問、內訓或課程，先聊聊，再一起決定下一步。</p>
-</div></section>
+{{> banner}}
 <section class="sec"><div class="wrap form-wrap">
  <div class="card card-pad" style="background:var(--navy);color:#fff;border:0;align-self:start">
-  <div class="eyebrow" style="color:var(--champ)">GET IN TOUCH</div><h2 class="title" style="color:#fff">讓有夢的人，<br>被對的人看見。</h2>
+  <div class="eyebrow" style="color:var(--champ)">{{p.card.eyebrow}}</div><h2 class="title" style="color:#fff">{{p.card.title_1}}<br>{{p.card.title_2}}</h2>
   <div class="info-list" style="color:#E8E2DA">
-   <a href="{{settings.line_url}}" target="_blank" rel="noopener" style="display:flex;gap:12px">{{> icon-line}}<span>官方 LINE@<br>{{settings.line_id}}<br><small style="color:#B5ADB0">最快回覆，建議優先使用</small></span></a>
-   <a href="tel:{{settings.phone}}" style="display:flex;gap:12px">{{> icon-phone}}<span>專線電話<br>{{settings.phone}}<br><small style="color:#B5ADB0">{{settings.hours}}</small></span></a>
-   <a href="mailto:{{settings.email}}" style="display:flex;gap:12px;word-break:break-all">{{> icon-mail}}<span>Email<br>{{settings.email}}<br><small style="color:#B5ADB0">表單內容將寄送至此信箱</small></span></a>
-   <div>{{> icon-clock}}<span>服務時間<br>{{settings.hours}}<br><small style="color:#B5ADB0">國定假日休息</small></span></div>
-   <div>{{> icon-pin}}<span>公司地址<br>{{settings.address}}<br><small style="color:#B5ADB0">實體諮詢請先預約</small></span></div>
+   <a href="{{settings.line_url}}" target="_blank" rel="noopener" style="display:flex;gap:12px">{{> icon-line}}<span>{{p.card.line_label}}<br>{{settings.line_id}}<br><small style="color:#B5ADB0">{{p.card.line_note}}</small></span></a>
+   <a href="tel:{{settings.phone}}" style="display:flex;gap:12px">{{> icon-phone}}<span>{{p.card.phone_label}}<br>{{settings.phone}}<br><small style="color:#B5ADB0">{{settings.hours}}</small></span></a>
+   <a href="mailto:{{settings.email}}" style="display:flex;gap:12px;word-break:break-all">{{> icon-mail}}<span>{{p.card.email_label}}<br>{{settings.email}}<br><small style="color:#B5ADB0">{{p.card.email_note}}</small></span></a>
+   <div>{{> icon-clock}}<span>{{p.card.hours_label}}<br>{{settings.hours}}<br><small style="color:#B5ADB0">{{p.card.hours_note}}</small></span></div>
+   <div>{{> icon-pin}}<span>{{p.card.address_label}}<br>{{settings.address}}<br><small style="color:#B5ADB0">{{p.card.address_note}}</small></span></div>
   </div>
-  <a class="btn btn-green mt" href="{{settings.line_url}}" target="_blank" rel="noopener">{{> icon-line-w}} 加入官方 LINE@</a>
+  <a class="btn btn-green mt" href="{{settings.line_url}}" target="_blank" rel="noopener">{{> icon-line-w}} {{p.card.button}}</a>
  </div>
- <div><h2 class="h3" style="font-size:26px">線上諮詢表單</h2><p class="note" style="margin:6px 0 18px">標示 <span style="color:#C73B28">*</span> 為必填，送出後我們會在 1–2 個工作天內回覆。</p>{{> form}}</div>
+ <div><h2 class="h3" style="font-size:26px">{{p.form.title}}</h2><p class="note" style="margin:6px 0 18px">{{p.form.note_1}} <span style="color:#C73B28">*</span> {{p.form.note_2}}</p>{{> form}}</div>
 </div></section>
 {{> cta}}
 {{> footer}}

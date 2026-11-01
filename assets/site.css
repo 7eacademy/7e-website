@@ -567,3 +567,4 @@ select.in{appearance:none;-webkit-appearance:none;cursor:pointer;background:#fff
 .fb-boards a{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#fff}
 .fb-boards img{width:100%;height:auto}
 @media (min-width:1024px){.fb-wall{columns:4}}
+.root-item .dot-0{background:#B58333}.root-item .dot-1{background:#D9B77A;color:#1F2B3A}.root-item .dot-2{background:#1F2B3A}

@@ -1,0 +1,206 @@
+{
+  "hero": {
+    "crumb": "蘇琮瑜",
+    "eyebrow": "TALENT & CAREER CONSULTANT",
+    "name": "蘇琮瑜",
+    "name_sub": "Su Chung-Yu",
+    "role": "展翅生涯管理顧問有限公司 創辦人暨執行長｜7E 協力顧問",
+    "tag": "統籌：7E 企業內訓 & 商業教育",
+    "photo": "media/site/511f567e9964.jpg",
+    "intro": "生涯顧問 × 企業人才發展顧問 × 溝通實戰教練。彰師大輔導與諮商碩士、東海企管，英國 CAMBMS 應用心理諮詢師認證創辦人，為中華電信、八曜和茶、天韻旅館集團等企業指定講師，專長企業人才發展、溝通領導與生涯規劃。",
+    "stats": [
+      {
+        "num": "18+",
+        "label": "年輔導經驗"
+      },
+      {
+        "num": "12,000+",
+        "label": "演講小時"
+      },
+      {
+        "num": "150,000+",
+        "label": "累積受眾"
+      }
+    ]
+  },
+  "expertise": {
+    "eyebrow": "EXPERTISE",
+    "title": "擅長領域",
+    "items": [
+      "企業人才發展",
+      "溝通領導",
+      "生涯規劃",
+      "團隊能力養成",
+      "職場軟實力",
+      "應用心理諮詢技能培訓"
+    ]
+  },
+  "scope": {
+    "eyebrow": "7E SERVICES",
+    "title": "7E 協力服務範疇",
+    "items": [
+      "企業內訓",
+      "職場能力培訓",
+      "生涯發展顧問",
+      "公益與社會培訓"
+    ],
+    "highlight_title": "7E 企業內訓 & 商業教育 統籌",
+    "highlight_text": "以 18 年經驗，從線上到線下規劃課程，前置排列產品內容、提前對焦。"
+  },
+  "resume": {
+    "eyebrow": "PROFILE",
+    "title": "講師資歷",
+    "col_1": "領域",
+    "col_2": "代表資歷",
+    "rows": [
+      {
+        "k": "學歷",
+        "v": "國立彰化師範大學 輔導與諮商學系 碩士（心理健康與諮詢組）；東海大學 企業管理學系"
+      },
+      {
+        "k": "產業經歷",
+        "v": "鼎森製衣集團 人資部 招募訓練專員"
+      },
+      {
+        "k": "企業講師",
+        "v": "中華電信、八曜和茶、天韻旅館集團、正光連鎖藥局等企業指定講師"
+      },
+      {
+        "k": "政府合作",
+        "v": "勞動部一般民眾／失業民眾／銀髮族、看守所、公益基金會職場能力訓練講師"
+      },
+      {
+        "k": "學術合作",
+        "v": "教育部大專校院職輔人員、導師、心理師應用心理諮詢技能培訓講師"
+      },
+      {
+        "k": "媒體曝光",
+        "v": "獨角傳媒遴選創業家創業專訪"
+      },
+      {
+        "k": "社群領導",
+        "v": "BNI 鳳凰分會：25 屆副主席、24 屆導師長、23 屆輔導專員、22 屆來賓長、教育長"
+      },
+      {
+        "k": "協會職務",
+        "v": "創新創業協會 2026 年創業關懷副主委；台中市品格組 2026 年副召集人；副總幹事"
+      }
+    ]
+  },
+  "certs": {
+    "eyebrow": "CERTIFICATIONS",
+    "title": "專業認證",
+    "groups": [
+      {
+        "title": "英國 CAMBMS 認證體系",
+        "items": [
+          "應用心理諮詢師專業認證 創辦人",
+          "國際應用心理諮詢師證照發照機構",
+          "亞太區教育委員會委員與審核官",
+          "終身高級講師"
+        ]
+      },
+      {
+        "title": "職涯與人才評鑑認證",
+        "items": [
+          "GCDF 全球職涯發展師",
+          "PODA 人才評鑑系統諮詢師",
+          "就業情報職涯顧問",
+          "企業內部講師認證"
+        ]
+      }
+    ]
+  },
+  "cases": {
+    "eyebrow": "CASE STUDIES",
+    "title": "代表性合作",
+    "label": "案例實務",
+    "items": [
+      {
+        "title": "企業指定講師",
+        "text": "中華電信、八曜和茶、天韻旅館集團、正光連鎖藥局"
+      },
+      {
+        "title": "政府與公益培訓",
+        "text": "勞動部、看守所、公益基金會職場能力訓練"
+      },
+      {
+        "title": "學術培訓",
+        "text": "教育部大專校院職輔人員、導師、心理師諮詢技能培訓"
+      }
+    ]
+  },
+  "talks": {
+    "eyebrow": "TALKS & CLASSES",
+    "title": "講座與課程",
+    "sessions": [
+      {
+        "title": "112 學年度新鮮人成長營",
+        "photos": [
+          "images/su/camp-01.jpg",
+          "images/su/camp-02.jpg",
+          "images/su/camp-03.jpg"
+        ]
+      },
+      {
+        "title": "114 學年度職涯導師 職涯諮詢專業能力培訓",
+        "photos": [
+          "images/su/career-mentor-01.jpg",
+          "images/su/career-mentor-02.jpg"
+        ]
+      },
+      {
+        "title": "教育部深耕計畫｜職場零距離微學分",
+        "photos": [
+          "images/su/microcredit-02.jpg",
+          "images/su/microcredit-01.jpg"
+        ]
+      },
+      {
+        "title": "「養成建立信任的小習慣」講座",
+        "photos": [
+          "images/su/trust-01.jpg"
+        ]
+      },
+      {
+        "title": "展翅講座｜諮詢與諮商",
+        "photos": [
+          "images/su/counseling-01.jpg"
+        ]
+      },
+      {
+        "title": "溝通・RIASEC 職涯興趣・關係系列課程",
+        "photos": [
+          "images/su/stage-01.jpg",
+          "images/su/stage-02.jpg",
+          "images/su/stage-03.jpg"
+        ]
+      },
+      {
+        "title": "大型職涯講座",
+        "photos": [
+          "images/su/hall-01.jpg"
+        ]
+      },
+      {
+        "title": "大葉大學 職涯輔導研習",
+        "photos": [
+          "images/su/dayeh-01.jpg"
+        ]
+      },
+      {
+        "title": "面試技巧課程",
+        "photos": [
+          "images/su/interview-skills-01.jpg"
+        ]
+      },
+      {
+        "title": "職涯課程",
+        "photos": [
+          "images/su/class2023-01.jpg",
+          "images/su/class2023-02.jpg"
+        ]
+      }
+    ]
+  }
+}

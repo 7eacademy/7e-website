@@ -1,52 +1,45 @@
 {{> head}}{{> header}}
-<section class="banner"><div class="ring"></div><div class="word">Academy</div><div class="wrap">
- <div class="crumb"><a href="index.html">首頁</a>　/　<b>商業教育課程</b></div>
- <div class="eyebrow">BUSINESS EDUCATION</div><h1>創業者的商業課程</h1>
- <p>從個人品牌到商業品牌，一套可以被學習、實踐與複製的創業方法。</p>
- <p class="note">檢測與課程皆可線上報名；付費項目以銀行匯款，匯款資訊於報名表單中提供。</p>
- <div class="btns stack-m mt"><a class="btn btn-navy" href="#courses">看全部課程 {{> icon-arrow}}</a><a class="btn btn-line" href="{{settings.line_url}}" target="_blank" rel="noopener">加入會員</a></div>
-</div></section>
+{{#p.banner}}<section class="banner"><div class="ring"></div><div class="word">{{word}}</div><div class="wrap">
+ <div class="crumb"><a href="index.html">首頁</a>　/　<b>{{page_title}}</b></div>
+ <div class="eyebrow">{{eyebrow}}</div><h1>{{title}}</h1>
+ <p>{{text}}</p>
+ <p class="note">{{note}}</p>
+ <div class="btns stack-m mt"><a class="btn btn-navy" href="#courses">{{button_1}} {{> icon-arrow}}</a><a class="btn btn-line" href="{{settings.line_url}}" target="_blank" rel="noopener">{{button_2}}</a></div>
+</div></section>{{/p.banner}}
 
 <section class="sec" id="courses"><div class="wrap">
- <div class="head center"><div class="eyebrow">COURSES</div><h2 class="title">課程與檢測</h2><div class="rule"><i></i><b></b><i></i></div><p class="lead">從個人品牌到商業品牌，一套可以學習、實踐、複製的創業方法。</p></div>
+ <div class="head center">{{#p.courses}}{{> shead}}{{/p.courses}}</div>
  <div class="g g-4">{{#courses}}<div class="card course"><div class="ph"><img src="{{image}}" alt="{{title}}" loading="lazy"><span class="tag">{{tag}}</span></div><div class="bd"><h3 class="h3" style="font-size:18px">{{title}}</h3><p class="ex">{{description}}</p><p class="note">{{note}}</p><div class="ft2"><span class="price {{^is_price}}txt{{/is_price}}">{{price}}</span><a class="btn btn-navy btn-sm" href="{{link}}" {{#external}}target="_blank" rel="noopener"{{/external}}>{{button}}</a></div></div></div>{{/courses}}</div>
 </div></section>
 
 <section class="sec bg-pearl" id="recaps"><div class="wrap">
- <div class="head-row"><div class="head"><div class="eyebrow">CLASS RECAP</div><h2 class="title">課程回顧</h2><div class="rule"><i></i><b></b><i></i></div><p class="lead">每一堂課的主題、時間與現場紀錄。</p></div><a class="btn btn-line" href="recaps.html">看全部課程回顧 {{> icon-arrow}}</a></div>
+ <div class="head-row"><div class="head">{{#p.recaps}}{{> shead}}{{/p.recaps}}</div><a class="btn btn-line" href="recaps.html">{{p.recaps.button}} {{> icon-arrow}}</a></div>
  <div class="g">{{#recaps_home}}{{> recap-card}}{{/recaps_home}}</div>
 </div></section>
 
-<section class="sec bg-ivory"><div class="wrap">
- <div class="head center"><div class="eyebrow">HOW TO ENROLL</div><h2 class="title">報名流程</h2><div class="rule"><i></i><b></b><i></i></div><p class="lead">線上報名，付費項目以銀行匯款，匯款資訊於報名表單中提供。</p></div>
- <div class="steps">
-  <div class="step"><span class="n">1</span><b>選擇課程或檢測</b><p>點選「我要報名」或「免費檢測」</p></div>
-  <div class="step"><span class="n">2</span><b>填寫線上表單</b><p>姓名、電話、Email、公司／品牌與需求</p></div>
-  <div class="step"><span class="n">3</span><b>銀行匯款</b><p>付費項目依表單內的匯款資訊完成匯款</p></div>
-  <div class="step"><span class="n">4</span><b>確認與安排</b><p>7E 於 3 個工作天內與你聯繫、安排時間</p></div>
-  <div class="step"><span class="n">5</span><b>完成</b><p>上課、諮詢或收到解析報告</p></div>
- </div>
-</div></section>
+{{#p.enroll}}<section class="sec bg-ivory"><div class="wrap">
+ <div class="head center">{{> shead}}</div>
+ <div class="steps">{{#items}}<div class="step"><span class="n">{{_i1}}</span><b>{{title}}</b><p>{{text}}</p></div>{{/items}}</div>
+</div></section>{{/p.enroll}}
 
-<section class="sec"><div class="wrap split">
- <div><div class="eyebrow">MY COURSES</div><h2 class="title">線上課程：我的課程</h2><div class="rule"><i></i><b></b><i></i></div>
-  <ul class="checks mt"><li>會員登入後看到已購買的課程</li><li>購買後直接在網站觀看，影片不可下載</li><li>顯示每堂完成度，從上次停下的地方繼續</li><li>可下載講義與練習範本</li><li>觀看期限依課程設定（例：購買後 1 年，待確認）</li></ul></div>
+{{#p.online}}<section class="sec"><div class="wrap split">
+ <div><div class="eyebrow">{{eyebrow}}</div><h2 class="title">{{title}}</h2><div class="rule"><i></i><b></b><i></i></div>
+  <ul class="checks mt">{{#items}}<li>{{.}}</li>{{/items}}</ul></div>
  <div class="card card-pad">
-  <div style="display:flex;justify-content:space-between;align-items:center"><b class="serif" style="font-size:20px">我的課程</b><span class="note">會員：王小明</span></div>
-  <div class="mine mt"><b>個人品牌 7E（線上版示意）</b><div class="bar"><i style="width:62%"></i></div><span class="note">完成 62% ・ 繼續觀看：E3 Evolution 進化</span></div>
-  <div class="mine mt"><b>職能四獸－個人版</b><div class="bar"><i style="width:100%"></i></div><span class="note">完成 100% ・ 已完成・下載解析報告</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center"><b class="serif" style="font-size:20px">{{demo_title}}</b><span class="note">{{demo_member}}</span></div>
+  {{#demo}}<div class="mine mt"><b>{{title}}</b><div class="bar"><i style="width:{{percent}}%"></i></div><span class="note">{{note}}</span></div>{{/demo}}
  </div>
-</div></section>
+</div></section>{{/p.online}}
 
 <section class="sec bg-pearl"><div class="wrap" style="max-width:880px">
- <div class="head center"><div class="eyebrow">FAQ</div><h2 class="title">常見問題</h2><div class="rule"><i></i><b></b><i></i></div></div>
+ <div class="head center">{{#p.faq}}{{> shead}}{{/p.faq}}</div>
  <div class="faq">
   {{#faq.courses}}<details><summary>{{q}}</summary><div class="a">{{{a_html}}}</div></details>{{/faq.courses}}
  </div>
 </div></section>
 
-<section class="sec cta"><div class="ring"></div><div class="wrap cta-in">
- <div><div class="eyebrow">BUSINESS EDUCATION</div><h2>定位，你是誰，決定你能走多遠。</h2><p class="lead">不確定該從哪堂課開始？加入 LINE@，讓 7E 幫你推薦。</p></div>
- <div class="btns stack-m"><a class="btn btn-navy" href="{{settings.line_url}}" target="_blank" rel="noopener">加入官方 LINE@ {{> icon-arrow}}</a><a class="btn btn-line" href="#courses">看全部課程</a></div>
-</div></section>
+{{#p.closing}}<section class="sec cta"><div class="ring"></div><div class="wrap cta-in">
+ <div><div class="eyebrow">{{eyebrow}}</div><h2>{{title}}</h2><p class="lead">{{lead}}</p></div>
+ <div class="btns stack-m"><a class="btn btn-navy" href="{{settings.line_url}}" target="_blank" rel="noopener">{{button_1}} {{> icon-arrow}}</a><a class="btn btn-line" href="#courses">{{button_2}}</a></div>
+</div></section>{{/p.closing}}
 {{> footer}}

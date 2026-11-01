@@ -1,69 +1,45 @@
 {{> head}}{{> header}}
-<section class="banner" style="padding-bottom:clamp(40px,6vw,88px)"><div class="ring"></div><div class="wrap">
- <div class="crumb"><a href="index.html">首頁</a>　/　<a href="consultants.html">顧問團隊</a>　/　<b>黃凱鈴</b></div>
- <div class="p-hero mt">
-  <div class="photo-frame"><img src="media/site/248f91e61d0a.jpg" alt="黃凱鈴"></div>
-  <div>
-   <div class="eyebrow">BRAND MARKETING CONSULTANT</div>
-   <h1>黃凱鈴<small>（小鈴 Eling）</small></h1>
-   <div class="role">7E 商學院創辦人・連結力導師・企業大小提案講師</div>
-   <span class="tag" style="background:var(--navy);color:var(--champ);margin-top:12px">統籌：品牌行銷 & 資源整合</span>
-   <p class="lead" style="max-width:none">天生擁有朱雀的連結天賦，擅長看見每個人的價值，把對的人放在一起；也有創業者的原則與決斷，說到做到，陪人把事情做成。</p>
-   <div class="p-stats"><div><b>13</b><span>年銷售成交經驗</span></div><div><b>5</b><span>年人才定位輔導</span></div><div><b>3</b><span>年品牌行銷專案</span></div></div>
-   <div class="btns stack-m mt"><a class="btn btn-navy" href="#booking">預約一對一諮詢 {{> icon-arrow}}</a><a class="btn btn-green" href="{{settings.line_url}}" target="_blank" rel="noopener">{{> icon-line-w}} LINE 直接詢問</a></div>
-  </div>
- </div>
-</div></section>
+{{> p-hero}}
 
 <section class="sec"><div class="wrap split" style="align-items:start">
- <div><div class="eyebrow">EXPERTISE</div><h2 class="title">擅長領域</h2><div class="rule"><i></i><b></b><i></i></div>
-  <ul class="checks mt"><li>品牌行銷策略規劃</li><li>人脈資源整合</li><li>大型商業提案計劃書撰寫</li><li>商業提案與談判</li><li>創業陪跑輔導</li><li>企業人才定位輔導</li></ul>
- </div>
- <div><div class="eyebrow">CASE STUDIES</div><h2 class="title">代表性案例</h2><div class="rule"><i></i><b></b><i></i></div>
-  <div class="g g-2 mt">
-   <div class="case"><span class="cat">案例實務 01</span><h4>台中食品代工廠 & 泡菜品牌 B2B 行銷</h4><p>促成破億規模合作，操盤品牌行銷專案</p></div>
-   <div class="case"><span class="cat">案例實務 02</span><h4>北部藝人演藝經紀品牌</h4><p>線上品牌行銷 + 線下活動策劃，提升品牌與藝人商業能見度</p></div>
-   <div class="case"><span class="cat">案例實務 03</span><h4>台中 30 年以上清潔品牌</h4><p>輔導品牌定位轉型，重塑市場形象</p></div>
-   <div class="case"><span class="cat">案例實務 04</span><h4>億級生技研發集團</h4><p>品牌運營策略與品牌行銷執行</p></div>
-  </div>
- </div>
+ {{#p.expertise}}<div><div class="eyebrow">{{eyebrow}}</div><h2 class="title">{{title}}</h2><div class="rule"><i></i><b></b><i></i></div>
+  <ul class="checks mt">{{#items}}<li>{{.}}</li>{{/items}}</ul>
+ </div>{{/p.expertise}}
+ {{#p.cases}}<div><div class="eyebrow">{{eyebrow}}</div><h2 class="title">{{title}}</h2><div class="rule"><i></i><b></b><i></i></div>
+  <div class="g g-2 mt">{{#items}}<div class="case"><span class="cat">{{p.cases.label}} {{_n}}</span><h4>{{title}}</h4><p>{{text}}</p></div>{{/items}}</div>
+ </div>{{/p.cases}}
 </div></section>
 
-<section class="sec bg-navy"><div class="wrap">
- <div class="head center"><div class="eyebrow">PEOPLE FIRST</div><h2 class="title">以人為本，先回到內核</h2><div class="rule"><i></i><b></b><i></i></div>
-  <p class="lead" style="color:#E8DCC4">小鈴的課程都圍繞「人才定位」與「天賦」，這也是 7E 商學院更重視人、以人為本的原因。商業與企業品牌，應當先回歸內核：拉回自己的人才與商業競爭力，再去進化，用 AI 應用與工具放大自己、放大品牌。</p></div>
- <p class="center" style="color:#fff;font-size:17px;margin-bottom:18px">這幾年輔導企業與創辦人，最重要的思維能力不是只有做行銷，而是拉回來看三件事：</p>
- <div class="pillars">
-  <div class="pillar"><div class="k">01</div><b>看團隊（軍隊）</b><p>人放對位置，團隊才有戰力。</p></div>
-  <div class="pillar"><div class="k">02</div><b>看戰略（怎麼在市場打仗）</b><p>知道在哪裡打、怎麼打、跟誰一起打。</p></div>
-  <div class="pillar"><div class="k">03</div><b>找定位（不被取代的價值）</b><p>找到別人取代不了的那一塊。</p></div>
+{{#p.people_first}}<section class="sec bg-navy"><div class="wrap">
+ <div class="head center"><div class="eyebrow">{{eyebrow}}</div><h2 class="title">{{title}}</h2><div class="rule"><i></i><b></b><i></i></div>
+  <p class="lead" style="color:#E8DCC4">{{lead}}</p></div>
+ <p class="center" style="color:#fff;font-size:17px;margin-bottom:18px">{{intro}}</p>
+ <div class="pillars">{{#pillars}}<div class="pillar"><div class="k">{{_n}}</div><b>{{title}}</b><p>{{text}}</p></div>{{/pillars}}</div>
+ <div class="flow" style="justify-content:center">{{#flow_items}}{{^first}}<i>→</i>{{/first}}<span>{{text}}</span>{{/flow_items}}</div>
+</div></section>{{/p.people_first}}
+
+{{#p.talent}}<section class="sec"><div class="wrap">
+ <div class="head">{{> shead}}</div>
+ <div class="tags">{{#tags}}<span class="tag dark">{{.}}</span>{{/tags}}</div>
+ <div class="sub-head mt-l"><h3 class="h3" style="font-size:24px">{{gallery_title}}</h3><a class="more" href="recaps.html">看全部課程回顧 {{> icon-arrow}}</a></div>
+ <div class="gallery ov mt-s">{{#show_recap}}{{#recaps_home.0}}{{#recaps_home.0.photos}}<figure class="{{#_first}}big{{/_first}}"><a href="{{big}}" data-lb="eling"><img src="{{thumb}}" alt="{{recaps_home.0.title}}" loading="lazy" decoding="async"></a>{{#_first}}<figcaption>{{recaps_home.0.title}}</figcaption>{{/_first}}</figure>{{/recaps_home.0.photos}}{{/recaps_home.0}}{{/show_recap}}{{> sessions}}</div>
+</div></section>{{/p.talent}}
+
+{{#p.testimonials}}<section class="sec bg-pearl"><div class="wrap">
+ <div class="head">{{> shead}}</div>
+ <div class="fb-boards">{{#boards}}<a href="{{.}}" data-lb="fb"><img src="{{.}}" alt="學員回饋" loading="lazy" decoding="async"></a>{{/boards}}</div>
+ <div class="fb-wall mt">{{#screenshots}}<a href="{{.}}" data-lb="fb"><img src="{{.}}" alt="學員回饋" loading="lazy" decoding="async"></a>{{/screenshots}}</div>
+</div></section>{{/p.testimonials}}
+
+{{#p.interview}}<section class="sec bg-ivory"><div class="wrap split" style="align-items:center">
+ <div><div class="eyebrow">{{eyebrow}}</div><h2 class="title">{{title}}</h2><div class="rule"><i></i><b></b><i></i></div>
+  <h3 class="h3 mt-s">{{subtitle}}</h3>
+  <p class="ex mt-s">{{text}}</p>
+  <div class="thumbs mt">{{#photos}}<a href="{{.}}" data-lb="interview"><img src="{{.}}" alt="訪談現場" loading="lazy" decoding="async"></a>{{/photos}}</div>
+  {{#youtube_url}}<a class="btn btn-line mt" href="{{youtube_url}}" target="_blank" rel="noopener">{{button}} {{> icon-arrow}}</a>{{/youtube_url}}
  </div>
- <div class="flow" style="justify-content:center"><span>人才定位・天賦</span><i>→</i><span>商業競爭力</span><i>→</i><span>AI 應用與工具放大</span></div>
-</div></section>
-
-<section class="sec"><div class="wrap">
- <div class="head"><div class="eyebrow">TALENT COURSES</div><h2 class="title">人才定位・天賦課程</h2><div class="rule"><i></i><b></b><i></i></div>
-  <p class="lead">從認識自己開始，看懂天賦、潛能與適合的角色，再把它用在團隊與事業上。</p></div>
- <div class="tags"><span class="tag dark">職能四獸</span><span class="tag dark">五獸聚力</span><span class="tag dark">生命靈數</span><span class="tag dark">天賦密碼</span><span class="tag dark">財富密碼</span><span class="tag dark">1 對 1 天賦諮詢</span></div>
- <div class="sub-head mt-l"><h3 class="h3" style="font-size:24px">商業課程 & 企業內訓</h3><a class="more" href="recaps.html">看全部課程回顧 {{> icon-arrow}}</a></div>
- <div class="gallery ov mt-s">{{#recaps_home.0}}{{#recaps_home.0.photos}}<figure class="{{#_first}}big{{/_first}}"><a href="{{big}}" data-lb="eling"><img src="{{thumb}}" alt="{{recaps_home.0.title}}" loading="lazy" decoding="async"></a>{{#_first}}<figcaption>{{recaps_home.0.title}}</figcaption>{{/_first}}</figure>{{/recaps_home.0.photos}}{{/recaps_home.0}}<figure><a href="images/eling/bv-01.jpg" data-lb="eling"><img src="images/eling/bv-01.jpg" alt="合作企業內部公開課｜天賦・使命・定位" loading="lazy" decoding="async"></a><figcaption>合作企業內部公開課｜天賦・使命・定位</figcaption></figure><figure><a href="images/eling/bv-02.jpg" data-lb="eling"><img src="images/eling/bv-02.jpg" alt="合作企業內部公開課｜天賦・使命・定位" loading="lazy" decoding="async"></a></figure><figure><a href="images/eling/bv-05.jpg" data-lb="eling"><img src="images/eling/bv-05.jpg" alt="合作企業內部公開課｜天賦・使命・定位" loading="lazy" decoding="async"></a></figure><figure><a href="images/eling/bv-03.jpg" data-lb="eling"><img src="images/eling/bv-03.jpg" alt="合作企業內部公開課｜天賦・使命・定位" loading="lazy" decoding="async"></a></figure><figure><a href="images/eling/bv-07.jpg" data-lb="eling"><img src="images/eling/bv-07.jpg" alt="合作企業內部公開課｜天賦・使命・定位" loading="lazy" decoding="async"></a></figure><figure><a href="images/eling/bv-10.jpg" data-lb="eling"><img src="images/eling/bv-10.jpg" alt="合作企業內部公開課｜天賦・使命・定位" loading="lazy" decoding="async"></a></figure><figure><a href="images/eling/team-01.jpg" data-lb="eling"><img src="images/eling/team-01.jpg" alt="團隊內訓｜生命靈數 透過數字更靠近自己" loading="lazy" decoding="async"></a><figcaption>團隊內訓｜生命靈數 透過數字更靠近自己</figcaption></figure><figure><a href="images/eling/team-04.jpg" data-lb="eling"><img src="images/eling/team-04.jpg" alt="團隊內訓｜生命靈數 透過數字更靠近自己" loading="lazy" decoding="async"></a></figure><figure><a href="images/eling/team-02.jpg" data-lb="eling"><img src="images/eling/team-02.jpg" alt="團隊內訓｜生命靈數 透過數字更靠近自己" loading="lazy" decoding="async"></a></figure><figure><a href="images/eling/team-03.jpg" data-lb="eling"><img src="images/eling/team-03.jpg" alt="團隊內訓｜生命靈數 透過數字更靠近自己" loading="lazy" decoding="async"></a></figure><figure><a href="images/eling/class-03.jpg" data-lb="eling"><img src="images/eling/class-03.jpg" alt="生命靈數課程｜今日課程 生命靈數解析" loading="lazy" decoding="async"></a><figcaption>生命靈數課程｜今日課程 生命靈數解析</figcaption></figure><figure><a href="images/eling/class-01.jpg" data-lb="eling"><img src="images/eling/class-01.jpg" alt="生命靈數課程｜今日課程 生命靈數解析" loading="lazy" decoding="async"></a></figure><figure><a href="images/eling/class-05.jpg" data-lb="eling"><img src="images/eling/class-05.jpg" alt="生命靈數課程｜今日課程 生命靈數解析" loading="lazy" decoding="async"></a></figure><figure><a href="images/eling/class-02.jpg" data-lb="eling"><img src="images/eling/class-02.jpg" alt="生命靈數課程｜今日課程 生命靈數解析" loading="lazy" decoding="async"></a></figure><figure><a href="images/eling/class-04.jpg" data-lb="eling"><img src="images/eling/class-04.jpg" alt="生命靈數課程｜今日課程 生命靈數解析" loading="lazy" decoding="async"></a></figure><figure><a href="images/eling/numerology-02.jpg" data-lb="eling"><img src="images/eling/numerology-02.jpg" alt="「遇見・生命靈數」講座" loading="lazy" decoding="async"></a><figcaption>「遇見・生命靈數」講座</figcaption></figure><figure><a href="images/eling/numerology-01.jpg" data-lb="eling"><img src="images/eling/numerology-01.jpg" alt="「遇見・生命靈數」講座" loading="lazy" decoding="async"></a></figure><figure><a href="images/eling/numerology-03.jpg" data-lb="eling"><img src="images/eling/numerology-03.jpg" alt="「遇見・生命靈數」講座" loading="lazy" decoding="async"></a></figure></div>
-</div></section>
-
-<section class="sec bg-pearl"><div class="wrap">
- <div class="head"><div class="eyebrow">TESTIMONIALS</div><h2 class="title">學員反饋</h2><div class="rule"><i></i><b></b><i></i></div><p class="lead">來自學員的真實回饋，點圖可放大。</p></div>
- <div class="fb-boards"><a href="images/eling/feedback/board-01.jpg" data-lb="fb"><img src="images/eling/feedback/board-01.jpg" alt="學員回饋" loading="lazy" decoding="async"></a><a href="images/eling/feedback/board-02.jpg" data-lb="fb"><img src="images/eling/feedback/board-02.jpg" alt="學員回饋" loading="lazy" decoding="async"></a><a href="images/eling/feedback/board-03.jpg" data-lb="fb"><img src="images/eling/feedback/board-03.jpg" alt="學員回饋" loading="lazy" decoding="async"></a><a href="images/eling/feedback/board-04.jpg" data-lb="fb"><img src="images/eling/feedback/board-04.jpg" alt="學員回饋" loading="lazy" decoding="async"></a><a href="images/eling/feedback/board-05.jpg" data-lb="fb"><img src="images/eling/feedback/board-05.jpg" alt="學員回饋" loading="lazy" decoding="async"></a><a href="images/eling/feedback/board-06.jpg" data-lb="fb"><img src="images/eling/feedback/board-06.jpg" alt="學員回饋" loading="lazy" decoding="async"></a><a href="images/eling/feedback/board-07.jpg" data-lb="fb"><img src="images/eling/feedback/board-07.jpg" alt="學員回饋" loading="lazy" decoding="async"></a><a href="images/eling/feedback/board-08.jpg" data-lb="fb"><img src="images/eling/feedback/board-08.jpg" alt="學員回饋" loading="lazy" decoding="async"></a></div>
- <div class="fb-wall mt"><a href="images/eling/feedback/line-02.jpg" data-lb="fb"><img src="images/eling/feedback/line-02.jpg" alt="學員回饋" loading="lazy" decoding="async"></a><a href="images/eling/feedback/line-03.jpg" data-lb="fb"><img src="images/eling/feedback/line-03.jpg" alt="學員回饋" loading="lazy" decoding="async"></a><a href="images/eling/feedback/line-04.jpg" data-lb="fb"><img src="images/eling/feedback/line-04.jpg" alt="學員回饋" loading="lazy" decoding="async"></a><a href="images/eling/feedback/line-08.jpg" data-lb="fb"><img src="images/eling/feedback/line-08.jpg" alt="學員回饋" loading="lazy" decoding="async"></a><a href="images/eling/feedback/line-09.jpg" data-lb="fb"><img src="images/eling/feedback/line-09.jpg" alt="學員回饋" loading="lazy" decoding="async"></a><a href="images/eling/feedback/line-10.jpg" data-lb="fb"><img src="images/eling/feedback/line-10.jpg" alt="學員回饋" loading="lazy" decoding="async"></a><a href="images/eling/feedback/line-11.jpg" data-lb="fb"><img src="images/eling/feedback/line-11.jpg" alt="學員回饋" loading="lazy" decoding="async"></a></div>
-</div></section>
-
-<section class="sec bg-ivory"><div class="wrap split" style="align-items:center">
- <div><div class="eyebrow">MEDIA INTERVIEW</div><h2 class="title">媒體訪談</h2><div class="rule"><i></i><b></b><i></i></div>
-  <h3 class="h3 mt-s">乘著夢想 改寫創造卓越人生（ft. 小鈴）</h3>
-  <p class="ex mt-s">分享從個人品牌走到商學院的創業歷程，以及用天賦定位陪伴人才與企業成長的初心。</p>
-  <div class="thumbs mt"><a href="images/eling/interview/photo-01.jpg" data-lb="interview"><img src="images/eling/interview/photo-01.jpg" alt="訪談現場" loading="lazy" decoding="async"></a><a href="images/eling/interview/photo-02.jpg" data-lb="interview"><img src="images/eling/interview/photo-02.jpg" alt="訪談現場" loading="lazy" decoding="async"></a><a href="images/eling/interview/photo-03.jpg" data-lb="interview"><img src="images/eling/interview/photo-03.jpg" alt="訪談現場" loading="lazy" decoding="async"></a><a href="images/eling/interview/photo-04.jpg" data-lb="interview"><img src="images/eling/interview/photo-04.jpg" alt="訪談現場" loading="lazy" decoding="async"></a><a href="images/eling/interview/photo-05.jpg" data-lb="interview"><img src="images/eling/interview/photo-05.jpg" alt="訪談現場" loading="lazy" decoding="async"></a></div>
-  <a class="btn btn-line mt" href="https://youtu.be/L6ASS2pu11E" target="_blank" rel="noopener">在 YouTube 觀看 {{> icon-arrow}}</a>
- </div>
- <div class="video"><button class="vposter" type="button" data-yt="L6ASS2pu11E" aria-label="播放訪談影片：乘著夢想 改寫創造卓越人生"><img src="images/eling/interview/cover.jpg" alt="" loading="lazy"><span><svg width="28" height="28" viewBox="0 0 24 24" fill="#B58333"><path d="M8 5v14l11-7z"/></svg></span></button></div>
-</div></section>
+ {{#youtube_id}}<div class="video"><button class="vposter" type="button" data-yt="{{youtube_id}}" aria-label="播放影片：{{subtitle}}"><img src="{{cover}}" alt="" loading="lazy"><span><svg width="28" height="28" viewBox="0 0 24 24" fill="#B58333"><path d="M8 5v14l11-7z"/></svg></span></button></div>{{/youtube_id}}
+</div></section>{{/p.interview}}
 {{> booking}}
 {{> cta}}
 {{> footer}}

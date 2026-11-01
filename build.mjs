@@ -40,7 +40,7 @@ function render(tpl, stack) {
     const v = lookup(name, stack);
     const empty = !v || (Array.isArray(v) && !v.length);
     if (op === '#' && !empty) {
-      if (Array.isArray(v)) v.forEach((x, k) => { out += render(inner, [...stack, (x && typeof x === 'object') ? { ...x, _i: k, _n: String(k + 1).padStart(2, '0'), _first: k === 0, _odd: k % 2 === 1 } : x]); });
+      if (Array.isArray(v)) v.forEach((x, k) => { out += render(inner, [...stack, (x && typeof x === 'object') ? { ...x, _i: k, _i1: k + 1, _n: String(k + 1).padStart(2, '0'), _first: k === 0, _last: k === v.length - 1, _odd: k % 2 === 1 } : x]); });
       else out += render(inner, typeof v === 'object' ? [...stack, v] : stack);
     } else if (op === '^' && empty) out += render(inner, stack);
     i = tag.lastIndex = pair.lastIndex;
@@ -64,7 +64,7 @@ const list = (v) => (Array.isArray(v) ? v.filter((x) => x !== null && x !== '' &
 const on = (v) => v !== false && v !== 'false';
 const fixImages = (o) => {
   if (Array.isArray(o)) return o.map(fixImages);
-  if (o && typeof o === 'object' && !(o instanceof Date)) { const r = {}; for (const [k, v] of Object.entries(o)) r[k] = /(image|photo|logo|cover|avatar)$/i.test(k) ? rel(v) : fixImages(v); return r; }
+  if (o && typeof o === 'object' && !(o instanceof Date)) { const r = {}; for (const [k, v] of Object.entries(o)) r[k] = /(image|photo|logo|cover|avatar)(_\d)?$/i.test(k) ? rel(v) : fixImages(v); return r; }
   return o;
 };
 function collection(dir) {
@@ -127,7 +127,30 @@ const THUMBS = [];
 const thumbOf = (src, w) => { const h = crypto.createHash('sha1').update(src + w).digest('hex').slice(0, 12); const out = `media/_t/${h}-${w}.jpg`; THUMBS.push({ src, out, w }); return out; };
 const recaps = recapsRaw.map((r) => ({ ...r, photos: r.photos.map((p) => ({ thumb: thumbOf(p, 480), big: thumbOf(p, 1280), src: p })), count: r.photos.length }));
 
+// 各頁面的固定文字與圖片（後台「頁面內容」）：content/pages/*.json
+const pagesData = {};
+if (exists('content/pages')) for (const f of fs.readdirSync(path.join(ROOT, 'content/pages')).filter((x) => x.endsWith('.json'))) pagesData[f.replace(/\.json$/, '')] = json('content/pages/' + f, {});
+// 講座照片：同場次只在第一張標說明；YouTube 網址自動取出影片代碼；流程箭頭
+const ytId = (u) => { const m = String(u || '').match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/); return m ? m[1] : ''; };
+function prepPage(p, key) {
+  const walk = (o) => {
+    if (Array.isArray(o)) return o.filter((x) => x !== null && x !== undefined && x !== '').map(walk);
+    if (!o || typeof o !== 'object') return o;
+    const r = {}; for (const [k, v] of Object.entries(o)) r[k] = walk(v);
+    if (Array.isArray(r.sessions)) { r.sessions = r.sessions.map((s, si) => ({ ...s, photos: list(s.photos).map((ph, i) => ({ src: rel(typeof ph === 'object' ? ph.image : ph), lb: key, caption_alt: s.title, caption: i === 0 ? s.title : '', big_first: si === 0 && i === 0 && r.big_first !== false })) })); }
+    if (r.youtube_url !== undefined) r.youtube_id = ytId(r.youtube_url);
+    if (Array.isArray(r.flow)) r.flow_items = r.flow.map((t, i) => ({ text: t, first: i === 0 }));
+    for (const k of Object.keys(r)) if (/(photos|boards|screenshots|images)$/.test(k) && Array.isArray(r[k])) r[k] = r[k].map((x) => (typeof x === 'string' ? rel(x) : x));
+    return r;
+  };
+  return walk(p);
+}
+for (const k of Object.keys(pagesData)) pagesData[k] = prepPage(pagesData[k], k);
+if (pagesData.marketing) for (const id of ['startup', 'brand', 'video', 'ai', 'seo', 'pos', 'ads']) if (pagesData.marketing[id]) pagesData.marketing[id].id = id;
+const PAGE_DATA = { index: 'home', 'consultant-eling': 'eling', 'consultant-vessi': 'vessi', 'consultant-su': 'su' };
+
 const base = {
+  common: pagesData.common || {},
   settings, consultants, courses, plans, partners, faq, recaps, recaps_home: recaps.slice(0, 3),
   articles_home: articles.slice(0, 3), articles_featured: featured ? [featured] : [], articles_rest: articles.filter((a) => a !== featured),
   news_home: news.slice(0, 4), news_all: news,
@@ -149,9 +172,11 @@ function page(file, tplName, view) {
   const tpl = withPartials(read(`templates/${tplName}.html`));
   const html = render(tpl, [{ ...base, ...view }]);
   if (/\{\{/.test(html.replace(/<script[\s\S]*?<\/script>/g, ''))) console.warn('提醒：' + file + ' 還有未套用的 {{ }} 標籤');
-  fs.writeFileSync(path.join(DIST, file), html); out.push(file);
+  // 輸出前壓縮 HTML（移除註解與多餘換行），原始碼不易閱讀
+  const min = html.replace(/<!--(?!\[if)[\s\S]*?-->/g, '').replace(/>\s*\n\s*</g, '><').replace(/\s*\n\s*/g, ' ');
+  fs.writeFileSync(path.join(DIST, file), min); out.push(file);
 }
-for (const [name, title, nav, form] of PAGES) page(`${name}.html`, `pages/${name}`, { page_title: title, active: { [nav]: true }, ...(form ? buildForm(form) : {}) });
+for (const [name, title, nav, form] of PAGES) page(`${name}.html`, `pages/${name}`, { page_title: title, active: { [nav]: true }, p: pagesData[PAGE_DATA[name] || name] || {}, ...(form ? buildForm(form) : {}) });
 for (const a of articles) page(a.url, 'pages/_article', { ...a, page_title: a.title, body: a.html, active: { articles: true } });
 
 for (const dir of ['media', 'images', 'assets']) if (exists(dir)) fs.cpSync(path.join(ROOT, dir), path.join(DIST, dir), { recursive: true });
