@@ -354,3 +354,2596 @@ content:
       - { name: su, label: 蘇琮瑜 預約表單, type: object, fields: *formfields }
       - { name: training, label: 企業內訓諮詢表單, type: object, fields: *formfields }
       - { name: contact, label: 聯絡我們表單, type: object, fields: *formfields }
+
+  # ===== 頁面內容（自動產生，請勿手動修改這段以下；改完 json 結構後執行 backend/gen-pages-config.py）=====
+  - name: page-common
+    label: "全站共用（頁尾、預約區、最下方 CTA）"
+    type: file
+    path: content/pages/common.json
+    format: json
+    fields:
+      - name: cta
+        label: "最下方行動區（全站共用）"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: button_1
+            label: "按鈕 1 文字"
+            type: string
+          - name: button_2
+            label: "按鈕 2 文字"
+            type: string
+      - name: footer
+        label: "頁尾"
+        type: object
+        fields:
+          - name: slogan_1
+            label: "頁尾標語第一行"
+            type: string
+          - name: slogan_2
+            label: "頁尾標語第二行"
+            type: string
+          - name: copyright
+            label: "版權文字"
+            type: text
+      - name: booking
+        label: "預約區"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: info_1
+            label: "說明 1"
+            type: string
+          - name: info_2
+            label: "說明 2（後面會接地址）"
+            type: string
+          - name: info_3
+            label: "說明 3"
+            type: string
+
+  - name: page-home
+    label: "頁面｜首頁"
+    type: file
+    path: content/pages/home.json
+    format: json
+    fields:
+      - name: hero
+        label: "最上方主視覺／個人簡介"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title_1
+            label: "標題第一行"
+            type: string
+          - name: title_2
+            label: "標題第二行"
+            type: string
+          - name: intro
+            label: "介紹"
+            type: text
+          - name: formula
+            label: "公式文字"
+            type: string
+          - name: image
+            label: "圖片"
+            type: image
+      - name: articles
+        label: "最新文章區"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: button
+            label: "按鈕文字"
+            type: string
+      - name: consultants
+        label: "顧問團隊區"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: button
+            label: "按鈕文字"
+            type: string
+      - name: services
+        label: "服務區"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: cards
+            label: "卡片"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: en
+                label: "英文名稱"
+                type: string
+              - name: who
+                label: "統籌"
+                type: string
+              - name: items
+                label: "項目"
+                type: string
+                list: true
+              - name: tagline
+                label: "一句話標語"
+                type: string
+              - name: link
+                label: "連結（頁面或網址）"
+                type: string
+      - name: news
+        label: "最新消息區"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: button
+            label: "按鈕文字"
+            type: string
+      - name: follow
+        label: "追蹤 7E 區"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: fb_name
+            label: "Facebook 顯示名稱"
+            type: string
+      - name: partners
+        label: "協力夥伴區"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+
+  - name: page-about
+    label: "頁面｜關於7E"
+    type: file
+    path: content/pages/about.json
+    format: json
+    fields:
+      - name: banner
+        label: "頁面上方大標區"
+        type: object
+        fields:
+          - name: word
+            label: "背景大字（英文）"
+            type: string
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: text
+            label: "內文"
+            type: text
+      - name: story
+        label: "品牌故事"
+        type: object
+        fields:
+          - name: photo
+            label: "照片"
+            type: image
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title_1
+            label: "標題第一行"
+            type: string
+          - name: title_2
+            label: "標題第二行"
+            type: string
+          - name: paragraphs
+            label: "段落（一格一段）"
+            type: text
+            list: true
+          - name: timeline
+            label: "時間軸"
+            type: object
+            list: true
+            fields:
+              - name: year
+                label: "年份"
+                type: string
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+          - name: quote
+            label: "金句"
+            type: string
+          - name: quote_note
+            label: "金句補充"
+            type: text
+          - name: cards
+            label: "卡片"
+            type: object
+            list: true
+            fields:
+              - name: label
+                label: "標籤"
+                type: string
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+          - name: closing
+            label: "段落結尾文字"
+            type: text
+      - name: philosophy
+        label: "品牌理念"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: roots
+            label: "根・枝葉・土壤"
+            type: object
+            list: true
+            fields:
+              - name: mark
+                label: "圓點字"
+                type: string
+              - name: pre
+                label: "標題前半"
+                type: string
+              - name: em
+                label: "標題強調字"
+                type: string
+              - name: sub
+                label: "副標"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+          - name: quote_1
+            label: "金句第一行"
+            type: string
+          - name: quote_2
+            label: "金句第二行"
+            type: string
+      - name: why
+        label: "7E 的不同"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: cards
+            label: "卡片"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+          - name: closing
+            label: "段落結尾文字"
+            type: text
+      - name: values
+        label: "七大核心"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: image
+            label: "圖片"
+            type: image
+          - name: items
+            label: "項目"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: en
+                label: "英文名稱"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+      - name: services
+        label: "服務區"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: cards
+            label: "卡片"
+            type: object
+            list: true
+            fields:
+              - name: no
+                label: "編號"
+                type: string
+              - name: title
+                label: "標題"
+                type: string
+              - name: en
+                label: "英文名稱"
+                type: string
+              - name: who
+                label: "統籌"
+                type: string
+              - name: tagline
+                label: "一句話標語"
+                type: string
+              - name: items
+                label: "項目"
+                type: string
+                list: true
+              - name: link
+                label: "連結（頁面或網址）"
+                type: string
+          - name: note
+            label: "備註文字"
+            type: text
+          - name: entry
+            label: "入門服務小卡"
+            type: object
+            fields:
+              - name: label
+                label: "標籤"
+                type: string
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+              - name: button
+                label: "按鈕文字"
+                type: string
+      - name: founder
+        label: "創辦人初衷"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title_1
+            label: "標題第一行"
+            type: string
+          - name: title_2
+            label: "標題第二行"
+            type: string
+          - name: name
+            label: "名稱"
+            type: string
+          - name: role
+            label: "職稱"
+            type: string
+          - name: text_1
+            label: "內文（第一段）"
+            type: text
+          - name: steps
+            label: "步驟"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+          - name: text_2
+            label: "內文（第二段）"
+            type: text
+          - name: note_eyebrow
+            label: "小卡標題"
+            type: string
+          - name: quote
+            label: "金句"
+            type: string
+          - name: quote_en
+            label: "金句英文"
+            type: string
+          - name: note_1
+            label: "小卡內文 1"
+            type: text
+          - name: note_2
+            label: "小卡內文 2"
+            type: text
+          - name: sign
+            label: "署名"
+            type: string
+          - name: stats
+            label: "數字亮點"
+            type: object
+            list: true
+            fields:
+              - name: num
+                label: "數字"
+                type: string
+              - name: label
+                label: "標籤"
+                type: string
+      - name: method
+        label: "7E 二階段"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: image_1
+            label: "圖片 1"
+            type: image
+          - name: stage_1
+            label: "第一階段"
+            type: object
+            fields:
+              - name: label
+                label: "標籤"
+                type: string
+              - name: title
+                label: "標題"
+                type: string
+              - name: en
+                label: "英文名稱"
+                type: string
+              - name: desc
+                label: "說明"
+                type: text
+              - name: items
+                label: "項目"
+                type: object
+                list: true
+                fields:
+                  - name: k
+                    label: "代號"
+                    type: string
+                  - name: name
+                    label: "名稱"
+                    type: string
+                  - name: sub
+                    label: "副標"
+                    type: string
+                  - name: text
+                    label: "內文"
+                    type: text
+          - name: stage_2
+            label: "第二階段"
+            type: object
+            fields:
+              - name: label
+                label: "標籤"
+                type: string
+              - name: title
+                label: "標題"
+                type: string
+              - name: en
+                label: "英文名稱"
+                type: string
+              - name: desc
+                label: "說明"
+                type: text
+              - name: items
+                label: "項目"
+                type: object
+                list: true
+                fields:
+                  - name: k
+                    label: "代號"
+                    type: string
+                  - name: name
+                    label: "名稱"
+                    type: string
+                  - name: sub
+                    label: "副標"
+                    type: string
+                  - name: text
+                    label: "內文"
+                    type: text
+          - name: image_2
+            label: "圖片 2"
+            type: image
+          - name: closing
+            label: "段落結尾文字"
+            type: text
+      - name: jump
+        label: "上方跳轉標籤文字"
+        type: string
+        list: true
+
+  - name: page-consultants
+    label: "頁面｜顧問團隊列表"
+    type: file
+    path: content/pages/consultants.json
+    format: json
+    fields:
+      - name: banner
+        label: "頁面上方大標區"
+        type: object
+        fields:
+          - name: word
+            label: "背景大字（英文）"
+            type: string
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: text
+            label: "內文"
+            type: text
+      - name: book_button
+        label: "預約按鈕"
+        type: string
+      - name: more_button
+        label: "看更多按鈕"
+        type: string
+
+  - name: page-eling
+    label: "頁面｜顧問完整介紹：黃凱鈴"
+    type: file
+    path: content/pages/eling.json
+    format: json
+    fields:
+      - name: hero
+        label: "最上方主視覺／個人簡介"
+        type: object
+        fields:
+          - name: crumb
+            label: "麵包屑名稱"
+            type: string
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: name
+            label: "名稱"
+            type: string
+          - name: name_sub
+            label: "姓名後的小字"
+            type: string
+          - name: role
+            label: "職稱"
+            type: string
+          - name: tag
+            label: "標籤"
+            type: string
+          - name: photo
+            label: "照片"
+            type: image
+          - name: intro
+            label: "介紹"
+            type: text
+          - name: stats
+            label: "數字亮點"
+            type: object
+            list: true
+            fields:
+              - name: num
+                label: "數字"
+                type: string
+              - name: label
+                label: "標籤"
+                type: string
+      - name: expertise
+        label: "擅長領域"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: items
+            label: "項目"
+            type: string
+            list: true
+      - name: cases
+        label: "案例"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: label
+            label: "標籤"
+            type: string
+          - name: items
+            label: "項目"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+      - name: people_first
+        label: "以人為本"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: intro
+            label: "介紹"
+            type: text
+          - name: pillars
+            label: "三大重點"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+          - name: flow
+            label: "流程（一格一步）"
+            type: string
+            list: true
+      - name: talent
+        label: "人才定位・天賦課程"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: tags
+            label: "標籤"
+            type: string
+            list: true
+          - name: gallery_title
+            label: "照片區標題"
+            type: string
+          - name: show_recap
+            label: "照片區最前面顯示最新一筆課程回顧"
+            type: boolean
+          - name: sessions
+            label: "場次（同場次只在第一張標說明）"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: photos
+                label: "照片（可多張）"
+                type: image
+                options:
+                  multiple: true
+          - name: big_first
+            label: "第一張照片放大"
+            type: boolean
+      - name: testimonials
+        label: "學員反饋"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: boards
+            label: "設計過的回饋看板"
+            type: image
+            options:
+              multiple: true
+          - name: screenshots
+            label: "回饋截圖"
+            type: image
+            options:
+              multiple: true
+      - name: interview
+        label: "媒體訪談"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: subtitle
+            label: "副標題"
+            type: string
+          - name: text
+            label: "內文"
+            type: text
+          - name: photos
+            label: "照片（可多張）"
+            type: image
+            options:
+              multiple: true
+          - name: youtube_url
+            label: "YouTube 影片網址"
+            type: string
+          - name: cover
+            label: "封面圖"
+            type: image
+          - name: button
+            label: "按鈕文字"
+            type: string
+
+  - name: page-vessi
+    label: "頁面｜顧問完整介紹：林彥廷"
+    type: file
+    path: content/pages/vessi.json
+    format: json
+    fields:
+      - name: hero
+        label: "最上方主視覺／個人簡介"
+        type: object
+        fields:
+          - name: crumb
+            label: "麵包屑名稱"
+            type: string
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: name
+            label: "名稱"
+            type: string
+          - name: name_sub
+            label: "姓名後的小字"
+            type: string
+          - name: role
+            label: "職稱"
+            type: string
+          - name: tag
+            label: "標籤"
+            type: string
+          - name: photo
+            label: "照片"
+            type: image
+          - name: intro
+            label: "介紹"
+            type: text
+          - name: stats
+            label: "數字亮點"
+            type: object
+            list: true
+            fields:
+              - name: num
+                label: "數字"
+                type: string
+              - name: label
+                label: "標籤"
+                type: string
+      - name: advisory
+        label: "顧問服務項目"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: items
+            label: "項目"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: sub
+                label: "副標"
+                type: string
+                list: true
+      - name: services
+        label: "服務區"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: cards
+            label: "卡片"
+            type: object
+            list: true
+            fields:
+              - name: label
+                label: "標籤"
+                type: string
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+              - name: items
+                label: "項目"
+                type: string
+                list: true
+      - name: courses
+        label: "課程區"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: items
+            label: "項目"
+            type: object
+            list: true
+            fields:
+              - name: duration
+                label: "時數"
+                type: string
+              - name: title
+                label: "標題"
+                type: string
+              - name: intro
+                label: "介紹"
+                type: text
+              - name: outline
+                label: "大綱"
+                type: string
+                list: true
+          - name: extra_title
+            label: "補充區塊標題"
+            type: string
+          - name: extra_text
+            label: "補充區塊內文"
+            type: text
+          - name: button
+            label: "按鈕文字"
+            type: string
+      - name: plans
+        label: "方案"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: items
+            label: "項目"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: items
+                label: "項目"
+                type: string
+                list: true
+      - name: results
+        label: "實績"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: stats
+            label: "數字亮點"
+            type: object
+            list: true
+            fields:
+              - name: num
+                label: "數字"
+                type: string
+              - name: label
+                label: "標籤"
+                type: string
+          - name: label
+            label: "標籤"
+            type: string
+          - name: items
+            label: "項目"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+      - name: resume
+        label: "學經歷表"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: col_1
+            label: "表格第 1 欄標題"
+            type: string
+          - name: col_2
+            label: "表格第 2 欄標題"
+            type: string
+          - name: rows
+            label: "表格列"
+            type: object
+            list: true
+            fields:
+              - name: k
+                label: "代號"
+                type: string
+              - name: v
+                label: "內容"
+                type: text
+      - name: certs
+        label: "專業認證"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: items
+            label: "項目"
+            type: string
+            list: true
+      - name: gallery
+        label: "照片牆"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: items
+            label: "項目"
+            type: object
+            list: true
+            fields:
+              - name: image
+                label: "圖片"
+                type: image
+              - name: caption
+                label: "圖說"
+                type: string
+      - name: industries
+        label: "適用產業"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: tags
+            label: "標籤"
+            type: string
+            list: true
+          - name: quote
+            label: "金句"
+            type: string
+          - name: quote_by
+            label: "金句署名"
+            type: string
+
+  - name: page-su
+    label: "頁面｜顧問完整介紹：蘇琮瑜"
+    type: file
+    path: content/pages/su.json
+    format: json
+    fields:
+      - name: hero
+        label: "最上方主視覺／個人簡介"
+        type: object
+        fields:
+          - name: crumb
+            label: "麵包屑名稱"
+            type: string
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: name
+            label: "名稱"
+            type: string
+          - name: name_sub
+            label: "姓名後的小字"
+            type: string
+          - name: role
+            label: "職稱"
+            type: string
+          - name: tag
+            label: "標籤"
+            type: string
+          - name: photo
+            label: "照片"
+            type: image
+          - name: intro
+            label: "介紹"
+            type: text
+          - name: stats
+            label: "數字亮點"
+            type: object
+            list: true
+            fields:
+              - name: num
+                label: "數字"
+                type: string
+              - name: label
+                label: "標籤"
+                type: string
+      - name: expertise
+        label: "擅長領域"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: items
+            label: "項目"
+            type: string
+            list: true
+      - name: scope
+        label: "服務範疇"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: items
+            label: "項目"
+            type: string
+            list: true
+          - name: highlight_title
+            label: "重點框標題"
+            type: string
+          - name: highlight_text
+            label: "重點框內文"
+            type: text
+      - name: resume
+        label: "學經歷表"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: col_1
+            label: "表格第 1 欄標題"
+            type: string
+          - name: col_2
+            label: "表格第 2 欄標題"
+            type: string
+          - name: rows
+            label: "表格列"
+            type: object
+            list: true
+            fields:
+              - name: k
+                label: "代號"
+                type: string
+              - name: v
+                label: "內容"
+                type: text
+      - name: certs
+        label: "專業認證"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: groups
+            label: "分組"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: items
+                label: "項目"
+                type: string
+                list: true
+      - name: cases
+        label: "案例"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: label
+            label: "標籤"
+            type: string
+          - name: items
+            label: "項目"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+      - name: talks
+        label: "講座與課程"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: sessions
+            label: "場次（同場次只在第一張標說明）"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: photos
+                label: "照片（可多張）"
+                type: image
+                options:
+                  multiple: true
+
+  - name: page-marketing
+    label: "頁面｜品牌行銷服務"
+    type: file
+    path: content/pages/marketing.json
+    format: json
+    fields:
+      - name: banner
+        label: "頁面上方大標區"
+        type: object
+        fields:
+          - name: word
+            label: "背景大字（英文）"
+            type: string
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: text
+            label: "內文"
+            type: text
+          - name: text_2
+            label: "內文（第二段）"
+            type: text
+      - name: overview
+        label: "服務總覽"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: help_title
+            label: "提示卡標題"
+            type: string
+          - name: help_text
+            label: "提示卡內文"
+            type: text
+          - name: help_button
+            label: "提示卡按鈕"
+            type: string
+      - name: startup
+        label: "01 創業輔導"
+        type: object
+        fields:
+          - name: no
+            label: "編號"
+            type: string
+          - name: en
+            label: "英文名稱"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: nav
+            label: "跳轉標籤文字"
+            type: string
+          - name: avatar
+            label: "頭像"
+            type: image
+          - name: logo
+            label: "Logo"
+            type: image
+          - name: logo_text
+            label: "沒有 Logo 時顯示的文字"
+            type: string
+          - name: card_who
+            label: "總覽卡負責人"
+            type: string
+          - name: card_summary
+            label: "總覽卡摘要"
+            type: string
+          - name: owner_name
+            label: "負責夥伴"
+            type: string
+          - name: owner_role
+            label: "負責夥伴職稱"
+            type: string
+          - name: slogan
+            label: "標語"
+            type: string
+          - name: desc
+            label: "說明"
+            type: text
+          - name: items_title
+            label: "項目標題"
+            type: string
+          - name: items
+            label: "項目"
+            type: string
+            list: true
+          - name: lessons_title
+            label: "課程區標題"
+            type: string
+          - name: lessons_note
+            label: "課程區備註"
+            type: text
+          - name: lessons
+            label: "課程"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+          - name: plans_title
+            label: "方案標題"
+            type: string
+          - name: plans
+            label: "方案"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: period
+                label: "期間"
+                type: string
+              - name: items
+                label: "項目"
+                type: string
+                list: true
+              - name: note
+                label: "備註文字"
+                type: text
+          - name: button
+            label: "按鈕文字"
+            type: string
+      - name: brand
+        label: "02 品牌行銷顧問"
+        type: object
+        fields:
+          - name: no
+            label: "編號"
+            type: string
+          - name: en
+            label: "英文名稱"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: nav
+            label: "跳轉標籤文字"
+            type: string
+          - name: avatar
+            label: "頭像"
+            type: image
+          - name: logo
+            label: "Logo"
+            type: image
+          - name: logo_text
+            label: "沒有 Logo 時顯示的文字"
+            type: string
+          - name: card_who
+            label: "總覽卡負責人"
+            type: string
+          - name: card_summary
+            label: "總覽卡摘要"
+            type: string
+          - name: owner_name
+            label: "負責夥伴"
+            type: string
+          - name: owner_role
+            label: "負責夥伴職稱"
+            type: string
+          - name: slogan
+            label: "標語"
+            type: string
+          - name: desc
+            label: "說明"
+            type: text
+          - name: items_title
+            label: "項目標題"
+            type: string
+          - name: items
+            label: "項目"
+            type: string
+            list: true
+          - name: button
+            label: "按鈕文字"
+            type: string
+          - name: cases_label
+            label: "案例標籤"
+            type: string
+          - name: cases
+            label: "案例"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+      - name: video
+        label: "03 影音製作"
+        type: object
+        fields:
+          - name: no
+            label: "編號"
+            type: string
+          - name: en
+            label: "英文名稱"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: nav
+            label: "跳轉標籤文字"
+            type: string
+          - name: avatar
+            label: "頭像"
+            type: image
+          - name: logo
+            label: "Logo"
+            type: image
+          - name: logo_text
+            label: "沒有 Logo 時顯示的文字"
+            type: string
+          - name: card_who
+            label: "總覽卡負責人"
+            type: string
+          - name: card_summary
+            label: "總覽卡摘要"
+            type: string
+          - name: owner_name
+            label: "負責夥伴"
+            type: string
+          - name: owner_role
+            label: "負責夥伴職稱"
+            type: string
+          - name: slogan
+            label: "標語"
+            type: string
+          - name: desc
+            label: "說明"
+            type: text
+          - name: items_title
+            label: "項目標題"
+            type: string
+          - name: items
+            label: "項目"
+            type: string
+            list: true
+          - name: button
+            label: "按鈕文字"
+            type: string
+          - name: works
+            label: "代表作品"
+            type: object
+            list: true
+            fields:
+              - name: image
+                label: "圖片"
+                type: image
+              - name: caption
+                label: "圖說"
+                type: string
+      - name: ai
+        label: "04 AI 智能體"
+        type: object
+        fields:
+          - name: no
+            label: "編號"
+            type: string
+          - name: en
+            label: "英文名稱"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: nav
+            label: "跳轉標籤文字"
+            type: string
+          - name: card_title
+            label: "總覽卡標題（不填用標題）"
+            type: string
+          - name: avatar
+            label: "頭像"
+            type: image
+          - name: logo
+            label: "Logo"
+            type: image
+          - name: logo_text
+            label: "沒有 Logo 時顯示的文字"
+            type: string
+          - name: card_who
+            label: "總覽卡負責人"
+            type: string
+          - name: card_summary
+            label: "總覽卡摘要"
+            type: string
+          - name: owner_name
+            label: "負責夥伴"
+            type: string
+          - name: owner_role
+            label: "負責夥伴職稱"
+            type: string
+          - name: slogan
+            label: "標語"
+            type: string
+          - name: desc
+            label: "說明"
+            type: text
+          - name: highlights
+            label: "重點"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+          - name: tags_title
+            label: "標籤標題"
+            type: string
+          - name: tags
+            label: "標籤"
+            type: string
+            list: true
+          - name: items_title
+            label: "項目標題"
+            type: string
+          - name: items
+            label: "項目"
+            type: string
+            list: true
+          - name: quote
+            label: "金句"
+            type: string
+          - name: quote_by
+            label: "金句署名"
+            type: string
+          - name: bio
+            label: "介紹"
+            type: text
+          - name: button
+            label: "按鈕文字"
+            type: string
+      - name: seo
+        label: "05 SEO & AEO"
+        type: object
+        fields:
+          - name: no
+            label: "編號"
+            type: string
+          - name: en
+            label: "英文名稱"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: nav
+            label: "跳轉標籤文字"
+            type: string
+          - name: card_title
+            label: "總覽卡標題（不填用標題）"
+            type: string
+          - name: avatar
+            label: "頭像"
+            type: image
+          - name: logo
+            label: "Logo"
+            type: image
+          - name: logo_text
+            label: "沒有 Logo 時顯示的文字"
+            type: string
+          - name: card_who
+            label: "總覽卡負責人"
+            type: string
+          - name: card_summary
+            label: "總覽卡摘要"
+            type: string
+          - name: owner_name
+            label: "負責夥伴"
+            type: string
+          - name: owner_role
+            label: "負責夥伴職稱"
+            type: string
+          - name: slogan
+            label: "標語"
+            type: string
+          - name: desc
+            label: "說明"
+            type: text
+          - name: website_title
+            label: "官網建置標題"
+            type: string
+          - name: website_text
+            label: "官網建置說明"
+            type: text
+          - name: steps_title
+            label: "步驟標題"
+            type: string
+          - name: steps
+            label: "步驟"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+          - name: advantages_title
+            label: "優勢標題"
+            type: string
+          - name: advantages
+            label: "優勢"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+          - name: table_title
+            label: "表格標題"
+            type: string
+          - name: table_cols
+            label: "表格欄位標題"
+            type: string
+            list: true
+          - name: table_rows
+            label: "表格列"
+            type: object
+            list: true
+            fields:
+              - name: cells
+                label: "各欄內容"
+                type: string
+                list: true
+          - name: button
+            label: "按鈕文字"
+            type: string
+      - name: pos
+        label: "06 網站 & POS 系統"
+        type: object
+        fields:
+          - name: no
+            label: "編號"
+            type: string
+          - name: en
+            label: "英文名稱"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: nav
+            label: "跳轉標籤文字"
+            type: string
+          - name: card_title
+            label: "總覽卡標題（不填用標題）"
+            type: string
+          - name: avatar
+            label: "頭像"
+            type: image
+          - name: logo
+            label: "Logo"
+            type: image
+          - name: logo_text
+            label: "沒有 Logo 時顯示的文字"
+            type: string
+          - name: card_who
+            label: "總覽卡負責人"
+            type: string
+          - name: card_summary
+            label: "總覽卡摘要"
+            type: string
+          - name: owner_name
+            label: "負責夥伴"
+            type: string
+          - name: owner_role
+            label: "負責夥伴職稱"
+            type: string
+          - name: slogan
+            label: "標語"
+            type: string
+          - name: desc
+            label: "說明"
+            type: text
+          - name: tags
+            label: "標籤"
+            type: string
+            list: true
+          - name: website_title
+            label: "官網建置標題"
+            type: string
+          - name: website_text
+            label: "官網建置說明"
+            type: text
+          - name: promises_title
+            label: "承諾標題"
+            type: string
+          - name: promises
+            label: "承諾"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+          - name: table_title
+            label: "表格標題"
+            type: string
+          - name: table_cols
+            label: "表格欄位標題"
+            type: string
+            list: true
+          - name: table_rows
+            label: "表格列"
+            type: object
+            list: true
+            fields:
+              - name: cells
+                label: "各欄內容"
+                type: string
+                list: true
+          - name: quote
+            label: "金句"
+            type: string
+          - name: button
+            label: "按鈕文字"
+            type: string
+      - name: ads
+        label: "07 廣告投放"
+        type: object
+        fields:
+          - name: no
+            label: "編號"
+            type: string
+          - name: en
+            label: "英文名稱"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: nav
+            label: "跳轉標籤文字"
+            type: string
+          - name: avatar
+            label: "頭像"
+            type: image
+          - name: logo
+            label: "Logo"
+            type: image
+          - name: logo_text
+            label: "沒有 Logo 時顯示的文字"
+            type: string
+          - name: card_who
+            label: "總覽卡負責人"
+            type: string
+          - name: card_summary
+            label: "總覽卡摘要"
+            type: string
+          - name: owner_name
+            label: "負責夥伴"
+            type: string
+          - name: owner_role
+            label: "負責夥伴職稱"
+            type: string
+          - name: slogan
+            label: "標語"
+            type: string
+          - name: desc
+            label: "說明"
+            type: text
+          - name: highlights
+            label: "重點"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+          - name: results_eyebrow
+            label: "成效小標"
+            type: string
+          - name: stats
+            label: "數字亮點"
+            type: object
+            list: true
+            fields:
+              - name: num
+                label: "數字"
+                type: string
+              - name: label
+                label: "標籤"
+                type: string
+          - name: projects
+            label: "代表專案"
+            type: text
+          - name: button
+            label: "按鈕文字"
+            type: string
+      - name: closing
+        label: "段落結尾文字"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: button
+            label: "按鈕文字"
+            type: string
+
+  - name: page-training
+    label: "頁面｜企業內訓"
+    type: file
+    path: content/pages/training.json
+    format: json
+    fields:
+      - name: banner
+        label: "頁面上方大標區"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title_1
+            label: "標題第一行"
+            type: string
+          - name: title_2
+            label: "標題第二行"
+            type: string
+          - name: strong
+            label: "粗體標語"
+            type: string
+          - name: text
+            label: "內文"
+            type: text
+          - name: button_1
+            label: "按鈕 1 文字"
+            type: string
+          - name: button_2
+            label: "按鈕 2 文字"
+            type: string
+          - name: image
+            label: "圖片"
+            type: image
+      - name: why
+        label: "7E 的不同"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: cards
+            label: "卡片"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+      - name: approach
+        label: "內訓方式"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title_1
+            label: "標題第一行"
+            type: string
+          - name: title_2
+            label: "標題第二行"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: tags
+            label: "標籤"
+            type: string
+            list: true
+          - name: quote_1
+            label: "金句第一行"
+            type: string
+          - name: quote_2
+            label: "金句第二行"
+            type: string
+      - name: beasts
+        label: "職能五獸"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: items
+            label: "項目"
+            type: object
+            list: true
+            fields:
+              - name: name
+                label: "名稱"
+                type: string
+              - name: role
+                label: "職稱"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+              - name: image
+                label: "圖片"
+                type: image
+          - name: fit_label
+            label: "「適合」標題"
+            type: string
+          - name: fit
+            label: "適合對象"
+            type: string
+            list: true
+          - name: gain_label
+            label: "「可以得到」標題"
+            type: string
+          - name: gain
+            label: "可以得到"
+            type: string
+            list: true
+          - name: note
+            label: "備註文字"
+            type: text
+          - name: button
+            label: "按鈕文字"
+            type: string
+      - name: programs
+        label: "四大課程主軸"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: items
+            label: "項目"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: sub
+                label: "副標"
+                type: string
+              - name: bullets
+                label: "重點"
+                type: string
+                list: true
+              - name: lecturer
+                label: "講師"
+                type: string
+          - name: note
+            label: "備註文字"
+            type: text
+      - name: lecturers
+        label: "講師陣容"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: items
+            label: "項目"
+            type: object
+            list: true
+            fields:
+              - name: name
+                label: "名稱"
+                type: string
+              - name: role
+                label: "職稱"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+              - name: photo
+                label: "照片"
+                type: image
+              - name: focus
+                label: "照片對焦位置（例：center 15%）"
+                type: string
+              - name: link
+                label: "連結（頁面或網址）"
+                type: string
+          - name: note
+            label: "備註文字"
+            type: text
+          - name: button
+            label: "按鈕文字"
+            type: string
+      - name: audience
+        label: "依對象規劃"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: focus_label
+            label: "「課程重點」標題"
+            type: string
+          - name: result_label
+            label: "「預期成果」標題"
+            type: string
+          - name: items
+            label: "項目"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: focus
+                label: "照片對焦位置（例：center 15%）"
+                type: string
+              - name: result
+                label: "預期成果"
+                type: text
+      - name: compare
+        label: "比較表"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: col_1
+            label: "表格第 1 欄標題"
+            type: string
+          - name: col_2
+            label: "表格第 2 欄標題"
+            type: string
+          - name: rows
+            label: "表格列"
+            type: object
+            list: true
+            fields:
+              - name: item
+                label: "項目"
+                type: string
+              - name: general
+                label: "一般企業培訓"
+                type: text
+              - name: ours
+                label: "7E 企業內訓"
+                type: text
+      - name: steps
+        label: "步驟"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: items
+            label: "項目"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+      - name: clients
+        label: "合作企業"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: items
+            label: "項目"
+            type: object
+            list: true
+            fields:
+              - name: name
+                label: "名稱"
+                type: string
+              - name: note
+                label: "備註文字"
+                type: text
+      - name: faq
+        label: "常見問題區"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+      - name: booking
+        label: "預約區"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: button
+            label: "按鈕文字"
+            type: string
+      - name: closing
+        label: "段落結尾文字"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: button_1
+            label: "按鈕 1 文字"
+            type: string
+          - name: button_2
+            label: "按鈕 2 文字"
+            type: string
+
+  - name: page-courses
+    label: "頁面｜商業教育課程"
+    type: file
+    path: content/pages/courses.json
+    format: json
+    fields:
+      - name: banner
+        label: "頁面上方大標區"
+        type: object
+        fields:
+          - name: word
+            label: "背景大字（英文）"
+            type: string
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: text
+            label: "內文"
+            type: text
+          - name: note
+            label: "備註文字"
+            type: text
+          - name: button_1
+            label: "按鈕 1 文字"
+            type: string
+          - name: button_2
+            label: "按鈕 2 文字"
+            type: string
+      - name: courses
+        label: "課程區"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+      - name: recaps
+        label: "recaps"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: button
+            label: "按鈕文字"
+            type: string
+      - name: enroll
+        label: "報名流程"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: items
+            label: "項目"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: text
+                label: "內文"
+                type: text
+      - name: online
+        label: "線上課程區"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: items
+            label: "項目"
+            type: string
+            list: true
+          - name: demo_title
+            label: "示意卡標題"
+            type: string
+          - name: demo_member
+            label: "示意會員"
+            type: string
+          - name: demo
+            label: "示意課程"
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: "標題"
+                type: string
+              - name: percent
+                label: "完成度（數字）"
+                type: string
+              - name: note
+                label: "備註文字"
+                type: text
+      - name: faq
+        label: "常見問題區"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+      - name: closing
+        label: "段落結尾文字"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: lead
+            label: "說明文字"
+            type: text
+          - name: button_1
+            label: "按鈕 1 文字"
+            type: string
+          - name: button_2
+            label: "按鈕 2 文字"
+            type: string
+
+  - name: page-articles
+    label: "頁面｜最新文章（頁首文字）"
+    type: file
+    path: content/pages/articles.json
+    format: json
+    fields:
+      - name: banner
+        label: "頁面上方大標區"
+        type: object
+        fields:
+          - name: word
+            label: "背景大字（英文）"
+            type: string
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: text
+            label: "內文"
+            type: text
+      - name: search_placeholder
+        label: "搜尋框提示文字"
+        type: string
+      - name: empty
+        label: "沒有內容時顯示"
+        type: string
+
+  - name: page-news
+    label: "頁面｜最新消息（頁首文字）"
+    type: file
+    path: content/pages/news.json
+    format: json
+    fields:
+      - name: banner
+        label: "頁面上方大標區"
+        type: object
+        fields:
+          - name: word
+            label: "背景大字（英文）"
+            type: string
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: text
+            label: "內文"
+            type: text
+      - name: account_note
+        label: "帳號說明"
+        type: string
+      - name: follow_button
+        label: "追蹤按鈕"
+        type: string
+      - name: more_button
+        label: "看更多按鈕"
+        type: string
+
+  - name: page-recaps
+    label: "頁面｜課程回顧（頁首文字）"
+    type: file
+    path: content/pages/recaps.json
+    format: json
+    fields:
+      - name: banner
+        label: "頁面上方大標區"
+        type: object
+        fields:
+          - name: word
+            label: "背景大字（英文）"
+            type: string
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: text
+            label: "內文"
+            type: text
+      - name: empty
+        label: "沒有內容時顯示"
+        type: string
+
+  - name: page-contact
+    label: "頁面｜聯絡我們"
+    type: file
+    path: content/pages/contact.json
+    format: json
+    fields:
+      - name: banner
+        label: "頁面上方大標區"
+        type: object
+        fields:
+          - name: word
+            label: "背景大字（英文）"
+            type: string
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title
+            label: "標題"
+            type: string
+          - name: text
+            label: "內文"
+            type: text
+      - name: card
+        label: "聯絡資訊卡"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "小標（英文）"
+            type: string
+          - name: title_1
+            label: "標題第一行"
+            type: string
+          - name: title_2
+            label: "標題第二行"
+            type: string
+          - name: line_label
+            label: "LINE 標題"
+            type: string
+          - name: line_note
+            label: "LINE 說明"
+            type: string
+          - name: phone_label
+            label: "電話標題"
+            type: string
+          - name: email_label
+            label: "Email 標題"
+            type: string
+          - name: email_note
+            label: "Email 說明"
+            type: string
+          - name: hours_label
+            label: "時間標題"
+            type: string
+          - name: hours_note
+            label: "時間說明"
+            type: string
+          - name: address_label
+            label: "地址標題"
+            type: string
+          - name: address_note
+            label: "地址說明"
+            type: string
+          - name: button
+            label: "按鈕文字"
+            type: string
+      - name: form
+        label: "表單區"
+        type: object
+        fields:
+          - name: title
+            label: "標題"
+            type: string
+          - name: note_1
+            label: "小卡內文 1"
+            type: text
+          - name: note_2
+            label: "小卡內文 2"
+            type: text
