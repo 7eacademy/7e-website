@@ -12,6 +12,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
+<script>/* 每一頁都從頁首開始 */(function(){try{history.scrollRestoration='manual'}catch(e){}var h=location.hash;if(h){window.__startHash=h;try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}}
+function top(){var d=document.documentElement;d.style.scrollBehavior='auto';window.scrollTo(0,0);d.scrollTop=0;if(document.body)document.body.scrollTop=0;}
+var touched=false;['wheel','touchstart','pointerdown','keydown','click'].forEach(function(t){window.addEventListener(t,function(){touched=true},{passive:true,once:true})});
+function guard(){if(!touched)top();}
+top();document.addEventListener('DOMContentLoaded',guard);window.addEventListener('load',function(){guard();setTimeout(guard,60);setTimeout(guard,250);});
+window.addEventListener('pageshow',function(){touched=false;guard();setTimeout(guard,60);});})();</script>
+
 <script>window.SITE={endpoint:"{{settings.form_endpoint}}"};</script>
 <script src="assets/site.js" defer></script>
 </head>

@@ -3,13 +3,15 @@
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
-  /* 進入每一頁都從頁首開始（不沿用上一頁的捲動位置） */
-  try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
-  function toTop() { var h = document.documentElement, b = h.style.scrollBehavior; h.style.scrollBehavior = 'auto'; window.scrollTo(0, 0); h.style.scrollBehavior = b; }
-  var startHash = location.hash;
-  if (location.hash) { try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {} }
-  toTop();
-  window.addEventListener('pageshow', function (e) { if (e.persisted) toTop(); });
+  var startHash = window.__startHash || '';
+  /* 頁內跳轉（例如關於頁的標籤）用平滑捲動；換頁一律從頁首開始（見 head） */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"]'); if (!a) return;
+    var id = a.getAttribute('href').slice(1); var t = id && document.getElementById(id); if (!t) return;
+    e.preventDefault(); var hd = document.querySelector('.hd'), jb = document.querySelector('.jump');
+    var off = (hd ? hd.offsetHeight : 0) + (jb ? jb.offsetHeight : 0) + 8;
+    window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - off, behavior: 'smooth' });
+  });
 
   /* 手機／平板選單 */
   function drawer() {
