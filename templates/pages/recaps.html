@@ -1,0 +1,11 @@
+{{> head}}{{> header}}
+<section class="banner"><div class="ring"></div><div class="word">Recap</div><div class="wrap">
+ <div class="crumb"><a href="index.html">首頁</a>　/　<a href="courses.html">商業教育課程</a>　/　<b>課程回顧</b></div>
+ <div class="eyebrow">CLASS RECAP</div><h1>課程回顧</h1><p>每一堂課的主題、時間與現場紀錄。</p>
+</div></section>
+<section class="sec"><div class="wrap" style="max-width:980px">
+ <div class="g">{{#recaps}}{{> recap-card}}{{/recaps}}</div>
+ {{^recaps}}<p class="note center">課程回顧陸續更新中。</p>{{/recaps}}
+</div></section>
+{{> cta}}
+{{> footer}}

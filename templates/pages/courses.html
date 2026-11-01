@@ -7,18 +7,14 @@
  <div class="btns stack-m mt"><a class="btn btn-navy" href="#courses">看全部課程 {{> icon-arrow}}</a><a class="btn btn-line" href="{{settings.line_url}}" target="_blank" rel="noopener">加入會員</a></div>
 </div></section>
 
-<section class="sec bg-ivory"><div class="wrap">
- <div class="card card-pad lead-card">
-  <img class="av-lg" src="media/site/00d1561457d9.jpg" alt="蘇琮瑜">
-  <div><div class="eyebrow">統籌</div><h2 class="h3" style="font-size:24px">商業教育 & 企業內訓｜蘇琮瑜 統籌</h2>
-   <p class="ex">商業教育不只是職能四獸、五獸。由展翅生涯管理顧問執行長蘇琮瑜統籌，以 18 年經驗，從線上到線下規劃課程，前置排列產品內容、提前對焦。</p>
-   <a class="more mt-s" href="consultant-su.html">認識蘇琮瑜 {{> icon-arrow}}</a></div>
- </div>
-</div></section>
-
 <section class="sec" id="courses"><div class="wrap">
  <div class="head center"><div class="eyebrow">COURSES</div><h2 class="title">課程與檢測</h2><div class="rule"><i></i><b></b><i></i></div><p class="lead">從個人品牌到商業品牌，一套可以學習、實踐、複製的創業方法。</p></div>
  <div class="g g-4">{{#courses}}<div class="card course"><div class="ph"><img src="{{image}}" alt="{{title}}" loading="lazy"><span class="tag">{{tag}}</span></div><div class="bd"><h3 class="h3" style="font-size:18px">{{title}}</h3><p class="ex">{{description}}</p><p class="note">{{note}}</p><div class="ft2"><span class="price {{^is_price}}txt{{/is_price}}">{{price}}</span><a class="btn btn-navy btn-sm" href="{{link}}" {{#external}}target="_blank" rel="noopener"{{/external}}>{{button}}</a></div></div></div>{{/courses}}</div>
+</div></section>
+
+<section class="sec bg-pearl" id="recaps"><div class="wrap">
+ <div class="head-row"><div class="head"><div class="eyebrow">CLASS RECAP</div><h2 class="title">課程回顧</h2><div class="rule"><i></i><b></b><i></i></div><p class="lead">每一堂課的主題、時間與現場紀錄。</p></div><a class="btn btn-line" href="recaps.html">看全部課程回顧 {{> icon-arrow}}</a></div>
+ <div class="g">{{#recaps_home}}{{> recap-card}}{{/recaps_home}}</div>
 </div></section>
 
 <section class="sec bg-ivory"><div class="wrap">
@@ -45,10 +41,7 @@
 <section class="sec bg-pearl"><div class="wrap" style="max-width:880px">
  <div class="head center"><div class="eyebrow">FAQ</div><h2 class="title">常見問題</h2><div class="rule"><i></i><b></b><i></i></div></div>
  <div class="faq">
-  <details><summary>線上課程可以看多久？</summary><div class="a">依各課程頁標示的觀看期限。</div></details>
-  <details><summary>可以退費嗎？</summary><div class="a">退費方式依各課程說明辦理，詳情請洽官方 LINE@。</div></details>
-  <details><summary>可以開發票嗎？</summary><div class="a">請在報名表單或官方 LINE@ 告知發票需求，7E 會與你確認開立方式。</div></details>
-  <details><summary>企業可以包班嗎？</summary><div class="a">可以。團隊包班 8 人以上每人 NT$800、20 人以上包班 NT$15,000，詳見<a href="training.html#beasts">企業內訓</a>。</div></details>
+  {{#faq.courses}}<details><summary>{{q}}</summary><div class="a">{{{a_html}}}</div></details>{{/faq.courses}}
  </div>
 </div></section>
 
