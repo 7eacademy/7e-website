@@ -1,4 +1,40 @@
 {
+  "menu": [
+    {
+      "label": "關於7E",
+      "link": "about.html"
+    },
+    {
+      "label": "顧問團隊",
+      "link": "consultants.html"
+    },
+    {
+      "label": "最新文章",
+      "link": "articles.html"
+    },
+    {
+      "label": "最新消息",
+      "link": "news.html"
+    },
+    {
+      "label": "品牌行銷服務",
+      "link": "marketing.html"
+    },
+    {
+      "label": "企業內訓",
+      "link": "training.html"
+    },
+    {
+      "label": "商業教育課程",
+      "link": "courses.html"
+    },
+    {
+      "label": "聯絡我們",
+      "link": "contact.html"
+    }
+  ],
+  "menu_member": "加入會員",
+  "menu_line": "LINE 預約諮詢",
   "cta": {
     "eyebrow": "FROM VISION TO LEGACY",
     "title": "你的品牌，現在走到第幾個 E？",

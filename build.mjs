@@ -128,6 +128,8 @@ const plans = json('content/plans.json', []).map((p) => { const link = linkOf(p.
 const partners = json('content/partners.json', []);
 // 常見問題（後台可新增、修改）：回答可換行，網址會自動變成連結
 const faqRaw = json('content/faq.json', {});
+// 新版：企業內訓、商業教育各一個檔案（後台分別放在各自的分類裡）
+for (const k of ['training', 'courses']) { const f = json(`content/faq-${k}.json`, null); if (f) faqRaw[k] = f.items || []; }
 const faq = {};
 for (const [k, v] of Object.entries(faqRaw)) faq[k] = list(v).filter((x) => x && x.q && on(x.show)).map((x) => ({ ...x, a_html: esc(String(x.a || '')).replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>').replace(/\n/g, '<br>') }));
 const forms = json('content/forms.json', {});
@@ -200,7 +202,9 @@ const SITE_URL = (settings.site_url || '').replace(/\/$/, '');
 const pageUrl = (file) => `${SITE_URL}/${file === 'index.html' ? '' : encodeURI(file.replace(/\.html$/, ''))}`;
 function page(file, tplName, view) {
   const tpl = withPartials(read(`templates/${tplName}.html`));
-  const html = render(tpl, [{ ...base, canonical: SITE_URL ? pageUrl(file) : '', ...view }]);
+  const act = view.active || {};
+  const menu = list((base.common || {}).menu).filter((m) => m && m.label).map((m) => { const link = String(m.link || '').trim(); return { ...m, link, on: !!act[link.replace(/\.html$/, '')], ext: isExt(link) }; });
+  const html = render(tpl, [{ ...base, canonical: SITE_URL ? pageUrl(file) : '', menu, ...view }]);
   if (/\{\{/.test(html.replace(/<script[\s\S]*?<\/script>/g, ''))) console.warn('提醒：' + file + ' 還有未套用的 {{ }} 標籤');
   // 輸出前壓縮 HTML（移除註解與多餘換行），原始碼不易閱讀
   const min = html.replace(/<!--(?!\[if)[\s\S]*?-->/g, '').replace(/>\s*\n\s*</g, '><').replace(/\s*\n\s*/g, ' ');
