@@ -382,6 +382,9 @@ content:
       - name: site_url
         label: 網站正式網址（用於 Google 搜尋網站地圖）
         type: string
+      - name: google_verification
+        label: Google Search Console 驗證碼（貼上 HTML 標記整段或 content 裡的那串都可以）
+        type: string
 
   - name: forms
     label: 官網預約表單欄位（進階）
@@ -1963,8 +1966,22 @@ content:
           - name: button
             label: "按鈕文字"
             type: string
-          - name: works
-            label: "代表作品"
+          - name: works_title
+            label: "案例區標題"
+            type: string
+          - name: works_wide
+            label: "橫式案例（2 格，放橫的照片）"
+            type: object
+            list: true
+            fields:
+              - name: image
+                label: "圖片"
+                type: image
+              - name: caption
+                label: "圖說"
+                type: string
+          - name: works_tall
+            label: "直式案例（4 格，放直的照片）"
             type: object
             list: true
             fields:
