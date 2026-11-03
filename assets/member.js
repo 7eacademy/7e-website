@@ -5,7 +5,9 @@
   var M = {}, mm = document.getElementById('member-msg'); if (mm) ['not_ready', 'error', 'expired', 'missing', 'bad_email', 'fail'].forEach(function (k) { M[k] = mm.getAttribute('data-' + k) || ''; });
   var ep = (window.SITE || {}).endpoint, channel = app.getAttribute('data-channel');
   var redirect = location.origin + '/member';
-  var store = { get: function (k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} }, del: function (k) { try { sessionStorage.removeItem(k); } catch (e) {} } };
+  // 用 localStorage（同一個瀏覽器的分頁都讀得到）。手機瀏覽器登入時常會跳到 LINE App 再回來，
+  // 回來的地方可能是另一個分頁或 LINE 內建瀏覽器，讀不到原本的紀錄，這時仍繼續（身分由後端用 Channel secret 驗證）。
+  var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} }, del: function (k) { try { localStorage.removeItem(k); sessionStorage.removeItem(k); } catch (e) {} } };
   var token = null, isUpdate = false;
   function step(name) { ['start', 'loading', 'form', 'done'].forEach(function (s) { var el = app.querySelector('[data-step="' + s + '"]'); if (el) el.hidden = s !== name; }); }
   function top(t, bad) { var m = $('[data-top-msg]'); m.textContent = t || ''; m.className = 'msg ' + (t ? (bad ? 'err' : 'ok') : ''); }
@@ -14,7 +16,7 @@
 
   $('[data-line-login]').addEventListener('click', function () {
     if (!ep || !channel) { top(M.not_ready, true); return; }
-    var state = rand(), nonce = rand(); store.set('7e_state', state);
+    var state = rand(), nonce = rand(); store.set('7e_state', state); store.set('7e_state_at', String(Date.now()));
     location.href = 'https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=' + encodeURIComponent(channel) +
       '&redirect_uri=' + encodeURIComponent(redirect) + '&state=' + state + '&nonce=' + nonce + '&scope=' + encodeURIComponent('profile openid email');
   });
@@ -24,7 +26,10 @@
   if (!code) return;
   history.replaceState(null, '', location.pathname);
   if (!ep) { top(M.not_ready, true); return; }
-  if (!q.get('state') || q.get('state') !== store.get('7e_state')) { top(M.error, true); return; }
+  var saved = store.get('7e_state'), savedAt = +store.get('7e_state_at') || 0;
+  // 同一個瀏覽器、10 分鐘內發出的登入，state 必須一致；其他情況（從 LINE App 回到別的瀏覽器）照常繼續
+  if (saved && Date.now() - savedAt < 600000 && q.get('state') !== saved) { top(M.error, true); return; }
+  store.del('7e_state_at');
   store.del('7e_state');
   step('loading');
   call({ action: 'line_login', code: code, redirect_uri: redirect }).then(function (r) {
