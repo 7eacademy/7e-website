@@ -600,3 +600,42 @@ select.in{appearance:none;-webkit-appearance:none;cursor:pointer;background:#fff
 .art-links a:hover{color:var(--dgold)}
 .art-links svg{flex:none}
 @media (max-width:640px){.prose>p:first-child{font-size:17px}.art-cta{padding:22px 20px}.art-cta p{font-size:18px}.art-cta .btn{width:100%;justify-content:center}}
+/* 影音製作案例：2 格橫式 + 4 格直式 */
+.works-wide,.works-tall{display:grid;gap:clamp(12px,1.6vw,20px)}
+.works-wide{grid-template-columns:repeat(2,1fr)}
+.works-tall{grid-template-columns:repeat(4,1fr);margin-top:clamp(12px,1.6vw,20px)}
+.work{position:relative;display:block;border-radius:12px;overflow:hidden;background:linear-gradient(160deg,#F4EDE1,#E9DCC4)}
+.works-wide .work{aspect-ratio:16/9}
+.works-tall .work{aspect-ratio:3/4}
+.work img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.work:hover img{transform:scale(1.03)}
+.work span{position:absolute;left:0;right:0;bottom:0;padding:22px 14px 10px;color:#fff;font-size:13.5px;background:linear-gradient(transparent,rgba(20,26,36,.72))}
+.work.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:var(--dgold);text-align:center;padding:10px}
+.work.empty b{font-weight:500;font-size:14px}.work.empty small{font-size:12px;opacity:.75}
+@media (max-width:640px){.works-wide{grid-template-columns:1fr}.works-tall{grid-template-columns:repeat(2,1fr)}}
+/* 商業教育課程：精簡卡片（左上課程圖示、右側主題、下方介紹） */
+.course-grid{display:grid;gap:clamp(12px,1.8vw,22px);grid-template-columns:repeat(2,1fr)}
+@media (min-width:760px){.course-grid{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:1180px){.course-grid{grid-template-columns:repeat(4,1fr)}}
+.course-grid .course{padding:18px;height:auto}
+.course .c-top{display:flex;gap:12px;align-items:flex-start}
+.course .c-ic{flex:none;width:64px;height:64px;border-radius:12px;object-fit:cover;background:var(--pearl)}
+.course .c-hd{min-width:0;display:flex;flex-direction:column;gap:5px}
+.course .c-tag{align-self:flex-start;font-size:11.5px;line-height:1.4;padding:2px 8px;border-radius:99px;background:var(--navy);color:#fff}
+.course .c-t{font-family:var(--serif);font-size:17px;line-height:1.45;font-weight:600;margin:0;word-break:break-word}
+.course-grid .course .ex{margin-top:12px;font-size:14.5px;line-height:1.75}
+.course-grid .course .note{font-size:13px}
+.course-grid .course .ft2{margin-top:12px;padding-top:12px}
+@media (max-width:640px){
+ .course-grid .course{padding:14px 12px}
+ .course .c-top{gap:9px}
+ .course .c-ic{width:46px;height:46px;border-radius:10px}
+ .course .c-tag{font-size:10.5px;padding:1px 7px}
+ .course .c-t{font-size:15px;line-height:1.4}
+ .course-grid .course .ex{font-size:13.5px;line-height:1.7;margin-top:10px}
+ .course-grid .course .note{font-size:12px}
+ .course-grid .course .ft2{flex-direction:column;align-items:stretch;gap:8px}
+ .course-grid .course .price{font-size:16px}.course-grid .course .price.txt{font-size:13px}
+ .course-grid .course .btn{justify-content:center;width:100%;padding-left:8px;padding-right:8px}
+}
+.course-grid .course .price.txt{font-size:13.5px;line-height:1.5}

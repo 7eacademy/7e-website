@@ -79,6 +79,8 @@ const slugOf = (file) => (/^[a-z0-9-]+$/i.test(file) ? file.toLowerCase() : `${(
 const isExt = (u) => /^https?:/.test(u || '');
 
 const settings = json('content/settings.json', {});
+// Search Console 驗證碼：貼整段 <meta …> 也可以，自動取出 content
+settings.google_verification = (String(settings.google_verification || '').match(/content=["']([^"']+)/) || [, String(settings.google_verification || '').trim()])[1];
 const linkOf = (l) => ({ line: settings.line_url, biz: settings.form_biz, personal: settings.form_personal, four: settings.form_four, beast: settings.form_beast, contact: 'contact.html' }[String(l || '').trim()] || l || settings.line_url);
 
 const THUMBS = [];
@@ -204,9 +206,18 @@ function page(file, tplName, view) {
   const min = html.replace(/<!--(?!\[if)[\s\S]*?-->/g, '').replace(/>\s*\n\s*</g, '><').replace(/\s*\n\s*/g, ' ');
   fs.writeFileSync(path.join(DIST, file), min); out.push(file);
 }
-for (const [name, title, nav, form] of PAGES) page(`${name}.html`, `pages/${name}`, { page_title: title, active: { [nav]: true }, p: pagesData[PAGE_DATA[name] || name] || {}, ...(form ? buildForm(form) : {}) });
-// 結構化資料（Google 搜尋、AI 摘要用）：文章、FAQ、麵包屑
 const ld = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
+// 首頁：讓 Google 認得「7E商學院」這個品牌名稱（網站名稱、組織、社群帳號）
+const sameAs = [settings.ig_url, settings.fb_url, settings.line_url].filter(Boolean).map((u) => u.split('?')[0]);
+const homeLd = ld({ '@context': 'https://schema.org', '@graph': [
+  { '@type': 'WebSite', name: '7E商學院', alternateName: ['7E Business Academy', '7E 商學院', '7E商學院 7E Business Academy'], url: SITE_URL ? SITE_URL + '/' : undefined, inLanguage: 'zh-Hant-TW' },
+  { '@type': 'EducationalOrganization', name: '7E商學院', alternateName: '7E Business Academy', url: SITE_URL ? SITE_URL + '/' : undefined, logo: SITE_URL ? `${SITE_URL}/media/site/8aba46176fdb.png` : undefined,
+    description: '7E 商學院｜亞洲創業者第一所商學院。品牌行銷與資源整合、顧問團隊服務、企業內訓與商業教育。', email: settings.email || undefined, telephone: settings.phone || undefined,
+    address: settings.address ? { '@type': 'PostalAddress', streetAddress: settings.address, addressCountry: 'TW' } : undefined, founder: { '@type': 'Person', name: '黃凱鈴' }, sameAs },
+] });
+for (const [name, title, nav, form] of PAGES) page(`${name}.html`, `pages/${name}`, { page_title: title, active: { [nav]: true }, p: pagesData[PAGE_DATA[name] || name] || {}, ...(form ? buildForm(form) : {}),
+  ...(name === 'index' ? { seo_title: '7E商學院 7E Business Academy｜亞洲創業者商學院・品牌行銷・企業內訓', jsonld: homeLd } : {}) });
+// 結構化資料（Google 搜尋、AI 摘要用）：文章、FAQ、麵包屑
 for (const a of articles) {
   const url = SITE_URL ? pageUrl(a.url) : '', img = a.cover ? (SITE_URL ? `${SITE_URL}/${encodeURI(a.cover)}` : a.cover) : '';
   const desc = a.seo.description || a.excerpt || '';

@@ -9,7 +9,7 @@
 
 <section class="sec" id="courses"><div class="wrap">
  <div class="head center">{{#p.courses}}{{> shead}}{{/p.courses}}</div>
- <div class="g g-4">{{#courses}}<div class="card course"><div class="ph"><img src="{{image}}" alt="{{title}}" loading="lazy"><span class="tag">{{tag}}</span></div><div class="bd"><h3 class="h3" style="font-size:18px">{{title}}</h3><p class="ex">{{description}}</p><p class="note">{{note}}</p><div class="ft2"><span class="price {{^is_price}}txt{{/is_price}}">{{price}}</span><a class="btn btn-navy btn-sm" href="{{link}}" {{#external}}target="_blank" rel="noopener"{{/external}}>{{button}}</a></div></div></div>{{/courses}}</div>
+ <div class="course-grid">{{#courses}}<div class="card course"><div class="c-top"><img class="c-ic" src="{{image}}" alt="{{title}}" loading="lazy"><div class="c-hd"><span class="c-tag">{{tag}}</span><h3 class="c-t">{{title}}</h3></div></div><p class="ex">{{description}}</p><p class="note">{{note}}</p><div class="ft2"><span class="price {{^is_price}}txt{{/is_price}}">{{price}}</span><a class="btn btn-navy btn-sm" href="{{link}}" {{#external}}target="_blank" rel="noopener"{{/external}}>{{button}}</a></div></div>{{/courses}}</div>
 </div></section>
 
 <section class="sec bg-pearl" id="recaps"><div class="wrap">

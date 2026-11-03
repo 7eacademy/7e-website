@@ -140,22 +140,33 @@
       "活動紀錄與課程影片"
     ],
     "button": "預約影音製作諮詢",
-    "works": [
+    "works_title": "案例作品",
+    "works_wide": [
       {
         "image": "",
-        "caption": "代表作品 1"
+        "caption": "橫式案例 1"
       },
       {
         "image": "",
-        "caption": "代表作品 2"
+        "caption": "橫式案例 2"
+      }
+    ],
+    "works_tall": [
+      {
+        "image": "",
+        "caption": "直式案例 1"
       },
       {
         "image": "",
-        "caption": "代表作品 3"
+        "caption": "直式案例 2"
       },
       {
         "image": "",
-        "caption": "代表作品 4"
+        "caption": "直式案例 3"
+      },
+      {
+        "image": "",
+        "caption": "直式案例 4"
       }
     ]
   },

@@ -40,12 +40,13 @@
 {{#p.video}}<section class="sec detail bg-ivory" id="video"><div class="wrap">
 {{> mk-head}}
  <div class="split mt" style="align-items:start">
-  <div><p class="lead" style="max-width:none;margin-top:0">{{desc}}</p>
-   <h3 class="h3 mt">{{items_title}}</h3><ul class="checks mt-s">{{#items}}<li>{{.}}</li>{{/items}}</ul>
-   {{> mk-btn}}
-  </div>
-  <div class="g g-2">{{#works}}{{#image}}<a class="ph-box" style="padding:0;overflow:hidden" href="{{image}}" data-lb="video"><img src="{{image}}" alt="{{caption}}" loading="lazy" style="width:100%;height:100%;object-fit:cover"></a>{{/image}}{{^image}}<div class="ph-box">{{caption}}</div>{{/image}}{{/works}}</div>
+  <div><p class="lead" style="max-width:none;margin-top:0">{{desc}}</p></div>
+  <div><h3 class="h3">{{items_title}}</h3><ul class="checks mt-s">{{#items}}<li>{{.}}</li>{{/items}}</ul></div>
  </div>
+ {{> mk-btn}}
+ {{#works_title}}<h3 class="h3 mt-l">{{works_title}}</h3>{{/works_title}}
+ <div class="works-wide mt-s">{{#works_wide}}{{> work}}{{/works_wide}}</div>
+ <div class="works-tall">{{#works_tall}}{{> work}}{{/works_tall}}</div>
 </div></section>{{/p.video}}
 
 {{#p.ai}}<section class="sec detail" id="ai"><div class="wrap">
