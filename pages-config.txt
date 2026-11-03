@@ -1966,22 +1966,8 @@ content:
           - name: button
             label: "按鈕文字"
             type: string
-          - name: works_title
-            label: "案例區標題"
-            type: string
-          - name: works_wide
-            label: "橫式案例（2 格，放橫的照片）"
-            type: object
-            list: true
-            fields:
-              - name: image
-                label: "圖片"
-                type: image
-              - name: caption
-                label: "圖說"
-                type: string
-          - name: works_tall
-            label: "直式案例（4 格，放直的照片）"
+          - name: works
+            label: "代表作品"
             type: object
             list: true
             fields:
