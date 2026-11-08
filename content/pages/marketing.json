@@ -20,8 +20,7 @@
     "title": "創業輔導",
     "nav": "創業輔導",
     "avatar": "images/team/eling-avatar.jpg",
-    "logo": "media/site/8aba46176fdb.png",
-    "logo_text": "",
+    "logo": "/media/site/8aba46176fdb.png",
     "card_who": "黃凱鈴 Eling｜7E 商學院",
     "card_summary": "1 對 1 專案・從想法到落地，全程陪跑",
     "owner_name": "負責夥伴：黃凱鈴 Eling",
@@ -80,8 +79,7 @@
     "title": "品牌行銷顧問",
     "nav": "品牌行銷顧問",
     "avatar": "images/team/eling-avatar.jpg",
-    "logo": "media/site/8aba46176fdb.png",
-    "logo_text": "",
+    "logo": "/media/site/8aba46176fdb.png",
     "card_who": "黃凱鈴 Eling｜7E 商學院",
     "card_summary": "看見定位，建立品牌，連結市場",
     "owner_name": "負責夥伴：黃凱鈴 Eling",
@@ -123,49 +121,45 @@
     "en": "VIDEO PRODUCTION",
     "title": "影音製作",
     "nav": "影音製作",
-    "avatar": "",
-    "logo": "media/site/35d43be6486b.jpg",
-    "logo_text": "",
+    "logo": "/media/site/35d43be6486b.jpg",
     "card_who": "啟悠創意",
     "card_summary": "用影像說出品牌的故事",
     "owner_name": "負責夥伴：啟悠創意",
     "owner_role": "Chill Out Creative",
     "slogan": "用影像說出品牌的故事。",
-    "desc": "【待補】啟悠創意的公司介紹與代表作品。",
-    "items_title": "服務內容（暫定，待啟悠創意確認）",
+    "desc": "啟悠創意Chill Out Creative位於台中，服務全台灣，擁有前中後期各領域專業團隊共同執⾏\n影像製作協助各⼤中⼩型企業、品牌及政府機關服務超過10年以上市場經驗的卓越表現。\n專注於影像製作和品牌設計來強化視覺美學的敏銳度，包含市場分析與構通統籌規劃、拍攝\n與後製剪輯執⾏以及整合⾏銷的⼀條龍完整服務，致⼒於為您的企業提升價值，建立消費者\n對品牌的信任度與忠誠度，將適合您的⾼質感影像擬定客製化專案，以⾏銷思維透過全⽅位\n多樣化的⾼品質影像策略服務為您的品牌說故事。",
+    "items_title": "服務內容（動態攝影&平面攝影)",
     "items": [
-      "品牌形象影片",
-      "企業與創辦人人物訪談",
-      "短影音與 Reels 社群素材",
-      "活動紀錄與課程影片"
+      "企業品牌及產品形象影片",
+      "商業廣告影片",
+      "短影⾳及社群⾃媒體製作",
+      "AI影片及⾳樂創作",
+      "活動影像紀錄&⼈物專訪影片",
+      "⾳樂錄影帶（MV）、微電影、紀錄片",
+      "平⾯攝影 （⼈物形象、商品、空間建築、活動紀錄）",
+      "平⾯設計 （品牌識別系統、印刷品、包裝、數位EDM）"
     ],
     "button": "預約影音製作諮詢",
     "works_title": "案例作品",
     "works_wide": [
       {
-        "image": "",
         "caption": "橫式案例 1"
       },
       {
-        "image": "",
         "caption": "橫式案例 2"
       }
     ],
     "works_tall": [
       {
-        "image": "",
         "caption": "直式案例 1"
       },
       {
-        "image": "",
         "caption": "直式案例 2"
       },
       {
-        "image": "",
         "caption": "直式案例 3"
       },
       {
-        "image": "",
         "caption": "直式案例 4"
       }
     ]
@@ -176,9 +170,8 @@
     "title": "AI 智能體｜魔剪 SI",
     "nav": "AI 智能體",
     "card_title": "AI 智能體",
-    "avatar": "media/site/817d12428940.jpg",
-    "logo": "media/site/e8ff3daec07e.jpg",
-    "logo_text": "",
+    "avatar": "/media/site/817d12428940.jpg",
+    "logo": "/media/site/e8ff3daec07e.jpg",
     "card_who": "黃榮漢 Jerry｜幕見生態傳媒",
     "card_summary": "一個人，也能擁有一支內容團隊",
     "owner_name": "負責夥伴：黃榮漢 Jerry Han",
@@ -224,8 +217,7 @@
     "nav": "SEO & AEO",
     "card_title": "SEO & AEO",
     "avatar": "images/team/jerrylin-avatar.jpg",
-    "logo": "media/site/76a080227b6c.png",
-    "logo_text": "",
+    "logo": "/media/site/76a080227b6c.png",
     "card_who": "林志柔 Jerry｜永好數位行銷",
     "card_summary": "AI 時代，讓 AI 主動推薦你｜北部官網建置",
     "owner_name": "負責夥伴：林志柔 Jerry",
@@ -326,7 +318,6 @@
     "card_title": "網站 & POS 系統",
     "avatar": "images/team/kuiyuan-avatar.jpg",
     "logo": "images/partners/epos.png",
-    "logo_text": "",
     "card_who": "陳奎元｜E@POS",
     "card_summary": "讓系統長成店的樣子｜中部官網建置",
     "owner_name": "負責夥伴：陳奎元",
@@ -405,8 +396,6 @@
     "en": "DIGITAL ADVERTISING",
     "title": "廣告投放",
     "nav": "廣告投放",
-    "avatar": "",
-    "logo": "",
     "logo_text": "AChance Studio",
     "card_who": "AChance Studio",
     "card_summary": "每一分預算，都換成看得見的成效",
