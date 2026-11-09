@@ -119,7 +119,15 @@ const featured = articles.find((a) => a.featured) || articles[0];
 const news = collection('content/news').filter((n) => on(n.published)).map((n) => ({ ...n, date: toDate(n.date), link: n.link || settings.ig_url })).sort((a, b) => b.date.localeCompare(a.date));
 
 const courses = collection('content/courses').filter((c) => on(c.show)).sort((a, b) => (a.order || 99) - (b.order || 99))
-  .map((c) => { const link = linkOf(c.link); return { ...c, link, is_price: /^NT\$/.test(String(c.price || '')), external: isExt(link) }; });
+  .map((c) => {
+    const link = linkOf(c.link);
+    // 只填數字（例如 12800）自動顯示成 NT$ 12,800
+    let price = String(c.price ?? '').trim();
+    if (/^[\d,]+$/.test(price)) price = 'NT$ ' + Number(price.replace(/,/g, '')).toLocaleString('en-US');
+    // 簡短說明：後台的換行照樣顯示
+    const desc_html = esc(String(c.description || '').trim()).replace(/\n/g, '<br>');
+    return { ...c, link, price, desc_html, is_price: /^NT\$/.test(price), external: isExt(link) };
+  });
 
 const consultants = collection('content/consultants').filter((c) => on(c.show)).sort((a, b) => (a.order || 99) - (b.order || 99))
   .map((c) => ({ ...c, tags: list(c.tags), url: c.page ? `${c.page}.html` : settings.line_url }));
